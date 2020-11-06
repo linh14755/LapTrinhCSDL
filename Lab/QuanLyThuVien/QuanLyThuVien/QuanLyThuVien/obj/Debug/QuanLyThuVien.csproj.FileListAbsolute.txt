@@ -1,0 +1,50 @@
+C:\Users\Vuong\Desktop\Dev\C-for-Programming\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDocGia.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDoiMatKhau.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLySach.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDocGia.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDoiMatKhau.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLySach.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyDocGia.resources
+D:\Library-Manager\Quan Ly Thu Vien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyMuonTra.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDocGia.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDoiMatKhau.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyDocGia.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyMuonTra.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLySach.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
