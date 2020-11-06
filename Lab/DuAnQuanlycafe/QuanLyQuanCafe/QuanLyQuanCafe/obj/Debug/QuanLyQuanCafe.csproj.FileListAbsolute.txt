@@ -1,0 +1,13 @@
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.exe.config
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.exe
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.pdb
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csprojAssemblyReference.cache
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fLogin.resources
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Properties.Resources.resources
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.GenerateResource.cache
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.CoreCompileInputs.cache
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.exe
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pdb
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fTableManager.resources
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fAccountProfile.resources
+D:\LapTrinhCSDL\Lab\DuAnQuanlycafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fAdmin.resources
