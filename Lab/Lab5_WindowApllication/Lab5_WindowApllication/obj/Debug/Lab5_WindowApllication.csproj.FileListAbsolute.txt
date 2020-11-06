@@ -1,0 +1,12 @@
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\bin\Debug\Lab5_WindowApllication.exe.config
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\bin\Debug\Lab5_WindowApllication.exe
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\bin\Debug\Lab5_WindowApllication.pdb
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.csprojAssemblyReference.cache
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.Form1.resources
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.Properties.Resources.resources
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.csproj.GenerateResource.cache
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.csproj.CoreCompileInputs.cache
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.exe
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.pdb
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.frmTimKiem.resources
+D:\LapTrinhCSDL\Lab\Lab5_WindowApllication\Lab5_WindowApllication\obj\Debug\Lab5_WindowApllication.frmThongBao.resources
