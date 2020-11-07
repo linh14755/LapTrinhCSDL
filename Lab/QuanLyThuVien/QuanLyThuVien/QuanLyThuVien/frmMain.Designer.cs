@@ -52,7 +52,7 @@
             this.label1.Font = new System.Drawing.Font("Snap ITC", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(314, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(475, 57);
+            this.label1.Size = new System.Drawing.Size(459, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản Lý Thư Viện";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,14 +84,14 @@
             // đăngKýToolStripMenuItem
             // 
             this.đăngKýToolStripMenuItem.Name = "đăngKýToolStripMenuItem";
-            this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.đăngKýToolStripMenuItem.Text = "Đăng Ký";
             this.đăngKýToolStripMenuItem.Click += new System.EventHandler(this.đăngKýToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
@@ -128,8 +128,9 @@
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
+            this.thốngKêToolStripMenuItem.Text = "Báo Cáo - Thống kê";
+            this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVien.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,17 @@ namespace QuanLyThuVien
         public frmQuanLySach()
         {
             InitializeComponent();
+            LoadDanhSach();
         }
+        #region MEthods
+        public void LoadDanhSach()
+        {
+            string query = @"select* from  TaiKhoan";
+            dgvSach.DataSource = DataProVider.instance.ExcuteQuery(query);
+        }
+        #endregion
 
+        #region Events
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,5 +36,6 @@ namespace QuanLyThuVien
         {
             this.Close();
         }
+        #endregion
     }
 }

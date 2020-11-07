@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
-    public partial class frmQuanLyMuonTra : Form
+    public partial class frmThongKe : Form
     {
-        public frmQuanLyMuonTra()
+        public frmThongKe()
         {
             InitializeComponent();
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -59,5 +59,11 @@ namespace QuanLyThuVien
                 e.Cancel = true;
             }
         }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThongKe frmthongke = new frmThongKe();
+            frmthongke.ShowDialog();
+        }
     }
 }
