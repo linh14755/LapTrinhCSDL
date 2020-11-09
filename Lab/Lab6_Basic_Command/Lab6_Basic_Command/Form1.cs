@@ -13,6 +13,7 @@ namespace Lab6_Basic_Command
 {
     public partial class Form1 : Form
     {
+        string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=RestaurantManagement;Integrated Security=True";
         public Form1()
         {
             InitializeComponent();
@@ -80,7 +81,6 @@ namespace Lab6_Basic_Command
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
             string query = "delete from Category where ID = " + txbID.Text + "";
 
             SqlConnection connect = new SqlConnection(connectSRT);
@@ -118,7 +118,6 @@ namespace Lab6_Basic_Command
             
             if(KiemTra())
             {
-                string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
                 string query = "update Category set Name = N'" + txbName.Text + "', Type = " + txbType.Text + " where id = " + txbID.Text + "";
 
                 SqlConnection connect = new SqlConnection(connectSRT);
@@ -169,7 +168,6 @@ namespace Lab6_Basic_Command
 
             if (KiemTra())
             {
-                string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
                 string query = "insert into Category(Name,Type) values(N'" + txbName.Text + "' , " + txbType.Text + ")";
 
                 SqlConnection connect = new SqlConnection(connectSRT);
@@ -206,7 +204,6 @@ namespace Lab6_Basic_Command
 
         private void btnGetDS_Click(object sender, EventArgs e)
         {
-            string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
             string query = "select * from Category";
 
             using (SqlConnection connect = new SqlConnection(connectSRT))
@@ -223,5 +220,10 @@ namespace Lab6_Basic_Command
 
         #endregion
 
+        private void btnDanhSachBill_Click(object sender, EventArgs e)
+        {
+            frmBill frmbill = new frmBill();
+            frmbill.ShowDialog();
+        }
     }
 }

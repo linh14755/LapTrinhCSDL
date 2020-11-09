@@ -46,6 +46,7 @@
             this.txbID = new System.Windows.Forms.TextBox();
             this.txbType = new System.Windows.Forms.TextBox();
             this.txbName = new System.Windows.Forms.TextBox();
+            this.btnDanhSachBill = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,10 +59,11 @@
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 259);
+            this.listView1.Location = new System.Drawing.Point(12, 219);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(985, 295);
+            this.listView1.Size = new System.Drawing.Size(985, 333);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -105,7 +107,8 @@
             // 
             // btnGetDS
             // 
-            this.btnGetDS.Location = new System.Drawing.Point(12, 207);
+            this.btnGetDS.Location = new System.Drawing.Point(12, 152);
+            this.btnGetDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGetDS.Name = "btnGetDS";
             this.btnGetDS.Size = new System.Drawing.Size(145, 46);
             this.btnGetDS.TabIndex = 1;
@@ -115,7 +118,8 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(483, 207);
+            this.btnThem.Location = new System.Drawing.Point(483, 152);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(145, 46);
             this.btnThem.TabIndex = 3;
@@ -126,7 +130,8 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Enabled = false;
-            this.btnCapNhat.Location = new System.Drawing.Point(669, 207);
+            this.btnCapNhat.Location = new System.Drawing.Point(669, 152);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(145, 46);
             this.btnCapNhat.TabIndex = 4;
@@ -137,7 +142,8 @@
             // btnXoa
             // 
             this.btnXoa.Enabled = false;
-            this.btnXoa.Location = new System.Drawing.Point(852, 207);
+            this.btnXoa.Location = new System.Drawing.Point(852, 152);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(145, 46);
             this.btnXoa.TabIndex = 5;
@@ -166,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 72);
+            this.label3.Location = new System.Drawing.Point(25, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 8;
@@ -174,7 +180,8 @@
             // 
             // txbID
             // 
-            this.txbID.Location = new System.Drawing.Point(138, 23);
+            this.txbID.Location = new System.Drawing.Point(139, 23);
+            this.txbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbID.Name = "txbID";
             this.txbID.ReadOnly = true;
             this.txbID.Size = new System.Drawing.Size(273, 22);
@@ -182,23 +189,37 @@
             // 
             // txbType
             // 
-            this.txbType.Location = new System.Drawing.Point(138, 107);
+            this.txbType.Location = new System.Drawing.Point(139, 107);
+            this.txbType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbType.Name = "txbType";
             this.txbType.Size = new System.Drawing.Size(273, 22);
             this.txbType.TabIndex = 10;
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(138, 69);
+            this.txbName.Location = new System.Drawing.Point(139, 69);
+            this.txbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(273, 22);
             this.txbName.TabIndex = 11;
+            // 
+            // btnDanhSachBill
+            // 
+            this.btnDanhSachBill.Location = new System.Drawing.Point(483, 56);
+            this.btnDanhSachBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDanhSachBill.Name = "btnDanhSachBill";
+            this.btnDanhSachBill.Size = new System.Drawing.Size(145, 46);
+            this.btnDanhSachBill.TabIndex = 12;
+            this.btnDanhSachBill.Text = "Xem Danh Sách Bill";
+            this.btnDanhSachBill.UseVisualStyleBackColor = true;
+            this.btnDanhSachBill.Click += new System.EventHandler(this.btnDanhSachBill_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 566);
+            this.Controls.Add(this.btnDanhSachBill);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.txbType);
             this.Controls.Add(this.txbID);
@@ -210,6 +231,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnGetDS);
             this.Controls.Add(this.listView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -238,6 +260,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmViewFood;
+        private System.Windows.Forms.Button btnDanhSachBill;
     }
 }
 

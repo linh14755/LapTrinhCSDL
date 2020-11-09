@@ -13,6 +13,7 @@ namespace Lab6_Basic_Command
 {
     public partial class frmFood : Form
     {
+        string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=RestaurantManagement;Integrated Security=True";
         public frmFood()
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace Lab6_Basic_Command
             {
                 ListViewItem lvitem = new ListViewItem(row["ID"].ToString());
                 lvitem.SubItems.Add(row["Name"].ToString());
-                lvitem.SubItems.Add(row["Units"].ToString());
+                lvitem.SubItems.Add(row["Unit"].ToString());
                 lvitem.SubItems.Add(row["FoodCategoryID"].ToString());
                 lvitem.SubItems.Add(row["price"].ToString());
                 lvitem.SubItems.Add(row["notes"].ToString());
@@ -64,7 +65,6 @@ namespace Lab6_Basic_Command
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string id = txbID.Text, idcategory = txbIdCateGory.Text;
-            string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
             string query = "delete Food where id = " + id + "";
             if (MessageBox.Show("Bạn có muốn xóa food có id = " + id + " ?", "Thông Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
@@ -87,7 +87,6 @@ namespace Lab6_Basic_Command
         public void LoadFood(int categoryID)
         {
             txbIdCateGory.Text = categoryID.ToString();
-            string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
             string query = "select Name from Category where ID = " + categoryID + "";
 
             SqlConnection connect = new SqlConnection(connectSRT);
@@ -122,8 +121,7 @@ namespace Lab6_Basic_Command
             {
                 //create
                 string id = txbID.Text, name = txbName.Text, units = txbUnits.Text, idcategory = txbIdCateGory.Text, price = txbPrice.Text, notes = txbNotes.Text;
-                string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
-                string query = "insert into Food(Name,Units,FoodCategoryID,price,notes) values(N'" + name + "',N'" + units + "'," + idcategory + "," + price + ", N'" + notes + "')";
+                string query = "insert into Food(Name,Unit,FoodCategoryID,price,notes) values(N'" + name + "',N'" + units + "'," + idcategory + "," + price + ", N'" + notes + "')";
                 if (MessageBox.Show("Bạn có muốn tạo mới Food ?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     using (SqlConnection connect = new SqlConnection(connectSRT))
@@ -149,8 +147,7 @@ namespace Lab6_Basic_Command
             {
                 //update
                 string id = txbID.Text, name = txbName.Text, units = txbUnits.Text, idcategory = txbIdCateGory.Text, price = txbPrice.Text, notes = txbNotes.Text;
-                string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=Lab6_Basic_Command;Integrated Security=True";
-                string query = "update Food set Name = N'" + name + "' ,Units = N'" + units + "',FoodCategoryID = N'" + idcategory + "',price = N'" + price + "',notes =N'" + notes + "' where ID = " + id + "";
+                string query = "update Food set Name = N'" + name + "' ,Unit = N'" + units + "',FoodCategoryID = N'" + idcategory + "',price = N'" + price + "',notes =N'" + notes + "' where ID = " + id + "";
                 if (MessageBox.Show("Bạn có muốn chỉnh sửa Food tại FoodId = " + id + " ?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     DataTable data = new DataTable();
