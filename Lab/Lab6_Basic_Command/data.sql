@@ -269,10 +269,11 @@ where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1
 
 select sum(f.Price * bd.Quantity) from Food f, BillDetails bd, Bills b
 where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1
-go
-SELECT * FROM Bills
+
 go
 UPDATE Bills SET CheckoutDate = GETDATE() WHERE ID = 1
 go
 INSERT [dbo].[Bills] ([Name], [TableID], [Amount], [Discount], [Tax], [Status], [CheckoutDate], [Account]) VALUES (N'Hóa đơn thanh toán', 5, 150000, 0.05, 0, 1, GETDATE() - 2, N'pttnga')
 --select * from Bills where CheckoutDate between '@datefrom' and '@dateto'
+go
+SELECT * FROM Bills

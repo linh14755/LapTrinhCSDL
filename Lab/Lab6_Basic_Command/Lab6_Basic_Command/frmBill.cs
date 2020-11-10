@@ -18,9 +18,14 @@ namespace Lab6_Basic_Command
         {
             InitializeComponent();
             LoadBill();
+            LoadDateTime();
         }
 
-
+        private  void LoadDateTime()
+        {
+            DateTime today = DateTime.Now;
+            dtpkFrom.Value = new DateTime(today.Year, today.Month, 1);
+        }
        
         private void LoadBill()
         {
