@@ -13,7 +13,6 @@ namespace OnTapGiuaKy
     
     public partial class SearchForm : Form
     {
-        QuanLySinhVien quanlysv;
         public SearchForm()
         {
             InitializeComponent();
@@ -29,31 +28,9 @@ namespace OnTapGiuaKy
         }
         public KieuTim GetKieuTim()
         {
-            if (rdMa.Checked) return KieuTim.TheoLop;
-            if (rdLop.Checked) return KieuTim.TheoTen;
+            if (rdLop.Checked) return KieuTim.TheoLop;
+            if (rdTen.Checked) return KieuTim.TheoTen;
             return KieuTim.TheoMa;
-        }
-
-        private void btnok_Click(object sender, EventArgs e)
-        {
-            string keyword = GetKeyWord();
-            var kieutim = GetKieuTim();
-
-            List<SinhVien> result = quanlysv.FindStudents(CompareStudent, kieutim, keyword);
-
-            (result);
-        }
-        public bool CompareStudent(SinhVien sv, KieuTim kieutim, string keyword)
-        {
-            switch (kieutim)
-            {
-                case KieuTim.TheoTen:
-                    return sv.ten.ToLower().Contains(keyword.ToLower());
-                case KieuTim.TheoLop:
-                    return sv.lop == keyword;
-                default:
-                    return sv.mssv == keyword;
-            }
         }
     }
 }

@@ -78,30 +78,29 @@
             // 
             // btnok
             // 
-            this.btnok.Location = new System.Drawing.Point(120, 91);
+            this.btnok.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnok.Location = new System.Drawing.Point(109, 102);
             this.btnok.Name = "btnok";
-            this.btnok.Size = new System.Drawing.Size(85, 32);
+            this.btnok.Size = new System.Drawing.Size(81, 34);
             this.btnok.TabIndex = 10;
             this.btnok.Text = "OK";
             this.btnok.UseVisualStyleBackColor = true;
-            this.btnok.Click += new System.EventHandler(this.btnok_Click);
             // 
             // btncancel
             // 
             this.btncancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btncancel.Location = new System.Drawing.Point(235, 91);
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btncancel.Location = new System.Drawing.Point(230, 102);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(85, 32);
+            this.btncancel.Size = new System.Drawing.Size(81, 34);
             this.btncancel.TabIndex = 11;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = true;
             // 
             // SearchForm
             // 
-            this.AcceptButton = this.btnok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btncancel;
             this.ClientSize = new System.Drawing.Size(464, 148);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnok);

@@ -67,6 +67,7 @@
             this.txbCMND = new System.Windows.Forms.TextBox();
             this.txbHoLot = new System.Windows.Forms.TextBox();
             this.txbMSSV = new System.Windows.Forms.TextBox();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -396,11 +397,22 @@
             this.txbMSSV.Size = new System.Drawing.Size(235, 22);
             this.txbMSSV.TabIndex = 26;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(215, 299);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(94, 23);
+            this.btnLoad.TabIndex = 52;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 620);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnCapNhat);
@@ -480,6 +492,7 @@
         private System.Windows.Forms.TextBox txbCMND;
         private System.Windows.Forms.TextBox txbHoLot;
         private System.Windows.Forms.TextBox txbMSSV;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 

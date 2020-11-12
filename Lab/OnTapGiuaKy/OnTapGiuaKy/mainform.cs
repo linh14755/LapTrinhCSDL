@@ -129,14 +129,6 @@ namespace OnTapGiuaKy
             ThietLapSVconTrols(sv);
         }
 
-        private void btnThemSV_Click(object sender, EventArgs e)
-        {
-            if (lvSinhVien.SelectedItems.Count == 0) return;
-            string studentID = lvSinhVien.SelectedItems[0].Text;
-            SinhVien sv = quanlysv.FindByID(studentID);
-            quanlysv.AddorUpdate(sv);
-            ShowStudentList(quanlysv.GetStudents());
-        }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
@@ -157,10 +149,41 @@ namespace OnTapGiuaKy
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             SearchForm searchform = new SearchForm();
-            searchform.ShowDialog();
+            
+            
+            if (searchform.ShowDialog() == DialogResult.OK)
+            {
+                string keyword = searchform.GetKeyWord();
+                var kieutim = searchform.GetKieuTim();
+                List<SinhVien> result = quanlysv.FindStudents(CompareStudent, kieutim, keyword);
+                ShowStudentList(result);
+            }
+        }
+        public bool CompareStudent(SinhVien sv, KieuTim kieutim, string keyword)
+        {
+            switch (kieutim)
+            {
+                case KieuTim.TheoTen:
+                    return sv.ten.ToLower().Contains(keyword.ToLower());
+                case KieuTim.TheoLop:
+                    return sv.lop == keyword;
+                default:
+                    return sv.mssv == keyword;
+            }
         }
 
-       
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            quanlysv = new QuanLySinhVien(new DocFileTXT("DanhSach.txt"));
+            ShowStudentList(quanlysv.GetStudents());
+        }
+
+        private void btnThemSV_Click(object sender, EventArgs e)
+        {
+            var sv = GetStudentConTrols();
+            quanlysv.AddorUpdate(sv);
+            ShowStudentList(quanlysv.GetStudents());
+        }
     }
 }
 
