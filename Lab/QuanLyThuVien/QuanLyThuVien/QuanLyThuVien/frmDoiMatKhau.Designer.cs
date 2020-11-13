@@ -150,7 +150,7 @@
             // 
             // btnDoiMatKhau
             // 
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(258, 160);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(253, 160);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(110, 53);
             this.btnDoiMatKhau.TabIndex = 4;
@@ -159,7 +159,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(396, 162);
+            this.btnThoat.Location = new System.Drawing.Point(392, 160);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 53);
             this.btnThoat.TabIndex = 5;

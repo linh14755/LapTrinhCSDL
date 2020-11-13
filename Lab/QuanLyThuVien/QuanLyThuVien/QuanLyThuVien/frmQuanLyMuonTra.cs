@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVien.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace QuanLyThuVien
         public frmQuanLyMuonTra()
         {
             InitializeComponent();
+            LoadDanhSach();
+        }
+
+        public void LoadDanhSach()
+        {
+            string query = @"select * from  Sach";
+            dataGridView1.DataSource = DataProvider.instance.ExcuteQuery(query);
         }
 
         private void btnHome_Click(object sender, EventArgs e)

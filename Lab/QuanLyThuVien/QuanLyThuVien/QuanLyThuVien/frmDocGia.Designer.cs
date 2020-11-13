@@ -190,6 +190,7 @@
             this.Name = "frmDocGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dành Cho Đọc Giả";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDocGia_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

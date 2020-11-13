@@ -8,23 +8,35 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.DAO
 {
-    public class DataProVider
+    public class DataProvider
     {
-        public static DataProVider instance = new DataProVider();
+        public static DataProvider instance = new DataProvider();
 
-        public static DataProVider Instance { get => instance; set => instance = value; }
+        public static DataProvider Instance { get => instance; set => instance = value; }
 
         string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=QuanLyThuVien;Integrated Security=True";
 
-        public DataTable ExcuteQuery (string query)
+        public DataTable ExcuteQuery(string query, object[] paramaters = null)
         {
             DataTable data = new DataTable();
 
             using (SqlConnection connect = new SqlConnection(connectSRT))
             {
                 connect.Open();
-
                 SqlCommand command = new SqlCommand(query, connect);
+                if (paramaters != null)
+                {
+                    int i = 0;
+                    string[] listpara = query.Split(' ');
+                    foreach (string item in listpara)
+                    {
+                        if (item.Contains("@"))
+                        {
+                            command.Parameters.AddWithValue(item, paramaters[i]);
+                            i++;
+                        }
+                    }
+                }
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
@@ -33,6 +45,70 @@ namespace QuanLyThuVien.DAO
                 connect.Close();
             }
                 
+            return data;
+        }
+
+
+        //tra ve so dong thanh cong
+        public int ExcuteNonQuery(string query, object[] paramaters = null)
+        {
+            int data = 0;
+
+            using (SqlConnection connect = new SqlConnection(connectSRT))
+            {
+                connect.Open();
+                SqlCommand command = new SqlCommand(query, connect);
+                if (paramaters != null)
+                {
+                    int i = 0;
+                    string[] listpara = query.Split(' ');
+                    foreach (string item in listpara)
+                    {
+                        if (item.Contains("@"))
+                        {
+                            command.Parameters.AddWithValue(item, paramaters[i]);
+                            i++;
+                        }
+                    }
+                }
+
+                data = command.ExecuteNonQuery();
+
+                connect.Close();
+            }
+
+            return data;
+        }
+
+
+        //tra ve thong tin dong dau tien cua cot dau tien
+        public object ExcuteScalar(string query, object[] paramaters = null)
+        {
+            object data;
+
+            using (SqlConnection connect = new SqlConnection(connectSRT))
+            {
+                connect.Open();
+                SqlCommand command = new SqlCommand(query, connect);
+                if (paramaters != null)
+                {
+                    int i = 0;
+                    string[] listpara = query.Split(' ');
+                    foreach (string item in listpara)
+                    {
+                        if (item.Contains("@"))
+                        {
+                            command.Parameters.AddWithValue(item, paramaters[i]);
+                            i++;
+                        }
+                    }
+                }
+
+                data = command.ExecuteScalar();
+
+                connect.Close();
+            }
+
             return data;
         }
     }

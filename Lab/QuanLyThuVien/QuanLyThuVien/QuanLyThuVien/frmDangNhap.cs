@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyThuVien.DAO;
+using QuanLyThuVien.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,12 +19,48 @@ namespace QuanLyThuVien
             InitializeComponent();
         }
 
+        #region Methods
+        public bool LoginThuThu(string acc, string pass)
+        {
+            return AccountDAO.Instance.LoginAdmin(acc, pass);
+        }
+        public bool LoginDocGia(string acc, string pass)
+        {
+            return DocGiaDAO.Instance.LoginDocgia(acc, pass);
+        }
+
+        #endregion
+
+        #region Events
+
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmMain from = new frmMain();
-            this.Hide();
-            from.ShowDialog();
-            this.Show();
+            string tk = txbTaiKhoan.Text;
+            string mk = txbMatKhau.Text;
+            if (rdThuThu.Checked)
+            {
+                if (LoginThuThu(tk, mk))
+                {
+                    frmMain frmmain = new frmMain();
+                    this.Hide();
+                    frmmain.ShowDialog();
+                    this.Show();
+                }
+                else
+                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+            }
+            if (rdDocGia.Checked)
+            {
+                if (LoginDocGia(tk,mk))
+                {
+                    frmDocGia frmdg = new frmDocGia();
+                    this.Hide();
+                    frmdg.ShowDialog();
+                    this.Show();
+                }
+                else
+                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -37,5 +75,8 @@ namespace QuanLyThuVien
                 e.Cancel = true;
             }
         }
+
+        #endregion
+
     }
 }

@@ -65,5 +65,11 @@ namespace QuanLyThuVien
             frmThongKe frmthongke = new frmThongKe();
             frmthongke.ShowDialog();
         }
+
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDanhSachTaiKhoan frmdstk = new frmDanhSachTaiKhoan();
+            frmdstk.ShowDialog();
+        }
     }
 }

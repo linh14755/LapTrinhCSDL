@@ -27,5 +27,13 @@ namespace QuanLyThuVien
             frmDoiMatKhau frm = new frmDoiMatKhau();
             frm.ShowDialog();
         }
+
+        private void frmDocGia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thực sự muốn đăng xuất ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

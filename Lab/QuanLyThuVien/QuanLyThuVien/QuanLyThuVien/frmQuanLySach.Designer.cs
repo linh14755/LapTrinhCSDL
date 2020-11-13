@@ -484,18 +484,21 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(603, 10);
+            this.btnLoad.ForeColor = System.Drawing.Color.Black;
+            this.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoad.Location = new System.Drawing.Point(602, 10);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(134, 56);
+            this.btnLoad.Size = new System.Drawing.Size(156, 56);
             this.btnLoad.TabIndex = 10;
             this.btnLoad.Text = "Load Danh Sách";
             this.btnLoad.UseVisualStyleBackColor = true;
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(387, 10);
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(365, 10);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(134, 56);
+            this.btnHome.Size = new System.Drawing.Size(156, 56);
             this.btnHome.TabIndex = 9;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;

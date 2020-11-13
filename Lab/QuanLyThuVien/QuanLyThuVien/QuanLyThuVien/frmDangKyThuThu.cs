@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyThuVien.DAO;
+using QuanLyThuVien.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +19,16 @@ namespace QuanLyThuVien
             InitializeComponent();
         }
 
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

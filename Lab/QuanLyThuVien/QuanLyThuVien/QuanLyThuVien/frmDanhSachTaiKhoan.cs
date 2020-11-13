@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVien.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,16 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
-    public partial class frmThongKe : Form
+    public partial class frmDanhSachTaiKhoan : Form
     {
-        public frmThongKe()
+        public frmDanhSachTaiKhoan()
         {
             InitializeComponent();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void frmDanhSachTaiKhoan_Load(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
     }
 }

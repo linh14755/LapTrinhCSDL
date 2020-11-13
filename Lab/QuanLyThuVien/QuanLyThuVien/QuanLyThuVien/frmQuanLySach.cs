@@ -21,8 +21,8 @@ namespace QuanLyThuVien
         #region MEthods
         public void LoadDanhSach()
         {
-            string query = @"select* from  TaiKhoan";
-            dgvSach.DataSource = DataProVider.instance.ExcuteQuery(query);
+            string query = @"select * from  Sach";
+            dgvSach.DataSource = DataProvider.instance.ExcuteQuery(query);
         }
         #endregion
 

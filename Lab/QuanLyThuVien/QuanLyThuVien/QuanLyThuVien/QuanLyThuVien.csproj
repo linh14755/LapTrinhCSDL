@@ -33,8 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,18 +54,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\DataProVider.cs" />
-    <Compile Include="frmDangKyThuThu.cs">
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DocGiaDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\DocGia.cs" />
+    <Compile Include="frmDangKythuThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangKyThuThu.Designer.cs">
-      <DependentUpon>frmDangKyThuThu.cs</DependentUpon>
+    <Compile Include="frmDangKythuThu.Designer.cs">
+      <DependentUpon>frmDangKythuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachTaiKhoan.Designer.cs">
+      <DependentUpon>frmDanhSachTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDocGia.cs">
       <SubType>Form</SubType>
@@ -103,11 +121,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDangKyThuThu.resx">
-      <DependentUpon>frmDangKyThuThu.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangKythuThu.resx">
+      <DependentUpon>frmDangKythuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachTaiKhoan.resx">
+      <DependentUpon>frmDanhSachTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocGia.resx">
       <DependentUpon>frmDocGia.cs</DependentUpon>
@@ -172,9 +193,7 @@
     <Content Include="Resources\background.png" />
     <Content Include="Resources\dlu.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
