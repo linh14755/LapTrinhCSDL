@@ -8,46 +8,43 @@ namespace OnTapGiuaKy
 {
     public class SinhVien
     {
-        public string mssv;
-        private string gioitinh;
-        public string holot;
-        public string ten;
-        public DateTime ngaysinh;
-        public string lop;
-        public string socmnd;
-        public string sodt;
-        public string diachi;
-        public List<String> chuyennganh;
-
+        string mssv;
+        string holot;
+        string ten;
+        string gioitinh;
+        DateTime ngaysinh;
+        string lop;
+        string socmnd;
+        string sodt;
+        string diachi;
+        List<string> monhoc;
 
         public SinhVien()
         {
-            chuyennganh = new List<string>();
+            Monhoc = new List<string>();
         }
-        public SinhVien(string ms, string ho, string ten, string gt, DateTime ngaysinh, string lop, string socmnd, string sodt, string diachi, List<String> cn)
+        public SinhVien(string mssv, string holot, string ten, string gt, DateTime ngaysinh, string lop, string socmnd, string sodt, string diachi, List<string> monhoc)
         {
-            this.mssv = ms;
+            this.Mssv = mssv;
+            this.Holot = holot;
+            this.Ten = ten;
             this.Gioitinh = gt;
-            this.holot = ho;
-            this.ten = ten;
-            this.ngaysinh = ngaysinh;
-            this.lop = lop;
-            this.socmnd = socmnd;
-            this.sodt = sodt;
-            this.diachi = diachi;
-            this.chuyennganh = cn;
+            this.Ngaysinh = ngaysinh;
+            this.Lop = lop;
+            this.Socmnd = socmnd;
+            this.Diachi = diachi;
+            this.Monhoc = monhoc;
         }
-
 
         public string Mssv { get => mssv; set => mssv = value; }
         public string Holot { get => holot; set => holot = value; }
         public string Ten { get => ten; set => ten = value; }
+        public string Gioitinh { get => gioitinh; set => gioitinh = value; }
         public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
         public string Lop { get => lop; set => lop = value; }
         public string Socmnd { get => socmnd; set => socmnd = value; }
         public string Sodt { get => sodt; set => sodt = value; }
         public string Diachi { get => diachi; set => diachi = value; }
-        public List<string> Chuyennganh { get => chuyennganh; set => chuyennganh = value; }
-        public string Gioitinh { get => gioitinh; set => gioitinh = value; }
+        public List<string> Monhoc { get => monhoc; set => monhoc = value; }
     }
 }

@@ -7,103 +7,89 @@ using System.Threading.Tasks;
 
 namespace OnTapGiuaKy
 {
-    public class DocFileTXT:IDataSource
+    public class DocFileTXT : IDataSource
     {
-        string filePath;
-        public DocFileTXT(string filePath)
+        string filename;
+        public DocFileTXT(string filename)
         {
-            this.filePath = filePath;
+            this.filename = filename;
         }
-
-        //ham GhiFile
-        public void Save(List<SinhVien> listsv)
+        public List<SinhVien> GetStudentList()
         {
-            if (listsv.Count > 0)
-            {
-                using (var sw = new StreamWriter(new FileStream(filePath, FileMode.Create, FileAccess.Write)))
-                {
-                    foreach (var sv in listsv)
-                    {
-                        sw.WriteLine(FormatSdudent(sv));
-                    }
-                }
-            }
-        }
-
-        //ham DocFile
-        public List<SinhVien> GetStudent()
-        {
-            var studentlist = new List<SinhVien>();
             string line;
-            if (File.Exists(filePath))
+            List<SinhVien> lsv = new List<SinhVien>();
+            using (StreamReader sr = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read)))
             {
-                using (StreamReader sr = new StreamReader(new FileStream(filePath, FileMode.Open)))
+                while ((line = sr.ReadLine()) != null)
                 {
-
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        var sv = ParseLine(line);
-                        studentlist.Add(sv);
-                    }
-
+                    var sv = ParseLine(line);
+                    lsv.Add(sv);
                 }
             }
-            return studentlist;
+            return lsv;
         }
 
-        //chuyen doi tung dong du lieu thanh SinhVien
+        public void Save(List<SinhVien> lsinhvien)
+        {
+            if (lsinhvien.Count > 0)
+            {
+                using (StreamWriter sw = new StreamWriter(new FileStream(filename, FileMode.Open, FileAccess.Write)))
+                {
+                    foreach (var item in lsinhvien)
+                    {
+                        sw.WriteLine(FormatSV(item));
+                    }
+                }
+            }
+        }
+
+        public string FormatSV(SinhVien sv)
+        {
+            return string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|",
+                sv.Mssv,
+                sv.Holot,
+                sv.Ten,
+                sv.Gioitinh,
+                sv.Ngaysinh,
+                sv.Lop,
+                sv.Socmnd,
+                sv.Sodt,
+                sv.Diachi,
+                string.Join("^", sv.Monhoc)
+                );
+        }
         public SinhVien ParseLine(string line)
         {
-            
-
             var parts = line.Split('|');
-            var cn = parts[(int)ColumIndex.cn].Split('^').ToList();
+            var monhoc = parts[(int)ColumIndex.monhoc].Split('^').ToList();
 
             return new SinhVien()
             {
-                mssv = parts[(int)ColumIndex.ms],
-                holot = parts[(int)ColumIndex.holot],
-                ten = parts[(int)ColumIndex.ten],
-                Gioitinh = parts[(int)ColumIndex.gt],
-                ngaysinh = DateTime.Parse(parts[(int)ColumIndex.ngaysinh]),
-                lop = parts[(int)ColumIndex.lop],
-                socmnd = parts[(int)ColumIndex.socmnd],
-                sodt = parts[(int)ColumIndex.sodt],
-                diachi = parts[(int)ColumIndex.diachi],
-                chuyennganh = cn
+                Mssv = parts[(int)ColumIndex.mssv],
+                Holot = parts[(int)ColumIndex.holot],
+                Ten = parts[(int)ColumIndex.ten],
+                Gioitinh = parts[(int)ColumIndex.gioitinh],
+                Ngaysinh = DateTime.Parse(parts[(int)ColumIndex.ngaysinh]),
+                Lop = parts[(int)ColumIndex.lop],
+                Socmnd = parts[(int)ColumIndex.socmnd],
+                Sodt = parts[(int)ColumIndex.sodt],
+                Diachi = parts[(int)ColumIndex.diachi],
+                Monhoc = monhoc
             };
         }
-
-        //chuyen tu Sinh Vien sang line
-        public string FormatSdudent(SinhVien sv)
+        public enum ColumIndex
         {
-            return string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|",
-                sv.mssv,
-                sv.holot,
-                sv.ten,
-                sv.Gioitinh,
-                sv.ngaysinh,
-                sv.lop,
-                sv.socmnd,
-                sv.sodt,
-                sv.diachi,
-                string.Join("^",sv.chuyennganh)
-                );
-        }
-
-        private enum ColumIndex
-        {
-            ms,
+            mssv,
             holot,
             ten,
-            gt,
+            gioitinh,
             ngaysinh,
             lop,
             socmnd,
             sodt,
             diachi,
-            cn
+            monhoc,
         }
+
     }
 }
-
