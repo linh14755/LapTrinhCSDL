@@ -61,8 +61,8 @@ namespace OnTapGiuaKy
         private void MainForm_Load(object sender, EventArgs e)
         {
             //qlsv = new QuanLySinhVien(new TXTDataStorage("DanhSach.txt"));
-            qlsv = new QuanLySinhVien(new JSONDataStorage("DanhSach.json"));
-            //qlsv = new QuanLySinhVien(new XMLDataStorage("DanhSach.xml"));
+            //qlsv = new QuanLySinhVien(new JSONDataStorage("DanhSach.json"));
+            qlsv = new QuanLySinhVien(new XMLDataStorage("DanhSach.xml"));
             LoadListViewItem(qlsv.GetListSinhVien());
         }
         public SinhVien GetSvControls()
