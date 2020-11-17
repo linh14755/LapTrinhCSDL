@@ -8,7 +8,7 @@ namespace OnTapGiuaKy
 {
     public interface IDataSource
     {
-        List<SinhVien> GetStudentList();
-        void Save(List<SinhVien> lsinhvien);
+        List<SinhVien> GetSinhVien();
+        void Save(List<SinhVien> listsv);
     }
 }

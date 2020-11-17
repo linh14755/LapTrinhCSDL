@@ -9,80 +9,78 @@ namespace OnTapGiuaKy
     public delegate bool CompareFunc(SinhVien sv, KieuTim kt, string keyword);
     public class QuanLySinhVien
     {
-        public List<SinhVien> CompareStudent(CompareFunc compare,KieuTim kt,string keyword)
+        List<SinhVien> lsv;
+        IDataSource idatasource;
+        public QuanLySinhVien(IDataSource idatasource)
         {
-            var lsv = new List<SinhVien>();
-            foreach (var item in svlist)
-            {
-                if(compare(item,kt,keyword))
-                {
-                    lsv.Add(item);
-                }
-            }
+            this.idatasource = idatasource;
+            lsv = idatasource.GetSinhVien();
+        }
+        
+        public List<SinhVien> GetListSinhVien()
+        {
             return lsv;
         }
-        List<SinhVien> svlist;
-        IDataSource datasource;
 
-        public QuanLySinhVien(IDataSource datasource)
-        {
-            this.datasource = datasource;
-            svlist = datasource.GetStudentList();
-        }
-        public List<SinhVien> GetStudentList()
-        {
-            return svlist;
-        }
-        public void AddSV(SinhVien sv)
-        {
-            svlist.Add(sv);
-            datasource.Save(svlist);
-        }
-        public void AddOrUpdate(SinhVien sv)
-        {
-            int index = Find(sv);
-            if (index < 0)
-            {
-                AddSV(sv);
-            }
-            else
-            {
-                svlist[index] = sv;
-                datasource.Save(svlist);
-            }
-        }
         public void Xoa(SinhVien sv)
         {
-            for (int i = 0; i < svlist.Count; i++)
-            {
-                if (svlist[i].Mssv == sv.Mssv)
-                {
-                    svlist.RemoveAt(i);
-                }
-                datasource.Save(svlist);
-            }
-            
+            int index = FindIndex(sv);
+            lsv.RemoveAt(index);
+            idatasource.Save(lsv);
         }
 
-        //tra ve index
-        public int Find(SinhVien sv)
+        public void Add(SinhVien sv)
         {
-            for (int i = 0; i < svlist.Count; i++)
+            lsv.Add(sv);
+            idatasource.Save(lsv);
+        }
+        public int FindIndex(SinhVien sv)
+        {
+            for (int i = 0; i < lsv.Count; i++)
             {
-                if (sv.Mssv == svlist[i].Mssv)
+                if(lsv[i].Mssv == sv.Mssv)
                 {
                     return i;
                 }
             }
             return -1;
         }
-        public SinhVien FindID(string id)
+        public SinhVien FindStudentByID(string id)
         {
-            foreach (var item in svlist)
+            foreach (var item in lsv)
             {
-                if (item.Mssv == id) return item;
+                if (item.Mssv == id)
+                    return item;
             }
             return null;
         }
+        public void AddOrUpdate(SinhVien sv)
+        {
+            int index = FindIndex(sv);
+            if(index < 0) //ko ton tai
+            {
+                lsv.Add(sv);
+                idatasource.Save(lsv);
+            }
+            else //da ton tai
+            {
+                lsv[index] = sv;
+                idatasource.Save(lsv);
+            }
+        }
+        public List<SinhVien> FindStudents(CompareFunc compare,KieuTim kt, string keyword)
+        {
+            List<SinhVien> listsv = new List<SinhVien>();
+
+            foreach (var item in lsv)
+            {
+                if (compare(item, kt, keyword))
+                {
+                    listsv.Add(item);
+                }
+            }
+
+            return listsv;
+        } 
     }
 }

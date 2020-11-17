@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace OnTapGiuaKy
 {
-    
     public partial class SearchForm : Form
     {
         public SearchForm()
         {
             InitializeComponent();
         }
-        public KieuTim GetKieuTim()
-        {
-            if (rdLop.Checked) return KieuTim.TheoLop;
-            if (rdTen.Checked) return KieuTim.TheoTen;
-            return KieuTim.TheoMa;
-        }
         public string GetKeyWord()
         {
             return txbTim.Text;
+        }
+        public KieuTim GetKieuTim()
+        {
+            if (rdTen.Checked) return KieuTim.TheoTen;
+            if (rdLop.Checked) return KieuTim.TheoLop;
+
+            return KieuTim.TheoMa;
         }
 
         private void SearchForm_Load(object sender, EventArgs e)

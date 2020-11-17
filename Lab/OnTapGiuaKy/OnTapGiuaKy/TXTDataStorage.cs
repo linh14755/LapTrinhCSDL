@@ -7,42 +7,42 @@ using System.Threading.Tasks;
 
 namespace OnTapGiuaKy
 {
-    public class DocFileTXT : IDataSource
+    public class TXTDataStorage : IDataSource
     {
-        string filename;
-        public DocFileTXT(string filename)
+        string filename { get; set; }
+        public TXTDataStorage(string filename)
         {
             this.filename = filename;
         }
-        public List<SinhVien> GetStudentList()
+        public List<SinhVien> GetSinhVien()
         {
-            string line;
             List<SinhVien> lsv = new List<SinhVien>();
-            using (StreamReader sr = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read)))
+            if (!File.Exists(filename))
             {
-                while ((line = sr.ReadLine()) != null)
+                FileStream fs = File.Create(filename);
+                fs.Close();
+            }
+            string line;
+            using (StreamReader r = new StreamReader(filename))
+            {
+                while ((line = r.ReadLine()) != null)
                 {
-                    var sv = ParseLine(line);
-                    lsv.Add(sv);
+                    lsv.Add(Parseline(line));
                 }
             }
             return lsv;
         }
 
-        public void Save(List<SinhVien> lsinhvien)
+        public void Save(List<SinhVien> listsv)
         {
-            if (lsinhvien.Count > 0)
+            using (StreamWriter w = new StreamWriter(filename))
             {
-                using (StreamWriter sw = new StreamWriter(new FileStream(filename, FileMode.Open, FileAccess.Write)))
+                foreach (var item in listsv)
                 {
-                    foreach (var item in lsinhvien)
-                    {
-                        sw.WriteLine(FormatSV(item));
-                    }
+                    w.WriteLine(FormatSV(item));
                 }
             }
         }
-
         public string FormatSV(SinhVien sv)
         {
             return string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|",
@@ -55,14 +55,12 @@ namespace OnTapGiuaKy
                 sv.Socmnd,
                 sv.Sodt,
                 sv.Diachi,
-                string.Join("^", sv.Monhoc)
-                );
+                string.Join("^", sv.Monhoc));
         }
-        public SinhVien ParseLine(string line)
+        public SinhVien Parseline(string line)
         {
             var parts = line.Split('|');
             var monhoc = parts[(int)ColumIndex.monhoc].Split('^').ToList();
-
             return new SinhVien()
             {
                 Mssv = parts[(int)ColumIndex.mssv],
@@ -77,6 +75,9 @@ namespace OnTapGiuaKy
                 Monhoc = monhoc
             };
         }
+
+        
+
         public enum ColumIndex
         {
             mssv,
@@ -90,6 +91,5 @@ namespace OnTapGiuaKy
             diachi,
             monhoc,
         }
-
     }
 }
