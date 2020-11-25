@@ -17,8 +17,17 @@ namespace QuanLyThuVien
         {
             InitializeComponent();
             LoadDanhSach();
+            Setbackground();
         }
         #region MEthods
+        public void Setbackground()
+        {
+            groupBox1.BackColor = Color.Transparent;
+            groupBox2.BackColor = Color.Transparent;
+            groupBox3.BackColor = Color.Transparent;
+            groupBox4.BackColor = Color.Transparent;
+            groupBox5.BackColor = Color.Transparent;
+        }
         public void LoadDanhSach()
         {
             string query = @"select * from  Sach";

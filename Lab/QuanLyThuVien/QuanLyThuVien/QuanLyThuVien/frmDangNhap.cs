@@ -17,19 +17,17 @@ namespace QuanLyThuVien
         public frmDangNhap()
         {
             InitializeComponent();
+            SetBackground();
         }
-
-        #region Methods
-        public bool LoginThuThu(string acc, string pass)
+        public void SetBackground()
         {
-            return AccountDAO.Instance.LoginAdmin(acc, pass);
+            Image backgroundblack = new Bitmap(@"D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\Resources\backgroundwhite.jpg");
+            this.BackgroundImage = backgroundblack;
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+            rdThuThu.BackColor = Color.Transparent;
+            rdDocGia.BackColor = Color.Transparent;
         }
-        public bool LoginDocGia(string acc, string pass)
-        {
-            return DocGiaDAO.Instance.LoginDocgia(acc, pass);
-        }
-
-        #endregion
 
         #region Events
 
@@ -39,10 +37,11 @@ namespace QuanLyThuVien
             string mk = txbMatKhau.Text;
             if (rdThuThu.Checked)
             {
-                if (LoginThuThu(tk, mk))
+                if (AccountDAO.Instance.LoginThuThu(tk, mk))
                 {
                     frmMain frmmain = new frmMain();
                     this.Hide();
+                    frmmain.GetTK(txbTaiKhoan.Text);
                     frmmain.ShowDialog();
                     this.Show();
                 }
@@ -51,7 +50,7 @@ namespace QuanLyThuVien
             }
             if (rdDocGia.Checked)
             {
-                if (LoginDocGia(tk,mk))
+                if (AccountDAO.Instance.LoginDocGia(tk,mk))
                 {
                     frmDocGia frmdg = new frmDocGia();
                     this.Hide();

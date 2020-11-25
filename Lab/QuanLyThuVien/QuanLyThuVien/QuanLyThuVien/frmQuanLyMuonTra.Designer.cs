@@ -79,13 +79,11 @@
             this.rdTenDocGia = new System.Windows.Forms.RadioButton();
             this.rdMaDocGia = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -110,11 +108,13 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -138,9 +138,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox10.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -151,8 +150,9 @@
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -167,6 +167,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
@@ -623,6 +624,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button8);
@@ -637,76 +639,53 @@
             this.tabPage2.Text = "Quản Lý Trả Sách";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
+            // button4
             // 
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.groupBox9);
-            this.groupBox7.Location = new System.Drawing.Point(5, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(338, 191);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Tìm Kiếm";
+            this.button4.Location = new System.Drawing.Point(491, 202);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(134, 56);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Trả Sách";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // groupBox8
+            // button7
             // 
-            this.groupBox8.Controls.Add(this.button3);
-            this.groupBox8.Controls.Add(this.textBox6);
-            this.groupBox8.Location = new System.Drawing.Point(6, 106);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(317, 79);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Nhập Thông Tin Tìm Kiếm";
+            this.button7.Location = new System.Drawing.Point(324, 202);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(134, 56);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Load Danh Sách";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button8
             // 
-            this.button3.Location = new System.Drawing.Point(189, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Tìm";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button8.Location = new System.Drawing.Point(663, 203);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(134, 56);
+            this.button8.TabIndex = 14;
+            this.button8.Text = "Home";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // textBox6
+            // groupBox11
             // 
-            this.textBox6.Location = new System.Drawing.Point(10, 32);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(162, 22);
-            this.textBox6.TabIndex = 0;
+            this.groupBox11.Controls.Add(this.dataGridView2);
+            this.groupBox11.Location = new System.Drawing.Point(5, 264);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(1160, 365);
+            this.groupBox11.TabIndex = 13;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Danh sách Mượn";
             // 
-            // groupBox9
+            // dataGridView2
             // 
-            this.groupBox9.Controls.Add(this.radioButton1);
-            this.groupBox9.Controls.Add(this.radioButton2);
-            this.groupBox9.Location = new System.Drawing.Point(6, 21);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(317, 79);
-            this.groupBox9.TabIndex = 0;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Tìm Theo";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(174, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(84, 21);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Mã Sách";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(10, 33);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(103, 21);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Mã Đọc Giả";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 22);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(1148, 337);
+            this.dataGridView2.TabIndex = 0;
             // 
             // groupBox10
             // 
@@ -920,58 +899,82 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "Mã Phiếu:";
             // 
-            // groupBox11
+            // groupBox7
             // 
-            this.groupBox11.Controls.Add(this.dataGridView2);
-            this.groupBox11.Location = new System.Drawing.Point(5, 264);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(1160, 365);
-            this.groupBox11.TabIndex = 13;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Danh sách Mượn";
+            this.groupBox7.Controls.Add(this.groupBox8);
+            this.groupBox7.Controls.Add(this.groupBox9);
+            this.groupBox7.Location = new System.Drawing.Point(5, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(338, 191);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Tìm Kiếm";
             // 
-            // dataGridView2
+            // groupBox8
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 22);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1148, 337);
-            this.dataGridView2.TabIndex = 0;
+            this.groupBox8.Controls.Add(this.button3);
+            this.groupBox8.Controls.Add(this.textBox6);
+            this.groupBox8.Location = new System.Drawing.Point(6, 106);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(317, 79);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Nhập Thông Tin Tìm Kiếm";
             // 
-            // button7
+            // button3
             // 
-            this.button7.Location = new System.Drawing.Point(324, 202);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(134, 56);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Load Danh Sách";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(189, 23);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 40);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Tìm";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // textBox6
             // 
-            this.button8.Location = new System.Drawing.Point(663, 203);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(134, 56);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "Home";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.textBox6.Location = new System.Drawing.Point(10, 32);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(162, 22);
+            this.textBox6.TabIndex = 0;
             // 
-            // button4
+            // groupBox9
             // 
-            this.button4.Location = new System.Drawing.Point(491, 202);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 56);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Trả Sách";
-            this.button4.UseVisualStyleBackColor = true;
+            this.groupBox9.Controls.Add(this.radioButton1);
+            this.groupBox9.Controls.Add(this.radioButton2);
+            this.groupBox9.Location = new System.Drawing.Point(6, 21);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(317, 79);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Tìm Theo";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(174, 33);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(84, 21);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Mã Sách";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(10, 33);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(103, 21);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Mã Đọc Giả";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // frmQuanLyMuonTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 670);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmQuanLyMuonTra";
@@ -1012,11 +1015,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
@@ -1034,8 +1034,11 @@
             this.panel21.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }

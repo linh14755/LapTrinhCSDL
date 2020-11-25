@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.XtraEditors.Filtering.Templates;
+using QuanLyThuVien.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -14,11 +17,28 @@ namespace QuanLyThuVien.DAO
         public DocGiaDAO() { }
 
         public static DocGiaDAO Instance { get => instance; set => instance = value; }
-
-        public void DangKyDocGia(string tk, string mk, string hoten, string ngaysinh, string gt, string lop, string diachi, string email,string ghichu)
+        public List<DocGia> GettAll()
         {
-            string query = "INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL, GHICHU) VALUES (N'" + tk + "',N'" + mk + "',N'" + hoten + "', N'" + ngaysinh + "', N'" + gt + "', N'" + lop + "', N'" + diachi + "',N'" + email + "' , N'" + ghichu + "')";
-            DataProvider.instance.ExcuteQuery(query);
+            string query = "select * from  DocGia";
+            DataTable data = new DataTable();
+            data = DataProvider.instance.ExcuteQuery(query);
+            List<DocGia> lst = new List<DocGia>();
+
+            foreach (DataRow row in data.Rows)
+            {
+                DocGia dg = new DocGia(row);
+                lst.Add(dg);
+            }
+            return lst;
+        }
+
+        public bool DangKyDocGia(DocGia dg)
+        {
+            string query = "INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL, GHICHU) VALUES (N'" + dg.taikhoan + "',N'" + dg.matkau + "',N'" + dg.hoten + "', N'" + dg.ngaysinh + "', N'" + dg.gioitinh + "', N'" + dg.lop + "', N'" + dg.diachi + "',N'" + dg.email + "' , N'" + dg.ghichu + "')";
+            int data = 0;
+            data = DataProvider.instance.ExcuteNonQuery(query);
+
+            return data > 0;
         }
 
         public bool LoginDocgia(string acc,string pass)

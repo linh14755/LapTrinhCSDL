@@ -32,7 +32,7 @@
             this.txbTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rxbMatKhauCu = new System.Windows.Forms.TextBox();
+            this.txbMatKhauCu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbMatKhauMoi = new System.Windows.Forms.TextBox();
@@ -61,6 +61,7 @@
             // 
             this.txbTaiKhoan.Location = new System.Drawing.Point(203, 4);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
+            this.txbTaiKhoan.ReadOnly = true;
             this.txbTaiKhoan.Size = new System.Drawing.Size(327, 22);
             this.txbTaiKhoan.TabIndex = 1;
             // 
@@ -75,19 +76,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.rxbMatKhauCu);
+            this.panel2.Controls.Add(this.txbMatKhauCu);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(12, 49);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(549, 31);
             this.panel2.TabIndex = 1;
             // 
-            // rxbMatKhauCu
+            // txbMatKhauCu
             // 
-            this.rxbMatKhauCu.Location = new System.Drawing.Point(203, 4);
-            this.rxbMatKhauCu.Name = "rxbMatKhauCu";
-            this.rxbMatKhauCu.Size = new System.Drawing.Size(327, 22);
-            this.rxbMatKhauCu.TabIndex = 1;
+            this.txbMatKhauCu.Location = new System.Drawing.Point(203, 4);
+            this.txbMatKhauCu.Name = "txbMatKhauCu";
+            this.txbMatKhauCu.Size = new System.Drawing.Size(327, 22);
+            this.txbMatKhauCu.TabIndex = 1;
+            this.txbMatKhauCu.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -113,6 +115,7 @@
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(327, 22);
             this.txbMatKhauMoi.TabIndex = 1;
+            this.txbMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -138,6 +141,7 @@
             this.txbNhapLaiMatKhau.Name = "txbNhapLaiMatKhau";
             this.txbNhapLaiMatKhau.Size = new System.Drawing.Size(327, 22);
             this.txbNhapLaiMatKhau.TabIndex = 1;
+            this.txbNhapLaiMatKhau.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -156,6 +160,7 @@
             this.btnDoiMatKhau.TabIndex = 4;
             this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // btnThoat
             // 
@@ -171,6 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(573, 227);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDoiMatKhau);
@@ -199,7 +205,7 @@
         private System.Windows.Forms.TextBox txbTaiKhoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox rxbMatKhauCu;
+        private System.Windows.Forms.TextBox txbMatKhauCu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbMatKhauMoi;

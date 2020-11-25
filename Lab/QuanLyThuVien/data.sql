@@ -47,8 +47,8 @@ CREATE TABLE DocGia
 	TAIKHOAN NVARCHAR(100),
 	MATkHAU NVARCHAR(100),
 	HOTEN NVARCHAR(100),
-	NGAYSINH nvarchar(100),
-	GIOITINH NVARCHAR(100),
+	NGAYSINH date,
+	GIOITINH bit,
 	LOP NVARCHAR(100),
 	DIACHI NVARCHAR(100),
 	EMAIL NVARCHAR(100),
@@ -56,14 +56,16 @@ CREATE TABLE DocGia
 )
 GO
 
-create TABLE TaiKhoan
+CREATE TABLE TaiKhoan
 (
 	TAIKHOAN NVARCHAR(100)NOT NULL,
 	MATKHAU NVARCHAR(100)NOT NULL,
 	TEN NVARCHAR(100),
 	DIACHI NVARCHAR(100),
 	EMAIL NVARCHAR(100),
-	SODT NVARCHAR(100)
+	SODT NVARCHAR(100),
+	NGAYSINH date,
+	GIOITINH bit
 )
 GO
 CREATE TABLE MuonSach
@@ -78,19 +80,10 @@ CREATE TABLE MuonSach
 )
 
 GO
-/*
-select* from  tblDocGia
-select* from  tblLinhVuc
-select* from  tblMuon
-select* from  tblNhanVien
-select* from  tblNXB
-select* from  tblSach
-select* from  tblTacGia
-*/
 --select * from TaiKhoan where TAIKHOAN = N'Linh' and MATKHAU = N'1'
 --INSERT TAIKHOAN
-INSERT INTO TaiKhoan(TAIKHOAN, MATKHAU, TEN, DIACHI, EMAIL, SODT) VALUES (N'Linh',N'1', N'Khánh Linh', N'01, Phù Đổng Thiên Vương, P9, Đà Lạt', N'linh1475@gmail.com', N'01445554444')
-INSERT INTO TaiKhoan(TAIKHOAN, MATKHAU, TEN, DIACHI, EMAIL, SODT) VALUES (N'Staff',N'1', N'Staff', N'01, Phù Đổng Thiên Vương, P9, Đà Lạt', N'staff@gmail.com', N'0144588944')
+INSERT INTO TaiKhoan(TAIKHOAN, MATKHAU, TEN, DIACHI, EMAIL, SODT,NGAYSINH,GIOITINH) VALUES (N'Linh',N'1', N'Khánh Linh', N'01, Phù Đổng Thiên Vương, P9, Đà Lạt', N'linh1475@gmail.com', N'01445554444',GETDATE(),1)
+INSERT INTO TaiKhoan(TAIKHOAN, MATKHAU, TEN, DIACHI, EMAIL, SODT,NGAYSINH,GIOITINH) VALUES (N'Staff',N'1', N'Staff', N'01, Phù Đổng Thiên Vương, P9, Đà Lạt', N'staff@gmail.com', N'0144588944',GETDATE(),1)
 GO
 --INSERT LINHVUC
 INSERT INTO LinhVuc(TENLV) VALUES (N'Khoa Học')
@@ -115,8 +108,8 @@ INSERT INTO Sach(TENSACH,MATG,MANXB,MALV, NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Kỹ
 INSERT INTO Sach(TENSACH,MATG,MANXB,MALV, NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Nhập môn công nghệ thông tin', 1, 3, 1, GETDATE(), 10, GETDATE())
 GO
 --INSERT DOCGIA
-INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia1',N'1',N'Nguyễn Khánh Linh', N'9/11/2020', N'Nam', N'CTK42', N'Ai Biết',N'linh14751@gmail.com')
-INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia2',N'1',N'Lê Nhật Ánh',  N'9/11/2020', N'Nữ', N'CTK42', N'Ai Biết',N'nhatanh@gmail.com')
+INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia1',N'1',N'Nguyễn Khánh Linh', GETDATE(), 1, N'CTK42', N'Ai Biết',N'linh14751@gmail.com')
+INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia2',N'1',N'Lê Nhật Ánh',  GETDATE(), 1, N'CTK42', N'Ai Biết',N'nhatanh@gmail.com')
 go
 --INSERT MUONSACH
 INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (1,2,GETDATE(),GETDATE(),0)
@@ -124,9 +117,7 @@ INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (2,3,GE
 INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (2,3,GETDATE(),GETDATE(),1)
 
 GO
-INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL, GHICHU) VALUES (N'dá',N'đádsas',N'ádasdád', N'11/8/2020 10:45:20 PM', N'Nam', N'', N'',N'' , N'')
-
-select* from  DocGia where TaiKhoan = N'docgia1' and matkhau = N'1'
+select* from  DocGia 
 select* from  LinhVuc
 select* from  MuonSach
 select* from  TaiKhoan
@@ -135,13 +126,18 @@ select* from  Sach
 select* from  TacGia
 GO
 --Login
-alter PROC USP_Login
+CREATE PROC USP_Login
 @account nvarchar(100), @password nvarchar(100)
 as
 begin
 	select * from TaiKhoan where TAIKHOAN = @account and MATKHAU = @password
 end
 go
-exec USP_Login N'staff' , N'2'
+--exec USP_Login N'staff' , N'2'
 go
-select * from TaiKhoan where QUYENHAN = 1
+--select * from TaiKhoan where QUYENHAN = 1
+--update TaiKhoan set NGAYSINH = GETDATE() , GIOITINH = N'Nam' where TaiKhoan = N'Staff'
+
+--insert TaiKhoan(TAIKHOAN,MATKHAU,TEN,DIACHI,EMAIL,SODT,NGAYSINH,GIOITINH) values(N'linh',N'1',N'Nguyễn Khánh Linh',N'Nguyen Du, P9',N'linh@gmail.com',N'0776598805',2000-10-08,N'Nam')
+--update TaiKhoan set	MATKHAU = N'1' where TaiKhoan = N'linh'
+select * from TaiKhoan where TaiKhoan = N'linh' and MatKhau = N'1'

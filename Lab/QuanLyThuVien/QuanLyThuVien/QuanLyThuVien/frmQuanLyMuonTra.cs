@@ -19,6 +19,12 @@ namespace QuanLyThuVien
             LoadDanhSach();
         }
 
+        public void Setbackground(Image img)
+        {
+            tabPage1.BackgroundImage = img;
+            tabPage2.BackgroundImage = img;
+        }
+
         public void LoadDanhSach()
         {
             string query = @"select * from  Sach";

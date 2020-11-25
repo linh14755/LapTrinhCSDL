@@ -1,4 +1,5 @@
 ﻿using QuanLyThuVien.DAO;
+using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,19 @@ namespace QuanLyThuVien
         {
             InitializeComponent();
             LoadDanhSach();
+            Setbackground();
         }
-
+        public void Setbackground()
+        {
+            groupBox1.BackColor = Color.Transparent;
+            groupBox2.BackColor = Color.Transparent;
+            groupBox3.BackColor = Color.Transparent;
+            groupBox4.BackColor = Color.Transparent;
+            groupBox5.BackColor = Color.Transparent;
+        }
         public void LoadDanhSach()
         {
-            string query = @"select * from  DocGia";
-            dataGridView1.DataSource = DataProvider.instance.ExcuteQuery(query);
+            dataGridView1.DataSource = DocGiaDAO.Instance.GettAll();
         }
 
 
@@ -32,10 +40,20 @@ namespace QuanLyThuVien
         {
             if (txbTaiKhoan.Text != "" && txbMatKhau.Text != "" && txbHoTen.Text != "" && txbLop.Text != "" && txbDiaChi.Text != "" && txbEmail.Text != "")
             {
-                string gt = "Nam";
+                DocGia dg = new DocGia();
+                dg.taikhoan = txbTaiKhoan.Text;
+                dg.matkau = txbMatKhau.Text;
+                dg.hoten = txbHoTen.Text;
+                dg.ngaysinh = dtpkNgaySinh.Value;
+                dg.gioitinh = true;
                 if (rdNu.Checked)
-                    gt = "Nữ";
-                DocGiaDAO.Instance.DangKyDocGia(txbTaiKhoan.Text, txbMatKhau.Text, txbHoTen.Text, dtpkNgaySinh.Value.ToString(), gt, txbLop.Text, txbDiaChi.Text, txbEmail.Text, txbGhiChu.Text);
+                    dg.gioitinh = false;
+                dg.lop = txbLop.Text;
+                dg.diachi = txbDiaChi.Text;
+                dg.email = txbEmail.Text;
+                dg.ghichu = txbGhiChu.Text;
+
+                DocGiaDAO.Instance.DangKyDocGia(dg);
                 MessageBox.Show("Thêm Đọc Giả thành Công !");
                 LoadDanhSach();
             }

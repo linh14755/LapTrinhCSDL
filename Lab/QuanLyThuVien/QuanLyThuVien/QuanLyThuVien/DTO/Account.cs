@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Filtering.Templates;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,14 +11,18 @@ namespace QuanLyThuVien.DTO
 {
     public class Account
     {
-        private string taikhoan;
-        private string matkau;
-        private string ten;
-        private string diachi;
-        private string email;
-        private string sdt;
-        
-        public Account(string taikhoan, string matkhau, string ten, string diachi, string email, string sdt)
+        public string taikhoan { get; set; }
+        public string matkau { get; set; }
+        public string ten { get; set; }
+        public string diachi { get; set; }
+        public string email { get; set; }
+        public string sdt { get; set; }
+        public DateTime ngaysinh { get; set; }
+        public bool gioitinh { get; set; }
+
+        public Account() { }
+
+        public Account(string taikhoan, string matkhau, string ten, string diachi, string email, string sdt, DateTime ngaysinh, bool gt)
         {
             this.taikhoan = taikhoan;
             this.matkau = matkhau;
@@ -25,6 +30,8 @@ namespace QuanLyThuVien.DTO
             this.diachi = diachi;
             this.email = email;
             this.sdt = sdt;
+            this.ngaysinh = ngaysinh;
+            this.gioitinh = gt;
         }
 
         public Account(DataRow row) 
@@ -35,13 +42,10 @@ namespace QuanLyThuVien.DTO
             this.diachi = row["diachi"].ToString();
             this.email = row["email"].ToString();
             this.sdt = row["sodt"].ToString();
+            this.ngaysinh = DateTime.Parse(row["ngaysinh"].ToString());
+            this.gioitinh = true;
+            if ((bool)row["gioitinh"] == false)
+                this.gioitinh = false;
         }
-
-        public string Taikhoan { get => taikhoan; set => taikhoan = value; }
-        public string Matkau { get => matkau; set => matkau = value; }
-        public string Ten { get => ten; set => ten = value; }
-        public string Diachi { get => diachi; set => diachi = value; }
-        public string Email { get => email; set => email = value; }
-        public string Sdt { get => sdt; set => sdt = value; }
     }
 }

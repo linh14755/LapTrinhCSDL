@@ -59,11 +59,11 @@
     <Compile Include="DAO\DocGiaDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\DocGia.cs" />
-    <Compile Include="frmDangKythuThu.cs">
+    <Compile Include="frmDangKyThuThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangKythuThu.Designer.cs">
-      <DependentUpon>frmDangKythuThu.cs</DependentUpon>
+    <Compile Include="frmDangKyThuThu.Designer.cs">
+      <DependentUpon>frmDangKyThuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDangKythuThu.resx">
-      <DependentUpon>frmDangKythuThu.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangKyThuThu.resx">
+      <DependentUpon>frmDangKyThuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -153,18 +153,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -190,7 +190,40 @@
     <None Include="Resources\onebit_20.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\vrtableserat.ico" />
+    <None Include="Resources\onebit_50.ico" />
+    <None Include="Resources\onebit_35.ico" />
+    <None Include="Resources\onebit_20.ico" />
+    <None Include="Resources\onebit_13.ico" />
+    <None Include="Resources\onebit_09.ico" />
+    <None Include="Resources\onebit_07.ico" />
+    <None Include="Resources\onebit_05.ico" />
+    <None Include="Resources\onebit_02.ico" />
+    <None Include="Resources\onebit_01.ico" />
+    <None Include="Resources\backgoundwhite.jpg" />
+    <None Include="Resources\8.ico" />
     <Content Include="Resources\background.png" />
+    <None Include="Resources\Thumbs.db" />
+    <None Include="Resources\vrtableserat.jpg" />
+    <None Include="Resources\thongke.jpg" />
+    <None Include="Resources\taikhoan.png" />
+    <None Include="Resources\reload2.jpg" />
+    <None Include="Resources\reload1.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\qunlymuontra.png" />
+    <None Include="Resources\quanlysach.png" />
+    <None Include="Resources\onebit_13.png" />
+    <None Include="Resources\onebit_09.png" />
+    <None Include="Resources\onebit_07.png" />
+    <None Include="Resources\onebit_05.png" />
+    <None Include="Resources\onebit_02.png" />
+    <None Include="Resources\login2.jpg" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\iconlogin.png" />
+    <None Include="Resources\docgia.jpg" />
+    <None Include="Resources\backgroundwhite.jpg" />
+    <None Include="Resources\dangxuat.jpg" />
+    <None Include="Resources\backgroundblack.jpg" />
     <Content Include="Resources\dlu.jpg" />
   </ItemGroup>
   <ItemGroup />

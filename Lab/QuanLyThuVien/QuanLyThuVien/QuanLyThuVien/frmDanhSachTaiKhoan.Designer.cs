@@ -60,7 +60,7 @@
             this.columnHeader7});
             this.lvTaiKhoan.FullRowSelect = true;
             this.lvTaiKhoan.HideSelection = false;
-            this.lvTaiKhoan.Location = new System.Drawing.Point(13, 53);
+            this.lvTaiKhoan.Location = new System.Drawing.Point(12, 53);
             this.lvTaiKhoan.MultiSelect = false;
             this.lvTaiKhoan.Name = "lvTaiKhoan";
             this.lvTaiKhoan.Size = new System.Drawing.Size(683, 385);
@@ -75,10 +75,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Mật Khẩu";
+            this.columnHeader2.Width = 94;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Quyền Hạn";
+            this.columnHeader3.Width = 94;
             // 
             // columnHeader4
             // 
@@ -91,6 +93,7 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Email";
+            this.columnHeader6.Width = 74;
             // 
             // columnHeader7
             // 
@@ -100,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(708, 450);
             this.Controls.Add(this.lvTaiKhoan);
             this.Controls.Add(this.btnXoa);
