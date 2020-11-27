@@ -16,18 +16,13 @@ namespace QuanLyThuVien
         public frmDoiMatKhau()
         {
             InitializeComponent();
-            Setbackground();
+         
+          
         }
-        public void Setbackground()
+        
+        public void GetTK(string tk)
         {
-            panel1.BackColor = Color.Transparent;
-            panel2.BackColor = Color.Transparent;
-            panel3.BackColor = Color.Transparent;
-            panel4.BackColor = Color.Transparent;
-        }
-        public void SetTK(string tk)
-        {
-            txbTaiKhoan.Text = tk;
+            txbtaikhoan.Text = tk;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -38,7 +33,7 @@ namespace QuanLyThuVien
         {
             if (txbMatKhauMoi.Text == txbNhapLaiMatKhau.Text)
             {
-                if (AccountDAO.Instance.DoiMK(txbTaiKhoan.Text, txbNhapLaiMatKhau.Text,txbMatKhauCu.Text))
+                if (AccountDAO.Instance.DoiMK(txbtaikhoan.Text, txbNhapLaiMatKhau.Text,txbMatKhauCu.Text))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công!");
                     this.Close();
@@ -46,6 +41,11 @@ namespace QuanLyThuVien
                 else MessageBox.Show("Mật khẩu cũ không đúng!");
             }
             else MessageBox.Show("Nhập lại mật khẩu không đúng!");
+        }
+
+        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

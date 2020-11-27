@@ -17,7 +17,53 @@ namespace QuanLyThuVien.DAO
         public DocGiaDAO() { }
 
         public static DocGiaDAO Instance { get => instance; set => instance = value; }
-        public List<DocGia> GettAll()
+        public bool Delete(string id)
+        {
+            int result = DataProvider.instance.ExcuteNonQuery("delete docgia where MaDG = " + id + "");
+            return result > 0;
+        }
+        public bool Update(DocGia d)
+        {
+            int gt = 1;
+            if (d.gioitinh == false)
+                gt = 0;
+
+            string ngaysinh = Convert.ToDateTime(d.ngaysinh).ToString("yyyy-MM-dd");
+            string query = "update DocGia set MATkHAU = N'" + d.matkhau + "' , HOTEN = N'" + d.hoten + "' , NGAYSINH = '" + ngaysinh + "' ,GIOITINH = " + gt + " , LOP = N'" + d.lop + "' , DIACHI = N'" + d.diachi + "' ,EMAIL = N'" + d.email + "' where MADG = " + d.madg + "";
+            int result = DataProvider.instance.ExcuteNonQuery(query);
+            return result > 0;
+            
+        }
+        public List<DocGia> FindByID(string id)
+        {
+            List<DocGia> ldg = new List<DocGia>();
+            var data = DataProvider.instance.ExcuteQuery("select * from DocGia where MaDG = N'" + id + "'");
+            foreach (DataRow row in data.Rows)
+            {
+                DocGia d = new DocGia(row);
+                ldg.Add(d);
+            }
+            return ldg;
+        }
+        public bool Insert(DocGia d)
+        {
+            DateTime ngaysinh = d.ngaysinh;
+            string ngaysinhnew = Convert.ToDateTime(ngaysinh).ToString("yyyy-MM-dd");
+            var data = DataProvider.instance.ExcuteQuery("select * from DocGia");
+            int gt = 1;
+            if (d.gioitinh == false)
+                gt = 0;
+
+            foreach (DataRow row in data.Rows)
+            {
+                if (d.taikhoan == row["TaiKhoan"].ToString())
+                    return false;
+            }
+
+            int result = DataProvider.instance.ExcuteNonQuery("INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'" + d.taikhoan + "',N'" + d.matkhau + "',N'" + d.hoten + "', '" + ngaysinhnew + "', " + gt + ", N'" + d.lop + "', N'" + d.diachi + "',N'" + d.email + "')");
+            return result > 0;
+        }
+        public List<DocGia> LoadDocGia()
         {
             string query = "select * from  DocGia";
             DataTable data = new DataTable();
@@ -34,17 +80,17 @@ namespace QuanLyThuVien.DAO
 
         public bool DangKyDocGia(DocGia dg)
         {
-            string query = "INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL, GHICHU) VALUES (N'" + dg.taikhoan + "',N'" + dg.matkau + "',N'" + dg.hoten + "', N'" + dg.ngaysinh + "', N'" + dg.gioitinh + "', N'" + dg.lop + "', N'" + dg.diachi + "',N'" + dg.email + "' , N'" + dg.ghichu + "')";
+            string query = "INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL, GHICHU) VALUES (N'" + dg.taikhoan + "',N'" + dg.matkhau + "',N'" + dg.hoten + "', N'" + dg.ngaysinh + "', N'" + dg.gioitinh + "', N'" + dg.lop + "', N'" + dg.diachi + "',N'" + dg.email + "' , N'" + dg.ghichu + "')";
             int data = 0;
             data = DataProvider.instance.ExcuteNonQuery(query);
 
             return data > 0;
         }
 
-        public bool LoginDocgia(string acc,string pass)
+        public bool LoginDocgia(string acc, string pass)
         {
 
-           DataTable data =  DataProvider.instance.ExcuteQuery("select* from  DocGia where TaiKhoan = @tk and matkhau = @mk", new object[] { acc, pass });
+            DataTable data = DataProvider.instance.ExcuteQuery("select* from  DocGia where TaiKhoan = @tk and matkhau = @mk", new object[] { acc, pass });
 
             return data.Rows.Count > 0;
         }

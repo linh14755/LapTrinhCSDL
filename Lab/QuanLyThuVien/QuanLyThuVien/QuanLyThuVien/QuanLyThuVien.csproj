@@ -55,10 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DocGiaDAO.cs" />
+    <Compile Include="DAO\MuonTraDAO.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\DocGia.cs" />
+    <Compile Include="DTO\MuonSach.cs" />
     <Compile Include="frmDangKyThuThu.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,4 +1,5 @@
 ﻿using QuanLyThuVien.DAO;
+using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,19 +17,158 @@ namespace QuanLyThuVien
         public frmQuanLyMuonTra()
         {
             InitializeComponent();
-            LoadDanhSach();
+            rdMaDocGia.Checked = true;
+            Load();
+        }
+        #region Methods
+        private void Load()
+        {
+            LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+            LoadMaDG();
+            LoadMaSach();
+            dtpmuon.Value = DateTime.Now;
+            dtptra.Value = DateTime.Now;
         }
 
-        public void Setbackground(Image img)
+        public bool KTKytuDacBiet(string kt)
         {
-            tabPage1.BackgroundImage = img;
-            tabPage2.BackgroundImage = img;
+            if (kt.Contains("~") ||
+                kt.Contains("!") ||
+                kt.Contains("@") ||
+                kt.Contains("#") ||
+                kt.Contains("$") ||
+                kt.Contains("%") ||
+                kt.Contains("^") ||
+                kt.Contains("&") ||
+                kt.Contains("*") ||
+                kt.Contains("(") ||
+                kt.Contains(")") ||
+                kt.Contains("-") ||
+                kt.Contains("=") ||
+                kt.Contains("`") ||
+                kt.Contains("?") ||
+                kt.Contains("/") ||
+                kt.Contains(".") ||
+                kt.Contains(",") ||
+                kt.Contains("<") ||
+                kt.Contains(">")
+                )
+                return false;
+            return true;
+        }
+        public MuonSach GetConTrols()
+        {
+            MuonSach m = new MuonSach();
+            m.sophieumuon = txbmaphieu.Text;
+            m.masach = cbbmasach.Text;
+            m.madg = cbbmadg.Text;
+            m.ngaymuon = dtpmuon.Value;
+            m.ngaytra = dtptra.Value;
+            m.xacnhantra = "0"; //khi muon auto chua tra 0
+            m.ghichu = txbghichu.Text;
+
+            return m;
+        }
+        public void LoadDanhSachLV(List<MuonSach> m)
+        {
+            lvmuonsach.Items.Clear();
+            foreach (var ms in m)
+            {
+                ListViewItem lvitem = new ListViewItem(ms.sophieumuon);
+                lvitem.SubItems.Add(ms.madg);
+                lvitem.SubItems.Add(ms.masach);
+                lvitem.SubItems.Add(ms.ngaymuon.ToString());
+                lvitem.SubItems.Add(ms.ngaytra.ToString());
+                lvitem.SubItems.Add(ms.soluong);
+                lvitem.SubItems.Add(ms.xacnhantra);
+                lvitem.SubItems.Add(ms.ghichu);
+                lvmuonsach.Items.Add(lvitem);
+            }
+        }
+        public void LoadMaSach()
+        {
+            List<Book> lst = BookDAO.instance.GetListBook();
+            cbbmasach.DataSource = lst;
+            cbbmasach.DisplayMember = "masach";
+            cbbmasach.ValueMember = "tensach";
+        }
+        public void LoadMaDG()
+        {
+            List<DocGia> lst = DocGiaDAO.Instance.LoadDocGia();
+            
+                cbbmadg.DataSource = lst;
+                cbbmadg.DisplayMember = "madg";
+                cbbmadg.ValueMember = "hoten";
+            
+        }
+        #endregion
+
+        #region Events
+
+        private void txbTim_TextChanged(object sender, EventArgs e)
+        {
+            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach");
+            if (lst == null) return;
+            int n;
+            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) && int.TryParse(txbTim.Text,out n))
+            {
+                string filterExpression = "MaDG = " + txbTim.Text + "";
+                if (rdmasach.Checked) filterExpression = "MASACH = " + txbTim.Text + "";
+
+                string sortExpression = "MaDG DESC";
+                DataViewRowState rowsatefilter = DataViewRowState.OriginalRows;
+
+                DataView dataview = new DataView(lst, filterExpression, sortExpression, rowsatefilter);
+
+                List<MuonSach> lm = new List<MuonSach>();
+                foreach (DataRowView row in dataview)
+                {
+                    MuonSach d = new MuonSach(row);
+                    lm.Add(d);
+                }
+                LoadDanhSachLV(lm);
+            }
+            else
+            {
+                LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+            }
         }
 
-        public void LoadDanhSach()
+        private void button1_Click(object sender, EventArgs e)
         {
-            string query = @"select * from  Sach";
-            dataGridView1.DataSource = DataProvider.instance.ExcuteQuery(query);
+            //cho muon
+            //danh sach muon
+            var muon = GetConTrols();
+            if (MuonTraDAO.instance.KiemTraDocGia(muon.madg,muon.masach))
+            {
+                if (MuonTraDAO.instance.MuonSach(muon))
+                    MessageBox.Show("Cho Mượn Thành Công \n Tên người mượn: " + txbtendocgia.Text + " \n Tên Sách: " + txbTenSach.Text + "", "Thông Báo");
+                else
+                    MessageBox.Show("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
+                LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+            }
+            else
+                MessageBox.Show("Một đọc giả không được mượn quá 3 quyển sách");
+        }
+
+        private void cbbmasach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbmasach.SelectedIndex == -1) return;
+
+            if (cbbmasach.SelectedValue is string)
+            {
+                txbTenSach.Text = cbbmasach.SelectedValue.ToString();
+            }
+        }
+
+        private void cbbmadg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbmadg.SelectedIndex == -1) return;
+
+            if (cbbmadg.SelectedValue is string)
+            {
+                txbtendocgia.Text = cbbmadg.SelectedValue.ToString();
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -36,9 +176,10 @@ namespace QuanLyThuVien
             this.Close();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
+
+        #endregion
+
+        
     }
 }

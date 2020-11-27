@@ -17,7 +17,7 @@ namespace QuanLyThuVien
         public frmDangNhap()
         {
             InitializeComponent();
-            SetBackground();
+            //SetBackground();
         }
         public void SetBackground()
         {

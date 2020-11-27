@@ -13,128 +13,125 @@ namespace QuanLyThuVien
 {
     public partial class frmMain : Form
     {
-        string tentk ="";
-        Image backgroundblue = new Bitmap(@"D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\Resources\background3.jpg");
-        Image backgroundblack = new Bitmap(@"D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\Resources\backgroundblack.jpg");
-        Image backgroundwhite = new Bitmap(@"D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\Resources\backgroundwhite.jpg");
+        string tentk = "";
         public frmMain()
         {
             InitializeComponent();
-            Setbackground();
+            hideSubMenu();
         }
 
-        private void Setbackground()
+        private void hideSubMenu()
         {
-            this.BackgroundImage = backgroundwhite;
-            label1.BackColor = Color.Transparent;
-            menuStrip1.BackColor = Color.Transparent;
-            label2.BackColor = Color.Transparent;
-            label3.BackColor = Color.Transparent;
-            label4.BackColor = Color.Transparent;
-            label5.BackColor = Color.Transparent;
-            label6.BackColor = Color.Transparent;
+            panelTaikhoanSubMenu.Visible = false;
+            panelQuanlydanhmucSubMenu.Visible = false;
+            panelQuanlymuontraSubMenu.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null) activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         public void GetTK(string tk)
         {
             tentk = tk;
         }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLySach frmsach = new frmQuanLySach();
-            frmsach.BackgroundImage = this.BackgroundImage;
-            frmsach.ShowDialog();
-        }
-
-        private void quảnLýĐọcGToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyDocGia frmdocgia = new frmQuanLyDocGia();
-            frmdocgia.BackgroundImage = this.BackgroundImage;
-            frmdocgia.ShowDialog();
-        }
-
-        private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyMuonTra frmmuontra = new frmQuanLyMuonTra();
-            frmmuontra.BackgroundImage = this.BackgroundImage;
-            frmmuontra.Setbackground(this.BackgroundImage);
-            frmmuontra.ShowDialog();
-        }
-
-        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDangKy frmdangky = new frmDangKy();
-            frmdangky.UnEnableTK();
-            frmdangky.GetTK(tentk);
-            frmdangky.BackgroundImage = this.BackgroundImage;
-            frmdangky.ShowDialog();
-        }
-
-        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDangKy frmdangky = new frmDangKy();
-            frmdangky.UnEnableUpdate();
-            frmdangky.BackgroundImage = this.BackgroundImage;
-            frmdangky.ShowDialog();
-        }
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDoiMatKhau frmdoimk = new frmDoiMatKhau();
-            frmdoimk.BackgroundImage = this.BackgroundImage;
-            frmdoimk.ShowDialog();
-        }
-
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Bạn có thực sự muốn đăng xuất ?","Thông Báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn có thực sự muốn đăng xuất ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
         }
 
-        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            frmThongKe frmthongke = new frmThongKe();
-            frmthongke.BackgroundImage = this.BackgroundImage;
-            frmthongke.ShowDialog();
+            this.Close();
         }
 
-        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnTaikhoan_Click(object sender, EventArgs e)
         {
-            frmDanhSachTaiKhoan frmdstk = new frmDanhSachTaiKhoan();
-            frmdstk.BackgroundImage = this.BackgroundImage;
-            frmdstk.ShowDialog();
+            showSubMenu(panelTaikhoanSubMenu);
         }
 
-        private void whiteToolStripMenuItem_Click(object sender, EventArgs e)
+        #region Taikhoansubmenu
+        private void button2_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = backgroundwhite;
+            frmDangKy frm = new frmDangKy();
+            frm.UnEnableUpdate();
+            openChildForm(frm);
+            //..
+            //your codes
+            //..
+            hideSubMenu();
         }
 
-        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = backgroundblack;
-        }
-        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.BackgroundImage = backgroundblue;
+            frmDangKy frm = new frmDangKy();
+            frm.GetTK(this.tentk);
+            frm.UnEnableTK();
+            openChildForm(frm);
+            //..
+            //your codes
+            //..
+            hideSubMenu();
         }
 
-        private void đổiMKToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             frmDoiMatKhau frm = new frmDoiMatKhau();
-            frm.SetTK(tentk);
-            frm.BackgroundImage = this.BackgroundImage;
-            frm.ShowDialog();
+            frm.GetTK(this.tentk);
+            openChildForm(frm);
+            //..
+            //your codes
+            //..
+            hideSubMenu();
+        }
+        #endregion
+
+        private void btnQuanlydanhmuc_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelQuanlydanhmucSubMenu);
+        }
+        #region Quanlydanhmucsubmenu
+        private void button8_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLySach());
+            hideSubMenu();
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLyDocGia());
+            hideSubMenu();
         }
 
-        
+
+        #endregion
+
+        private void btnqunlymuontra_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLyMuonTra());
+            hideSubMenu();
+        }
     }
 }

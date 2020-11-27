@@ -17,55 +17,183 @@ namespace QuanLyThuVien
         public frmQuanLyDocGia()
         {
             InitializeComponent();
-            LoadDanhSach();
-            Setbackground();
+            Load();
+            rdMaDocGia.Checked = true;
         }
-        public void Setbackground()
+        #region Methods
+        public void Load()
         {
-            groupBox1.BackColor = Color.Transparent;
-            groupBox2.BackColor = Color.Transparent;
-            groupBox3.BackColor = Color.Transparent;
-            groupBox4.BackColor = Color.Transparent;
-            groupBox5.BackColor = Color.Transparent;
+            LoadDanhSachLV(DocGiaDAO.Instance.LoadDocGia());
         }
-        public void LoadDanhSach()
+        public DocGia GetConTrols()
         {
-            dataGridView1.DataSource = DocGiaDAO.Instance.GettAll();
-        }
+            DocGia d = new DocGia();
+            d.madg = txbdocgia.Text;
+            d.hoten = txbHoTen.Text;
+            d.ngaysinh = dtpkNgaySinh.Value;
+            d.gioitinh = true;
+            if (rdNu.Checked)
+                d.gioitinh = false;
+            d.taikhoan = txbTaiKhoan.Text;
+            d.matkhau = txbMatKhau.Text;
+            d.lop = txbLop.Text;
+            d.diachi = txbDiaChi.Text;
+            d.email = txbEmail.Text;
+            d.ghichu = txbGhiChu.Text;
 
+            return d;
+        }
+        public void LoadConTrols(DocGia dg)
+        {
+            txbdocgia.Text = dg.madg;
+            txbHoTen.Text = dg.hoten;
+            dtpkNgaySinh.Value = dg.ngaysinh;
+            rdNam.Checked = true;
+            if (dg.gioitinh == false)
+                rdNu.Checked = true;
+            txbTaiKhoan.Text = dg.taikhoan;
+            txbMatKhau.Text = dg.matkhau;
+            txbLop.Text = dg.lop;
+            txbDiaChi.Text = dg.diachi;
+            txbEmail.Text = dg.email;
+            txbGhiChu.Text = dg.ghichu;
+        }
+        public void LoadDanhSachLV(List<DocGia> ldg)
+        {
+            lvdocgia.Items.Clear();
+            foreach (var dg in ldg)
+            {
+                ListViewItem lvitem = new ListViewItem(dg.madg);
+                lvitem.SubItems.Add(dg.hoten);
+                lvitem.SubItems.Add(dg.ngaysinh.ToString());
+                string gt = "Nam";
+                if (dg.gioitinh == false)
+                    gt = "Nữ";
+                lvitem.SubItems.Add(gt);
+                lvitem.SubItems.Add(dg.taikhoan);
+                lvitem.SubItems.Add(dg.matkhau);
+                lvitem.SubItems.Add(dg.lop);
+                lvitem.SubItems.Add(dg.diachi);
+                lvitem.SubItems.Add(dg.email);
+                lvitem.SubItems.Add(dg.ghichu);
+
+                lvdocgia.Items.Add(lvitem);
+            }
+        }
+        public bool KTKytuDacBiet(string kt)
+        {
+            if (kt.Contains("~") ||
+                kt.Contains("!") ||
+                kt.Contains("@") ||
+                kt.Contains("#") ||
+                kt.Contains("$") ||
+                kt.Contains("%") ||
+                kt.Contains("^") ||
+                kt.Contains("&") ||
+                kt.Contains("*") ||
+                kt.Contains("(") ||
+                kt.Contains(")") ||
+                kt.Contains("-") ||
+                kt.Contains("=") ||
+                kt.Contains("`") ||
+                kt.Contains("?") ||
+                kt.Contains("/") ||
+                kt.Contains(".") ||
+                kt.Contains(",") ||
+                kt.Contains("<") ||
+                kt.Contains(">")
+                )
+                return false;
+            return true;
+        }
+        public bool KTMA(string kt)
+        {
+            int n;
+            if (rdMaDocGia.Checked && int.TryParse(kt, out n))
+                return true;
+            return false;
+        }
+        #endregion
 
         #region Events
+        private void txbTim_TextChanged(object sender, EventArgs e)
+        {
+            var lst = DataProvider.instance.ExcuteQuery("select * from DocGia");
+            if (lst == null) return;
+
+            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) )
+            {
+                string filterExpression = "";
+                if (KTMA(txbTim.Text))
+                {
+                    filterExpression = "MaDG = " + txbTim.Text + "";
+                }
+                if (rdTenDocGia.Checked) filterExpression = "HOTEN like '%" + txbTim.Text + "%'";
+
+                string sortExpression = "MaDG DESC";
+                DataViewRowState rowsatefilter = DataViewRowState.OriginalRows;
+
+                DataView dataview = new DataView(lst, filterExpression, sortExpression, rowsatefilter);
+
+                List<DocGia> lbook = new List<DocGia>();
+                foreach (DataRowView row in dataview)
+                {
+                    DocGia d = new DocGia(row);
+                    lbook.Add(d);
+                }
+                LoadDanhSachLV(lbook);
+            }
+            else
+            {
+                Load();
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (txbdocgia.Text == "") return;
+            var dg = GetConTrols();
+            if (DocGiaDAO.Instance.Update(dg))
+                MessageBox.Show("Cập nhật thành công");
+            else
+                MessageBox.Show("Cập nhật thất bại");
+            Load();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string id = txbdocgia.Text;
+            if (DocGiaDAO.Instance.Delete(id))
+                MessageBox.Show("Xóa thành công");
+            else
+                MessageBox.Show("Xóa thất bại");
+            Load();
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txbTaiKhoan.Text != "" && txbMatKhau.Text != "" && txbHoTen.Text != "" && txbLop.Text != "" && txbDiaChi.Text != "" && txbEmail.Text != "")
-            {
-                DocGia dg = new DocGia();
-                dg.taikhoan = txbTaiKhoan.Text;
-                dg.matkau = txbMatKhau.Text;
-                dg.hoten = txbHoTen.Text;
-                dg.ngaysinh = dtpkNgaySinh.Value;
-                dg.gioitinh = true;
-                if (rdNu.Checked)
-                    dg.gioitinh = false;
-                dg.lop = txbLop.Text;
-                dg.diachi = txbDiaChi.Text;
-                dg.email = txbEmail.Text;
-                dg.ghichu = txbGhiChu.Text;
-
-                DocGiaDAO.Instance.DangKyDocGia(dg);
-                MessageBox.Show("Thêm Đọc Giả thành Công !");
-                LoadDanhSach();
-            }
+            var dg = GetConTrols();
+            if (DocGiaDAO.Instance.Insert(dg))
+                MessageBox.Show("Thêm Thành Công");
             else
-                MessageBox.Show("Bạn phải điền đầy đủ thông tin !");
+                MessageBox.Show("Tài khoản đã có trong danh sách");
+            Load();
+        }
 
+        private void lvdocgia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvdocgia.SelectedItems.Count == 0) return;
+            string id = lvdocgia.SelectedItems[0].Text;
+            var lst = DocGiaDAO.Instance.FindByID(id);
+            DocGia d = lst[0];
+            LoadConTrols(d);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         #endregion
     }
