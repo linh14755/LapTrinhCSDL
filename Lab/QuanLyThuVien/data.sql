@@ -26,7 +26,7 @@ CREATE TABLE DocGia
 	HOTEN NVARCHAR(100),
 	NGAYSINH date,
 	GIOITINH bit,
-	LOP NVARCHAR(100),
+	SODT NVARCHAR(100),
 	DIACHI NVARCHAR(100),
 	EMAIL NVARCHAR(100),
 	GHICHU NVARCHAR(100) default null
@@ -70,8 +70,8 @@ INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'K�
 INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Nhập môn công nghệ thông tin', N'Xuân Quỳnh', N'Nhà xuất bản Kim Đồng', N'Tài Liệu Học tập', GETDATE(), 10, GETDATE())
 GO
 --INSERT DOCGIA
-INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia1',N'1',N'Nguyễn Khánh Linh', GETDATE(), 1, N'CTK42', N'Ai Biết',N'linh14751@gmail.com')
-INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia2',N'1',N'Lê Nhật Ánh',  GETDATE(), 1, N'CTK42', N'Ai Biết',N'nhatanh@gmail.com')
+INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL) VALUES (N'docgia1',N'1',N'Nguyễn Khánh Linh', GETDATE(), 1, N'0776598805', N'Ai Biết',N'linh14751@gmail.com')
+INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL) VALUES (N'docgia2',N'1',N'Lê Nhật Ánh',  GETDATE(), 1, N'0123456788', N'Ai Biết',N'nhatanh@gmail.com')
 go
 --INSERT MUONSACH
 INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (1,2,GETDATE(),GETDATE(),0)
@@ -118,3 +118,5 @@ begin
 end
 go
 --exec USP_MuonSach N'madg' , N'masach' , 'ngaymuon' , 'ngaytra' , 'status' , N'ghichu'
+--select * from MuonSach where ngaytra < '" + datecurrent + "'
+--delete MuonSach where MADG = N'2'

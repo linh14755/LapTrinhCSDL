@@ -17,9 +17,38 @@ namespace QuanLyThuVien.DAO
         public DocGiaDAO() { }
 
         public static DocGiaDAO Instance { get => instance; set => instance = value; }
+
+        public bool DoiMK(string tk, string mkmoi, string mkcu)
+        {
+            string query = "update DocGia set	MATKHAU = N'" + mkmoi + "' where TaiKhoan = N'" + tk + "' and MatKhau = N'" + mkcu + "'";
+            int result = DataProvider.instance.ExcuteNonQuery(query);
+            return result > 0;
+        }
+        public List<DocGia> GetListDGByTK(string tk)
+        {
+            List<DocGia> l = new List<DocGia>();
+            var data = DataProvider.instance.ExcuteQuery("select * from DocGia where taikhoan = N'" + tk + "'");
+            foreach (DataRow row in data.Rows)
+            {
+                DocGia d = new DocGia(row);
+                l.Add(d);
+            }
+            return l;
+        }
         public bool Delete(string id)
         {
             int result = DataProvider.instance.ExcuteNonQuery("delete docgia where MaDG = " + id + "");
+            return result > 0;
+        }
+        public bool UpdateDocGia(DocGia d)
+        {
+            int gt = 1;
+            if (d.gioitinh == false)
+                gt = 0;
+
+            string ngaysinh = Convert.ToDateTime(d.ngaysinh).ToString("yyyy-MM-dd");
+            string query = "update DocGia set MATkHAU = N'" + d.matkhau + "' , HOTEN = N'" + d.hoten + "' , NGAYSINH = '" + ngaysinh + "' ,GIOITINH = " + gt + " , SODT = N'" + d.sodt + "' , DIACHI = N'" + d.diachi + "' ,EMAIL = N'" + d.email + "' where TaiKhoan = N'" + d.taikhoan + "'";
+            int result = DataProvider.instance.ExcuteNonQuery(query);
             return result > 0;
         }
         public bool Update(DocGia d)
@@ -29,10 +58,10 @@ namespace QuanLyThuVien.DAO
                 gt = 0;
 
             string ngaysinh = Convert.ToDateTime(d.ngaysinh).ToString("yyyy-MM-dd");
-            string query = "update DocGia set MATkHAU = N'" + d.matkhau + "' , HOTEN = N'" + d.hoten + "' , NGAYSINH = '" + ngaysinh + "' ,GIOITINH = " + gt + " , LOP = N'" + d.lop + "' , DIACHI = N'" + d.diachi + "' ,EMAIL = N'" + d.email + "' where MADG = " + d.madg + "";
+            string query = "update DocGia set MATkHAU = N'" + d.matkhau + "' , HOTEN = N'" + d.hoten + "' , NGAYSINH = '" + ngaysinh + "' ,GIOITINH = " + gt + " , SODT = N'" + d.sodt + "' , DIACHI = N'" + d.diachi + "' ,EMAIL = N'" + d.email + "', GhiChu = N'" + d.ghichu + "' where MADG = " + d.madg + "";
             int result = DataProvider.instance.ExcuteNonQuery(query);
             return result > 0;
-            
+
         }
         public List<DocGia> FindByID(string id)
         {
@@ -60,7 +89,7 @@ namespace QuanLyThuVien.DAO
                     return false;
             }
 
-            int result = DataProvider.instance.ExcuteNonQuery("INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'" + d.taikhoan + "',N'" + d.matkhau + "',N'" + d.hoten + "', '" + ngaysinhnew + "', " + gt + ", N'" + d.lop + "', N'" + d.diachi + "',N'" + d.email + "')");
+            int result = DataProvider.instance.ExcuteNonQuery("INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL) VALUES (N'" + d.taikhoan + "',N'" + d.matkhau + "',N'" + d.hoten + "', '" + ngaysinhnew + "', " + gt + ", N'" + d.sodt + "', N'" + d.diachi + "',N'" + d.email + "')");
             return result > 0;
         }
         public List<DocGia> LoadDocGia()
@@ -80,7 +109,7 @@ namespace QuanLyThuVien.DAO
 
         public bool DangKyDocGia(DocGia dg)
         {
-            string query = "INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL, GHICHU) VALUES (N'" + dg.taikhoan + "',N'" + dg.matkhau + "',N'" + dg.hoten + "', N'" + dg.ngaysinh + "', N'" + dg.gioitinh + "', N'" + dg.lop + "', N'" + dg.diachi + "',N'" + dg.email + "' , N'" + dg.ghichu + "')";
+            string query = "INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL, GHICHU) VALUES (N'" + dg.taikhoan + "',N'" + dg.matkhau + "',N'" + dg.hoten + "', N'" + dg.ngaysinh + "', N'" + dg.gioitinh + "', N'" + dg.sodt + "', N'" + dg.diachi + "',N'" + dg.email + "' , N'" + dg.ghichu + "')";
             int data = 0;
             data = DataProvider.instance.ExcuteNonQuery(query);
 

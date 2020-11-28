@@ -37,11 +37,9 @@ D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyTh
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
-D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDocGia.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDoiMatKhau.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyDocGia.resources
-D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyMuonTra.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLySach.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
@@ -91,3 +89,7 @@ D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\es\DevEx
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\ja\DevExpress.Pdf.v20.2.Core.resources.dll
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\bin\Debug\ru\DevExpress.Pdf.v20.2.Core.resources.dll
 D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CopyComplete
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDanhSachQuaHan.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyMuonSach.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLyTraSach.resources
+D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmGiaHan.resources

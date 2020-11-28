@@ -13,10 +13,40 @@ namespace QuanLyThuVien.DAO
     {
         public static MuonTraDAO instance = new MuonTraDAO();
         public MuonTraDAO() { }
+        public bool GianHan(DateTime ngaytra, string id)
+        {
+            string ngaytranew = Convert.ToDateTime(ngaytra).ToString("yyyy-MM-dd");
+            int result = DataProvider.instance.ExcuteNonQuery("update MuonSach set NgayTra = '" + ngaytranew + "' where sophieumuon = N'" + id + "'");
+            return result > 0;
+        }
+        public List<MuonSach> FindByID(string id)
+        {
+            List<MuonSach> l = new List<MuonSach>();
+            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where SoPhieuMuon = N'" + id + "'");
+            foreach (DataRow row in data.Rows)
+            {
+                MuonSach m = new MuonSach(row);
+                l.Add(m);
+            }
+            return l;
+        }
+        public List<MuonSach> GetDSQuaHan()
+        {
+            List<MuonSach> l = new List<MuonSach>();
+            string datecurrent = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
+            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
+            foreach (DataRow row in data.Rows)
+            {
+                MuonSach m = new MuonSach(row);
+                l.Add(m);
+            }
+            return l;
+        }
         public bool KiemTraDocGia(string madg, string masach) //mot doc gia khong duoc muon qua 3 sach
         {
             var result = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "' and MaSach = N'" + masach + "'");
-            return result.Rows.Count < 3;
+            var result2 = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "'");
+            return result.Rows.Count < 2 && result2.Rows.Count < 4;
         }
         public bool MuonSach(MuonSach m)
         {

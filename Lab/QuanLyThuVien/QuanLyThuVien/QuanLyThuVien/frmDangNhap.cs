@@ -17,17 +17,8 @@ namespace QuanLyThuVien
         public frmDangNhap()
         {
             InitializeComponent();
-            //SetBackground();
         }
-        public void SetBackground()
-        {
-            Image backgroundblack = new Bitmap(@"D:\LapTrinhCSDL\Lab\QuanLyThuVien\QuanLyThuVien\QuanLyThuVien\Resources\backgroundwhite.jpg");
-            this.BackgroundImage = backgroundblack;
-            label1.BackColor = Color.Transparent;
-            label2.BackColor = Color.Transparent;
-            rdThuThu.BackColor = Color.Transparent;
-            rdDocGia.BackColor = Color.Transparent;
-        }
+       
 
         #region Events
 
@@ -52,9 +43,11 @@ namespace QuanLyThuVien
             {
                 if (AccountDAO.Instance.LoginDocGia(tk,mk))
                 {
-                    frmDocGia frmdg = new frmDocGia();
+                    frmMain frmmain = new frmMain();
                     this.Hide();
-                    frmdg.ShowDialog();
+                    frmmain.GetTK(txbTaiKhoan.Text);
+                    frmmain.XuLyConTrolsChoDocGia();
+                    frmmain.ShowDialog();
                     this.Show();
                 }
                 else

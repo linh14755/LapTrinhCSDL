@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbtaikhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbMatKhauCu = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.txbtaikhoan = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,6 +56,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 31);
             this.panel1.TabIndex = 0;
+            // 
+            // txbtaikhoan
+            // 
+            this.txbtaikhoan.Location = new System.Drawing.Point(203, 7);
+            this.txbtaikhoan.Name = "txbtaikhoan";
+            this.txbtaikhoan.ReadOnly = true;
+            this.txbtaikhoan.Size = new System.Drawing.Size(327, 22);
+            this.txbtaikhoan.TabIndex = 6;
             // 
             // label1
             // 
@@ -172,14 +180,6 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // txbtaikhoan
-            // 
-            this.txbtaikhoan.Location = new System.Drawing.Point(203, 7);
-            this.txbtaikhoan.Name = "txbtaikhoan";
-            this.txbtaikhoan.ReadOnly = true;
-            this.txbtaikhoan.Size = new System.Drawing.Size(327, 22);
-            this.txbtaikhoan.TabIndex = 6;
-            // 
             // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,6 +194,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmDoiMatKhau";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu";
             this.panel1.ResumeLayout(false);

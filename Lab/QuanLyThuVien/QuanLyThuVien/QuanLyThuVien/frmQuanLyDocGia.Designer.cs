@@ -102,7 +102,7 @@
             this.groupBox4.Controls.Add(this.panel5);
             this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(21, 9);
+            this.groupBox4.Location = new System.Drawing.Point(33, 50);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1051, 275);
             this.groupBox4.TabIndex = 5;
@@ -166,9 +166,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(22, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 20);
+            this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Lớp:";
+            this.label5.Text = "Số ĐT:";
             // 
             // panel9
             // 
@@ -409,7 +409,7 @@
             this.groupBox2.Controls.Add(this.rdTenDocGia);
             this.groupBox2.Controls.Add(this.rdMaDocGia);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(48, 290);
+            this.groupBox2.Location = new System.Drawing.Point(60, 331);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(994, 70);
             this.groupBox2.TabIndex = 19;
@@ -454,7 +454,7 @@
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(682, 366);
+            this.btnHome.Location = new System.Drawing.Point(694, 407);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(115, 59);
             this.btnHome.TabIndex = 18;
@@ -469,7 +469,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXoa.Location = new System.Drawing.Point(539, 366);
+            this.btnXoa.Location = new System.Drawing.Point(551, 407);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(115, 59);
             this.btnXoa.TabIndex = 17;
@@ -484,7 +484,7 @@
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCapNhat.Location = new System.Drawing.Point(393, 366);
+            this.btnCapNhat.Location = new System.Drawing.Point(405, 407);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(115, 59);
             this.btnCapNhat.TabIndex = 16;
@@ -499,7 +499,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThem.Location = new System.Drawing.Point(255, 366);
+            this.btnThem.Location = new System.Drawing.Point(267, 407);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(115, 59);
             this.btnThem.TabIndex = 15;
@@ -522,7 +522,7 @@
             this.columnHeader10});
             this.lvdocgia.FullRowSelect = true;
             this.lvdocgia.HideSelection = false;
-            this.lvdocgia.Location = new System.Drawing.Point(21, 431);
+            this.lvdocgia.Location = new System.Drawing.Point(33, 472);
             this.lvdocgia.MultiSelect = false;
             this.lvdocgia.Name = "lvdocgia";
             this.lvdocgia.Size = new System.Drawing.Size(1039, 263);
@@ -577,7 +577,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1078, 706);
+            this.ClientSize = new System.Drawing.Size(1132, 753);
             this.Controls.Add(this.lvdocgia);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnHome);
@@ -586,6 +586,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.groupBox4);
             this.Name = "frmQuanLyDocGia";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Đọc Giả";
             this.groupBox4.ResumeLayout(false);

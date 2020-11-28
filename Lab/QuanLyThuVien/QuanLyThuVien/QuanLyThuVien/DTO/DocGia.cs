@@ -16,13 +16,13 @@ namespace QuanLyThuVien.DTO
         public string hoten { get; set; }
         public DateTime ngaysinh { get; set; }
         public bool gioitinh { get; set; }
-        public string lop { get; set; }
+        public string sodt { get; set; }
         public string diachi { get; set; }
         public string email { get; set; }
         public string ghichu { get; set; }
         public DocGia() { }
 
-        public DocGia(string madg, string tk, string mk, string hoten, DateTime ngaysinh, bool gt, string lop, string diachi, string email, string ghichu)
+        public DocGia(string madg, string tk, string mk, string hoten, DateTime ngaysinh, bool gt, string sodt, string diachi, string email, string ghichu)
         {
             this.madg = madg;
             this.taikhoan = tk;
@@ -30,7 +30,7 @@ namespace QuanLyThuVien.DTO
             this.hoten = hoten;
             this.ngaysinh = ngaysinh;
             this.gioitinh = gt;
-            this.lop = lop;
+            this.sodt = sodt;
             this.diachi = diachi;
             this.email = email;
             this.ghichu = ghichu;
@@ -45,7 +45,7 @@ namespace QuanLyThuVien.DTO
             this.gioitinh = true;
             if ((bool)row["gioitinh"] == false)
                 this.gioitinh = false;
-            this.lop = row["lop"].ToString();
+            this.sodt = row["sodt"].ToString();
             this.diachi = row["diachi"].ToString();
             this.email = row["email"].ToString();
             this.ghichu = row["ghichu"].ToString();
@@ -60,7 +60,7 @@ namespace QuanLyThuVien.DTO
             this.gioitinh = true;
             if ((bool)row["gioitinh"] == false)
                 this.gioitinh = false;
-            this.lop = row["lop"].ToString();
+            this.sodt = row["sodt"].ToString();
             this.diachi = row["diachi"].ToString();
             this.email = row["email"].ToString();
             this.ghichu = row["ghichu"].ToString();

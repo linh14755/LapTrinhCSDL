@@ -16,6 +16,7 @@ namespace QuanLyThuVien
 {
     public partial class frmQuanLySach : Form
     {
+        public string tentk = "";
         public frmQuanLySach()
         {
             InitializeComponent();
@@ -107,6 +108,21 @@ namespace QuanLyThuVien
             if (rdMaSach.Checked && int.TryParse(kt, out n))
                 return true;
             return false;
+        }
+
+        public void GetTK(string tk)
+        {
+            LoginDocGia(tk);
+        }
+        public void LoginDocGia(string tentk)
+        {
+            if(tentk.Contains("docgia"))
+            {
+                btnThem.Enabled = false;
+                btnCapNhat.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+
         }
         #endregion
 

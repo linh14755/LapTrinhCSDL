@@ -22,7 +22,7 @@ namespace QuanLyThuVien.DAO
             string namxbnew = Convert.ToDateTime(b.namxb).ToString("yyyy-MM-dd");
             string ngaynhapnew = Convert.ToDateTime(b.ngaynhap).ToString("yyyy-MM-dd");
 
-            int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + namxbnew + "' , SOLUONG = @soluong , NGAYNHAP = '" + ngaynhapnew + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
+            int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + namxbnew + "' ,GhiChu = N'" + b.ghichu + "', SOLUONG = @soluong , NGAYNHAP = '" + ngaynhapnew + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
             return result > 0;
         }
         public bool Insert(Book b)

@@ -36,7 +36,7 @@ namespace QuanLyThuVien
                 d.gioitinh = false;
             d.taikhoan = txbTaiKhoan.Text;
             d.matkhau = txbMatKhau.Text;
-            d.lop = txbLop.Text;
+            d.sodt = txbLop.Text;
             d.diachi = txbDiaChi.Text;
             d.email = txbEmail.Text;
             d.ghichu = txbGhiChu.Text;
@@ -53,7 +53,7 @@ namespace QuanLyThuVien
                 rdNu.Checked = true;
             txbTaiKhoan.Text = dg.taikhoan;
             txbMatKhau.Text = dg.matkhau;
-            txbLop.Text = dg.lop;
+            txbLop.Text = dg.sodt;
             txbDiaChi.Text = dg.diachi;
             txbEmail.Text = dg.email;
             txbGhiChu.Text = dg.ghichu;
@@ -72,7 +72,7 @@ namespace QuanLyThuVien
                 lvitem.SubItems.Add(gt);
                 lvitem.SubItems.Add(dg.taikhoan);
                 lvitem.SubItems.Add(dg.matkhau);
-                lvitem.SubItems.Add(dg.lop);
+                lvitem.SubItems.Add(dg.sodt);
                 lvitem.SubItems.Add(dg.diachi);
                 lvitem.SubItems.Add(dg.email);
                 lvitem.SubItems.Add(dg.ghichu);
@@ -172,12 +172,17 @@ namespace QuanLyThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var dg = GetConTrols();
-            if (DocGiaDAO.Instance.Insert(dg))
-                MessageBox.Show("Thêm Thành Công");
-            else
-                MessageBox.Show("Tài khoản đã có trong danh sách");
-            Load();
+            if (txbTaiKhoan.Text.Contains("docgia"))
+            {
+                var dg = GetConTrols();
+                if (DocGiaDAO.Instance.Insert(dg))
+                    MessageBox.Show("Thêm Thành Công");
+                else
+                    MessageBox.Show("Tài khoản đã có trong danh sách");
+                Load();
+            }
+            else MessageBox.Show("Tài khoản phải có dạng docgia...");
+            
         }
 
         private void lvdocgia_SelectedIndexChanged(object sender, EventArgs e)

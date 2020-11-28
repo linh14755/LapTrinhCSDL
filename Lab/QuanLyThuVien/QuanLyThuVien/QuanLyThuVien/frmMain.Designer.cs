@@ -36,7 +36,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnQuanlydanhmuc = new System.Windows.Forms.Button();
             this.panelTaikhoanSubMenu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.btnqunlymuontra = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnEqualizer = new System.Windows.Forms.Button();
             this.panelQuanlymuontraSubMenu = new System.Windows.Forms.Panel();
+            this.btndsquahan = new System.Windows.Forms.Button();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelQuanlydanhmucSubMenu = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -65,7 +65,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(255, 92);
@@ -81,6 +81,7 @@
             this.btnTaikhoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnTaikhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnTaikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaikhoan.ForeColor = System.Drawing.Color.White;
             this.btnTaikhoan.Image = ((System.Drawing.Image)(resources.GetObject("btnTaikhoan.Image")));
             this.btnTaikhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,6 +105,7 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(0, 100);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
@@ -124,6 +126,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(0, 50);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
@@ -144,6 +147,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
@@ -164,10 +168,11 @@
             this.btnQuanlydanhmuc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnQuanlydanhmuc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnQuanlydanhmuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanlydanhmuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanlydanhmuc.ForeColor = System.Drawing.Color.White;
             this.btnQuanlydanhmuc.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanlydanhmuc.Image")));
             this.btnQuanlydanhmuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanlydanhmuc.Location = new System.Drawing.Point(0, 331);
+            this.btnQuanlydanhmuc.Location = new System.Drawing.Point(0, 323);
             this.btnQuanlydanhmuc.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanlydanhmuc.Name = "btnQuanlydanhmuc";
             this.btnQuanlydanhmuc.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -182,7 +187,6 @@
             // panelTaikhoanSubMenu
             // 
             this.panelTaikhoanSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panelTaikhoanSubMenu.Controls.Add(this.button1);
             this.panelTaikhoanSubMenu.Controls.Add(this.button4);
             this.panelTaikhoanSubMenu.Controls.Add(this.button3);
             this.panelTaikhoanSubMenu.Controls.Add(this.button2);
@@ -190,27 +194,8 @@
             this.panelTaikhoanSubMenu.Location = new System.Drawing.Point(0, 171);
             this.panelTaikhoanSubMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelTaikhoanSubMenu.Name = "panelTaikhoanSubMenu";
-            this.panelTaikhoanSubMenu.Size = new System.Drawing.Size(291, 160);
+            this.panelTaikhoanSubMenu.Size = new System.Drawing.Size(291, 152);
             this.panelTaikhoanSubMenu.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 150);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(291, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Đăng ký";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // panelLogo
             // 
@@ -231,6 +216,7 @@
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(0, 50);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
@@ -238,7 +224,7 @@
             this.button7.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(291, 50);
             this.button7.TabIndex = 1;
-            this.button7.Text = "Quản lý đọc giả";
+            this.button7.Text = "Đọc giả";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -251,10 +237,11 @@
             this.btnqunlymuontra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnqunlymuontra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnqunlymuontra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnqunlymuontra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnqunlymuontra.ForeColor = System.Drawing.Color.White;
             this.btnqunlymuontra.Image = ((System.Drawing.Image)(resources.GetObject("btnqunlymuontra.Image")));
             this.btnqunlymuontra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnqunlymuontra.Location = new System.Drawing.Point(0, 494);
+            this.btnqunlymuontra.Location = new System.Drawing.Point(0, 481);
             this.btnqunlymuontra.Margin = new System.Windows.Forms.Padding(4);
             this.btnqunlymuontra.Name = "btnqunlymuontra";
             this.btnqunlymuontra.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -274,6 +261,7 @@
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(0, 0);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
@@ -281,7 +269,7 @@
             this.button8.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
             this.button8.Size = new System.Drawing.Size(291, 50);
             this.button8.TabIndex = 0;
-            this.button8.Text = "Quản lý sách";
+            this.button8.Text = "Sách";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -294,6 +282,7 @@
             this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Location = new System.Drawing.Point(0, 50);
             this.button12.Margin = new System.Windows.Forms.Padding(4);
@@ -301,9 +290,10 @@
             this.button12.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
             this.button12.Size = new System.Drawing.Size(291, 50);
             this.button12.TabIndex = 1;
-            this.button12.Text = "Trả Sách";
+            this.button12.Text = "Trả sách";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -313,6 +303,7 @@
             this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
             this.button13.Location = new System.Drawing.Point(0, 0);
             this.button13.Margin = new System.Windows.Forms.Padding(4);
@@ -323,6 +314,7 @@
             this.button13.Text = "Mượn sách";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // btnExit
             // 
@@ -332,10 +324,11 @@
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 718);
+            this.btnExit.Location = new System.Drawing.Point(0, 745);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -355,10 +348,11 @@
             this.btnEqualizer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnEqualizer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnEqualizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEqualizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEqualizer.ForeColor = System.Drawing.Color.White;
             this.btnEqualizer.Image = ((System.Drawing.Image)(resources.GetObject("btnEqualizer.Image")));
             this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 662);
+            this.btnEqualizer.Location = new System.Drawing.Point(0, 689);
             this.btnEqualizer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -372,14 +366,36 @@
             // panelQuanlymuontraSubMenu
             // 
             this.panelQuanlymuontraSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panelQuanlymuontraSubMenu.Controls.Add(this.btndsquahan);
             this.panelQuanlymuontraSubMenu.Controls.Add(this.button12);
             this.panelQuanlymuontraSubMenu.Controls.Add(this.button13);
             this.panelQuanlymuontraSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQuanlymuontraSubMenu.Location = new System.Drawing.Point(0, 550);
+            this.panelQuanlymuontraSubMenu.Location = new System.Drawing.Point(0, 537);
             this.panelQuanlymuontraSubMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelQuanlymuontraSubMenu.Name = "panelQuanlymuontraSubMenu";
-            this.panelQuanlymuontraSubMenu.Size = new System.Drawing.Size(291, 112);
+            this.panelQuanlymuontraSubMenu.Size = new System.Drawing.Size(291, 152);
             this.panelQuanlymuontraSubMenu.TabIndex = 7;
+            // 
+            // btndsquahan
+            // 
+            this.btndsquahan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btndsquahan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btndsquahan.FlatAppearance.BorderSize = 0;
+            this.btndsquahan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btndsquahan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btndsquahan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndsquahan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndsquahan.ForeColor = System.Drawing.Color.White;
+            this.btndsquahan.Location = new System.Drawing.Point(0, 100);
+            this.btndsquahan.Margin = new System.Windows.Forms.Padding(4);
+            this.btndsquahan.Name = "btndsquahan";
+            this.btndsquahan.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.btndsquahan.Size = new System.Drawing.Size(291, 51);
+            this.btndsquahan.TabIndex = 3;
+            this.btndsquahan.Text = "Danh sách quá hạn";
+            this.btndsquahan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btndsquahan.UseVisualStyleBackColor = false;
+            this.btndsquahan.Click += new System.EventHandler(this.btndsquahan_Click_1);
             // 
             // panelSideMenu
             // 
@@ -398,7 +414,7 @@
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(312, 753);
+            this.panelSideMenu.Size = new System.Drawing.Size(312, 800);
             this.panelSideMenu.TabIndex = 3;
             // 
             // panelQuanlydanhmucSubMenu
@@ -407,10 +423,10 @@
             this.panelQuanlydanhmucSubMenu.Controls.Add(this.button7);
             this.panelQuanlydanhmucSubMenu.Controls.Add(this.button8);
             this.panelQuanlydanhmucSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQuanlydanhmucSubMenu.Location = new System.Drawing.Point(0, 387);
+            this.panelQuanlydanhmucSubMenu.Location = new System.Drawing.Point(0, 379);
             this.panelQuanlydanhmucSubMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelQuanlydanhmucSubMenu.Name = "panelQuanlydanhmucSubMenu";
-            this.panelQuanlydanhmucSubMenu.Size = new System.Drawing.Size(291, 107);
+            this.panelQuanlydanhmucSubMenu.Size = new System.Drawing.Size(291, 102);
             this.panelQuanlydanhmucSubMenu.TabIndex = 4;
             // 
             // panelChildForm
@@ -421,10 +437,10 @@
             this.panelChildForm.Controls.Add(this.label2);
             this.panelChildForm.Controls.Add(this.label1);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelChildForm.Location = new System.Drawing.Point(299, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1083, 753);
+            this.panelChildForm.Size = new System.Drawing.Size(1150, 800);
             this.panelChildForm.TabIndex = 4;
             // 
             // label4
@@ -468,17 +484,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.ClientSize = new System.Drawing.Size(1400, 800);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.panelChildForm);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1400, 800);
+            this.MinimumSize = new System.Drawing.Size(1400, 800);
             this.Name = "frmMain";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Thư Viện";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTaikhoanSubMenu.ResumeLayout(false);
@@ -513,10 +533,10 @@
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelQuanlydanhmucSubMenu;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btndsquahan;
     }
 }

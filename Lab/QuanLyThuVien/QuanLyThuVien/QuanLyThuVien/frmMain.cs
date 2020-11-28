@@ -20,6 +20,13 @@ namespace QuanLyThuVien
             hideSubMenu();
         }
 
+        public void XuLyConTrolsChoDocGia()
+        {
+            button7.Enabled = false;
+            btnqunlymuontra.Enabled = false;
+            btnEqualizer.Enabled = false;
+            button2.Enabled = false;
+        }
         private void hideSubMenu()
         {
             panelTaikhoanSubMenu.Visible = false;
@@ -116,12 +123,19 @@ namespace QuanLyThuVien
         #region Quanlydanhmucsubmenu
         private void button8_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQuanLySach());
+            frmQuanLySach frm = new frmQuanLySach();
+            frm.GetTK(tentk);
+            openChildForm(frm);
             hideSubMenu();
         }
         private void button7_Click(object sender, EventArgs e)
         {
             openChildForm(new frmQuanLyDocGia());
+            hideSubMenu();
+        }
+        private void btndsquahan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmDanhSachQuaHan());
             hideSubMenu();
         }
 
@@ -130,8 +144,28 @@ namespace QuanLyThuVien
 
         private void btnqunlymuontra_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQuanLyMuonTra());
+            showSubMenu(panelQuanlymuontraSubMenu);
+        }
+        #region quanlymuontrasubmenu
+        private void button13_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLyMuonSach());
             hideSubMenu();
         }
+        private void button12_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLyTraSach());
+            hideSubMenu();
+        }
+        private void btndsquahan_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new frmDanhSachQuaHan());
+            hideSubMenu();
+        }
+
+
+        #endregion
+
+      
     }
 }

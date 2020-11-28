@@ -18,26 +18,39 @@ namespace QuanLyThuVien
         public frmDangKy()
         {
             InitializeComponent();
-            Setbackground();
-        }
 
-        private void Setbackground()
-        {
-            label1.BackColor = Color.Transparent;
-            label2.BackColor = Color.Transparent;
-            label4.BackColor = Color.Transparent;
-            label5.BackColor = Color.Transparent;
-            label6.BackColor = Color.Transparent;
-            label7.BackColor = Color.Transparent;
-            label8.BackColor = Color.Transparent;
-            label9.BackColor = Color.Transparent;
-            label10.BackColor = Color.Transparent;
-            rdNam.BackColor = Color.Transparent;
-            rdNu.BackColor = Color.Transparent;
         }
 
 
         #region Methods
+        public void ThietLapControlsDG(DocGia d)
+        {
+            txbHoTen.Text = d.hoten;
+            dtpkNgaySinh.Value = d.ngaysinh;
+            rdNam.Checked = true;
+            if (d.gioitinh == false) //nu
+                rdNu.Checked = true;
+            txbSoDT.Text = d.sodt;
+            txbDiaChi.Text = d.diachi;
+            txbEmail.Text = d.email;
+            txbTaiKhoan.Text = d.taikhoan;
+            txbMatKhau.Text = d.matkhau;
+        }
+        public DocGia GetConTrolsDG()
+        {
+            DocGia ac = new DocGia();
+            ac.hoten = txbHoTen.Text;
+            ac.ngaysinh = dtpkNgaySinh.Value;
+            ac.gioitinh = true;
+            if (rdNu.Checked)
+                ac.gioitinh = false;
+            ac.sodt = txbSoDT.Text;
+            ac.diachi = txbDiaChi.Text;
+            ac.email = txbEmail.Text;
+            ac.taikhoan = txbTaiKhoan.Text;
+            ac.matkhau = txbMatKhau.Text;
+            return ac;
+        }
 
         public void ThietLapControls(Account acc)
         {
@@ -70,12 +83,21 @@ namespace QuanLyThuVien
         public void GetTK(string tk)
         {
             this.tk = tk;
-            List<Account> lst = AccountDAO.Instance.GetListAccountByTK(this.tk);
-            foreach (var item in lst)
+            if (tk.Contains("docgia"))
             {
-                ThietLapControls(item);
-                this.Text = "Cập nhật thông tin thủ thư";
+                List<DocGia> lst = DocGiaDAO.Instance.GetListDGByTK(this.tk);
+
+                ThietLapControlsDG(lst[0]);
+                this.Text = "Cập nhật thông tin";
             }
+            else
+            {
+                List<Account> lst = AccountDAO.Instance.GetListAccountByTK(this.tk);
+
+                ThietLapControls(lst[0]);
+                this.Text = "Cập nhật thông tin";
+            }
+
         }
         public void UnEnableUpdate()
         {
@@ -107,13 +129,24 @@ namespace QuanLyThuVien
         #region Events
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            var ac = GetConTrols();
-            if (AccountDAO.Instance.UpdateAccount(ac))
+            if (tk.Contains("docgia"))
             {
-                MessageBox.Show("Sửa thành công");
-                ThietLapControls(ac);
+                var dg = GetConTrolsDG();
+                if (DocGiaDAO.Instance.UpdateDocGia(dg))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    ThietLapControlsDG(dg);
+                }
             }
-            
+            else
+            {
+                var ac = GetConTrols();
+                if (AccountDAO.Instance.UpdateAccount(ac))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    ThietLapControls(ac);
+                }
+            }
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

@@ -31,16 +31,32 @@ namespace QuanLyThuVien
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            if (txbMatKhauMoi.Text == txbNhapLaiMatKhau.Text)
+            if (txbtaikhoan.Text.Contains("docgia"))
             {
-                if (AccountDAO.Instance.DoiMK(txbtaikhoan.Text, txbNhapLaiMatKhau.Text,txbMatKhauCu.Text))
+                if (txbMatKhauMoi.Text == txbNhapLaiMatKhau.Text)
                 {
-                    MessageBox.Show("Đổi mật khẩu thành công!");
-                    this.Close();
+                    if (DocGiaDAO.Instance.DoiMK(txbtaikhoan.Text, txbNhapLaiMatKhau.Text, txbMatKhauCu.Text))
+                    {
+                        MessageBox.Show("Đổi mật khẩu thành công!");
+                        this.Close();
+                    }
+                    else MessageBox.Show("Mật khẩu cũ không đúng!");
                 }
-                else MessageBox.Show("Mật khẩu cũ không đúng!");
+                else MessageBox.Show("Nhập lại mật khẩu không đúng!");
             }
-            else MessageBox.Show("Nhập lại mật khẩu không đúng!");
+            else
+            {
+                if (txbMatKhauMoi.Text == txbNhapLaiMatKhau.Text)
+                {
+                    if (AccountDAO.Instance.DoiMK(txbtaikhoan.Text, txbNhapLaiMatKhau.Text, txbMatKhauCu.Text))
+                    {
+                        MessageBox.Show("Đổi mật khẩu thành công!");
+                        this.Close();
+                    }
+                    else MessageBox.Show("Mật khẩu cũ không đúng!");
+                }
+                else MessageBox.Show("Nhập lại mật khẩu không đúng!");
+            }
         }
 
         private void txbTaiKhoan_TextChanged(object sender, EventArgs e)

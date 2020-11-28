@@ -1,4 +1,5 @@
-﻿using QuanLyThuVien.DAO;
+﻿using DevExpress.Data.Mask;
+using QuanLyThuVien.DAO;
 using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,22 +13,27 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
-    public partial class frmQuanLyMuonTra : Form
+    public partial class frmDanhSachQuaHan : Form
     {
-        public frmQuanLyMuonTra()
+        public frmDanhSachQuaHan()
         {
             InitializeComponent();
-            rdMaDocGia.Checked = true;
             Load();
+            rdMaDocGia.Checked = true;
         }
         #region Methods
         private void Load()
         {
-            LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
-            LoadMaDG();
-            LoadMaSach();
-            dtpmuon.Value = DateTime.Now;
-            dtptra.Value = DateTime.Now;
+            LoadDanhSachLV(MuonTraDAO.instance.GetDSQuaHan());
+        }
+        public void LoadConTrols(MuonSach m)
+        {
+            txbmaphieu.Text = m.sophieumuon;
+            cbbmadg.Text = m.madg;
+            cbbmasach.Text = m.masach;
+            dtpmuon.Value = m.ngaymuon;
+            dtptra.Value = m.ngaytra;
+            txbghichu.Text = m.ghichu;
         }
 
         public bool KTKytuDacBiet(string kt)
@@ -56,19 +62,6 @@ namespace QuanLyThuVien
                 return false;
             return true;
         }
-        public MuonSach GetConTrols()
-        {
-            MuonSach m = new MuonSach();
-            m.sophieumuon = txbmaphieu.Text;
-            m.masach = cbbmasach.Text;
-            m.madg = cbbmadg.Text;
-            m.ngaymuon = dtpmuon.Value;
-            m.ngaytra = dtptra.Value;
-            m.xacnhantra = "0"; //khi muon auto chua tra 0
-            m.ghichu = txbghichu.Text;
-
-            return m;
-        }
         public void LoadDanhSachLV(List<MuonSach> m)
         {
             lvmuonsach.Items.Clear();
@@ -85,32 +78,25 @@ namespace QuanLyThuVien
                 lvmuonsach.Items.Add(lvitem);
             }
         }
-        public void LoadMaSach()
+        public bool KTngayquahan(DateTime ngaygiahan)
         {
-            List<Book> lst = BookDAO.instance.GetListBook();
-            cbbmasach.DataSource = lst;
-            cbbmasach.DisplayMember = "masach";
-            cbbmasach.ValueMember = "tensach";
-        }
-        public void LoadMaDG()
-        {
-            List<DocGia> lst = DocGiaDAO.Instance.LoadDocGia();
-            
-                cbbmadg.DataSource = lst;
-                cbbmadg.DisplayMember = "madg";
-                cbbmadg.ValueMember = "hoten";
-            
+            if (ngaygiahan > dtptra.Value && ngaygiahan >= DateTime.Now)
+                return true;
+            return false;
         }
         #endregion
 
-        #region Events
 
+        #region Events
         private void txbTim_TextChanged(object sender, EventArgs e)
         {
-            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach");
+            string datecurrent = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
+            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
+            
             if (lst == null) return;
             int n;
-            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) && int.TryParse(txbTim.Text,out n))
+
+            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) && int.TryParse(txbTim.Text, out n))
             {
                 string filterExpression = "MaDG = " + txbTim.Text + "";
                 if (rdmasach.Checked) filterExpression = "MASACH = " + txbTim.Text + "";
@@ -130,47 +116,40 @@ namespace QuanLyThuVien
             }
             else
             {
-                LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+                LoadDanhSachLV(MuonTraDAO.instance.GetDSQuaHan());
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //cho muon
-            //danh sach muon
-            var muon = GetConTrols();
-            if (MuonTraDAO.instance.KiemTraDocGia(muon.madg,muon.masach))
+            //giahan
+            if (txbmaphieu.Text == "") return;
+            frmGiaHan frm = new frmGiaHan();
+            
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                if (MuonTraDAO.instance.MuonSach(muon))
-                    MessageBox.Show("Cho Mượn Thành Công \n Tên người mượn: " + txbtendocgia.Text + " \n Tên Sách: " + txbTenSach.Text + "", "Thông Báo");
+                DateTime dategiahan = frm.Getdatetime();
+                if (KTngayquahan(dategiahan))
+                {
+                    MuonTraDAO.instance.GianHan(dategiahan, txbmaphieu.Text);
+                    MessageBox.Show("Gian Hạn Thành Công");
+                }
                 else
-                    MessageBox.Show("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
-                LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+                {
+                    MessageBox.Show("Gia hạn thất bại! \n Ngày gia hạn phải lớn hơn ngày trả bị quá hạn\n Và lớn hơn ngày hiện tại");
+                }
             }
-            else
-                MessageBox.Show("Một đọc giả không được mượn quá 3 quyển sách");
+            LoadDanhSachLV(MuonTraDAO.instance.GetDSQuaHan());
         }
-
-        private void cbbmasach_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvmuonsach_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cbbmasach.SelectedIndex == -1) return;
+            if (lvmuonsach.SelectedItems.Count == 0) return;
+            string id = lvmuonsach.SelectedItems[0].Text;
+            var list = MuonTraDAO.instance.FindByID(id);
+            MuonSach m = list[0];
 
-            if (cbbmasach.SelectedValue is string)
-            {
-                txbTenSach.Text = cbbmasach.SelectedValue.ToString();
-            }
+            LoadConTrols(m);
         }
-
-        private void cbbmadg_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbmadg.SelectedIndex == -1) return;
-
-            if (cbbmadg.SelectedValue is string)
-            {
-                txbtendocgia.Text = cbbmadg.SelectedValue.ToString();
-            }
-        }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -108,6 +108,7 @@
             this.Controls.Add(this.lvTaiKhoan);
             this.Controls.Add(this.btnXoa);
             this.Name = "frmDanhSachTaiKhoan";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Tài Khoản Admin";
             this.Load += new System.EventHandler(this.frmDanhSachTaiKhoan_Load);
