@@ -39,10 +39,40 @@
     <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FlatButton">
+      <HintPath>UIResource\FlatButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>UIResource\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="JDragControl">
+      <HintPath>UIResource\JDragControl.dll</HintPath>
+    </Reference>
+    <Reference Include="JImageButton">
+      <HintPath>UIResource\JImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="JMaterialTextbox">
+      <HintPath>UIResource\JMaterialTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="JMetroTextBox">
+      <HintPath>UIResource\JMetroTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox">
+      <HintPath>UIResource\JTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox2">
+      <HintPath>UIResource\JTextBox2.dll</HintPath>
+    </Reference>
+    <Reference Include="JThinButton">
+      <HintPath>UIResource\JThinButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageBoxOKCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxOKCancel.Designer.cs">
+      <DependentUpon>MessageBoxOKCancel.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -80,12 +116,6 @@
     </Compile>
     <Compile Include="frmDanhSachQuaHan.Designer.cs">
       <DependentUpon>frmDanhSachQuaHan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDanhSachTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhSachTaiKhoan.Designer.cs">
-      <DependentUpon>frmDanhSachTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -135,8 +165,17 @@
     <Compile Include="frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBoxOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxOK.Designer.cs">
+      <DependentUpon>MessageBoxOK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MessageBoxOKCancel.resx">
+      <DependentUpon>MessageBoxOKCancel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangKyThuThu.resx">
       <DependentUpon>frmDangKyThuThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhSachQuaHan.resx">
       <DependentUpon>frmDanhSachQuaHan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhSachTaiKhoan.resx">
-      <DependentUpon>frmDanhSachTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -173,6 +209,9 @@
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxOK.resx">
+      <DependentUpon>MessageBoxOK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -195,58 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\onebit_01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\onebit_35.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\onebit_50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\onebit_20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\vrtableserat.ico" />
-    <None Include="Resources\onebit_50.ico" />
-    <None Include="Resources\onebit_35.ico" />
-    <None Include="Resources\onebit_20.ico" />
-    <None Include="Resources\onebit_13.ico" />
-    <None Include="Resources\onebit_09.ico" />
-    <None Include="Resources\onebit_07.ico" />
-    <None Include="Resources\onebit_05.ico" />
-    <None Include="Resources\onebit_02.ico" />
-    <None Include="Resources\onebit_01.ico" />
-    <None Include="Resources\backgoundwhite.jpg" />
-    <None Include="Resources\8.ico" />
-    <Content Include="Resources\background.png" />
-    <None Include="Resources\Thumbs.db" />
-    <None Include="Resources\vrtableserat.jpg" />
-    <None Include="Resources\thongke.jpg" />
-    <None Include="Resources\taikhoan.png" />
-    <None Include="Resources\reload2.jpg" />
-    <None Include="Resources\reload1.png" />
-    <None Include="Resources\reload.png" />
-    <None Include="Resources\qunlymuontra.png" />
-    <None Include="Resources\quanlysach.png" />
-    <None Include="Resources\onebit_13.png" />
-    <None Include="Resources\onebit_09.png" />
-    <None Include="Resources\onebit_07.png" />
-    <None Include="Resources\onebit_05.png" />
-    <None Include="Resources\onebit_02.png" />
-    <None Include="Resources\login2.jpg" />
-    <None Include="Resources\login.png" />
-    <None Include="Resources\iconlogin.png" />
-    <None Include="Resources\docgia.jpg" />
-    <None Include="Resources\backgroundwhite.jpg" />
-    <None Include="Resources\dangxuat.jpg" />
-    <None Include="Resources\backgroundblack.jpg" />
-    <Content Include="Resources\dlu.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

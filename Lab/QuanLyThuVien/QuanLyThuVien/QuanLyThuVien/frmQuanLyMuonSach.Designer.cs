@@ -475,7 +475,7 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Ghi Chú";
-            this.columnHeader7.Width = 129;
+            this.columnHeader7.Width = 350;
             // 
             // frmQuanLyMuonSach
             // 

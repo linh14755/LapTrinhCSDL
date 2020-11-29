@@ -18,13 +18,19 @@ namespace QuanLyThuVien
         public frmDanhSachQuaHan()
         {
             InitializeComponent();
-            Load();
+            Loads();
             rdMaDocGia.Checked = true;
         }
         #region Methods
-        private void Load()
+        private void Loads()
         {
             LoadDanhSachLV(MuonTraDAO.instance.GetDSQuaHan());
+        }
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
         }
         public void LoadConTrols(MuonSach m)
         {
@@ -88,11 +94,12 @@ namespace QuanLyThuVien
 
 
         #region Events
-        private void txbTim_TextChanged(object sender, EventArgs e)
+
+        private void txbTim_TextChanged_1(object sender, EventArgs e)
         {
             string datecurrent = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
             var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
-            
+
             if (lst == null) return;
             int n;
 
@@ -120,28 +127,29 @@ namespace QuanLyThuVien
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btngiahan_Click(object sender, EventArgs e)
         {
             //giahan
             if (txbmaphieu.Text == "") return;
             frmGiaHan frm = new frmGiaHan();
-            
+
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 DateTime dategiahan = frm.Getdatetime();
                 if (KTngayquahan(dategiahan))
                 {
                     MuonTraDAO.instance.GianHan(dategiahan, txbmaphieu.Text);
-                    MessageBox.Show("Gian Hạn Thành Công");
+                    MessageBoxCT("Gian Hạn Thành Công");
                 }
                 else
                 {
-                    MessageBox.Show("Gia hạn thất bại! \n Ngày gia hạn phải lớn hơn ngày trả bị quá hạn\n Và lớn hơn ngày hiện tại");
+                    MessageBoxCT("Gia hạn thất bại, ngày nhập không hợp lệ");
                 }
             }
             LoadDanhSachLV(MuonTraDAO.instance.GetDSQuaHan());
         }
-        private void lvmuonsach_SelectedIndexChanged_1(object sender, EventArgs e)
+
+        private void lvmuonsach_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvmuonsach.SelectedItems.Count == 0) return;
             string id = lvmuonsach.SelectedItems[0].Text;
@@ -150,15 +158,11 @@ namespace QuanLyThuVien
 
             LoadConTrols(m);
         }
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnHome_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-
         #endregion
-
-        
     }
 }

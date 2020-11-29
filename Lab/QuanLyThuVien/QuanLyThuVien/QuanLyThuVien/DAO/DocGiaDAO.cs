@@ -37,7 +37,10 @@ namespace QuanLyThuVien.DAO
         }
         public bool Delete(string id)
         {
-            int result = DataProvider.instance.ExcuteNonQuery("delete docgia where MaDG = " + id + "");
+            int result = 0;
+            var kt = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = " + id + "");
+            if (kt.Rows.Count <= 0)
+                result = DataProvider.instance.ExcuteNonQuery("delete docgia where MaDG = " + id + "");
             return result > 0;
         }
         public bool UpdateDocGia(DocGia d)

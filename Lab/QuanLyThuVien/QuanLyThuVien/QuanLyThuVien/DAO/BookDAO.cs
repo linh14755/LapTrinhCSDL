@@ -12,29 +12,36 @@ namespace QuanLyThuVien.DAO
     {
         public static BookDAO instance = new BookDAO();
         public BookDAO() { }
+        public string ConvertDateTime(DateTime datetime)
+        {
+            return Convert.ToDateTime(datetime).ToString("yyyy-MM-dd");
+        }
         public bool Delete(string id)
         {
-            int result = DataProvider.instance.ExcuteNonQuery("delete Sach where MaSach = @id", new object[] { id });
+            int result = 0;
+            var kt = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaSach = " + id + "");
+            if (kt.Rows.Count <= 0)
+                result = DataProvider.instance.ExcuteNonQuery("delete Sach where MaSach = @id", new object[] { id });
             return result > 0;
         }
         public bool Update(Book b)
         {
-            string namxbnew = Convert.ToDateTime(b.namxb).ToString("yyyy-MM-dd");
-            string ngaynhapnew = Convert.ToDateTime(b.ngaynhap).ToString("yyyy-MM-dd");
+            string namxb = ConvertDateTime(b.namxb);
+            string ngaynhap = ConvertDateTime(b.ngaynhap);
 
-            int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + namxbnew + "' ,GhiChu = N'" + b.ghichu + "', SOLUONG = @soluong , NGAYNHAP = '" + ngaynhapnew + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
+            int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + namxb + "' ,GhiChu = N'" + b.ghichu + "', SOLUONG = @soluong , NGAYNHAP = '" + ngaynhap + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
             return result > 0;
         }
         public bool Insert(Book b)
         {
-            string namxbnew = Convert.ToDateTime(b.namxb).ToString("yyyy-MM-dd");
-            string ngaynhapnew = Convert.ToDateTime(b.ngaynhap).ToString("yyyy-MM-dd");
+            string namxb = ConvertDateTime(b.namxb);
+            string ngaynhap = ConvertDateTime(b.ngaynhap);
 
-            string query = "INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'" + b.tensach + "', N'" + b.tentg + "', N'" + b.tennxb + "', N'" + b.tenlv + "', '" + namxbnew + "', " + b.sl + ", '" + ngaynhapnew + "')";
+            string query = "INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'" + b.tensach + "', N'" + b.tentg + "', N'" + b.tennxb + "', N'" + b.tenlv + "', '" + namxb + "', " + b.sl + ", '" + ngaynhap + "')";
             int restult = DataProvider.instance.ExcuteNonQuery(query);
             return restult > 0;
         }
-        public List<Book> FindByID(int id)
+        public List<Book> FindByID(string id)
         {
             List<Book> lstbook = new List<Book>();
             string query = "SELECT * FROM SACH where masach = " + id + "";
@@ -49,7 +56,7 @@ namespace QuanLyThuVien.DAO
             return lstbook;
         }
 
-        public List<Book> GetListBook()
+        public List<Book> GetList()
         {
             List<Book> lstbook = new List<Book>();
             string query = "SELECT * FROM SACH";

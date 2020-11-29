@@ -20,14 +20,34 @@ namespace QuanLyThuVien
         public frmQuanLySach()
         {
             InitializeComponent();
-            Load();
+            Loads();
             rdMaSach.Checked = true;
         }
         #region MEthods
-        public void Load()
+        
+        public void Loads()
         {
-            LoadDanhSachLV(BookDAO.instance.GetListBook());
+            LoadDanhSachLV(BookDAO.instance.GetList());
         }
+
+        public bool KTText()
+        {
+            if (txbMaSach.Text != "" &&
+                txbTenSach.Text != "" &&
+                txbTenTG.Text != "" &&
+                txbLinhVuc.Text != "" &&
+                txbsoluong.Text != "")
+                return true;
+            return false;
+        }
+
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
+        }
+
         public Book GetControls()
         {
             Book b = new Book();
@@ -43,6 +63,7 @@ namespace QuanLyThuVien
 
             return b;
         }
+
         public void LoadConTrols(Book b)
         {
             txbMaSach.Text = b.masach;
@@ -59,8 +80,6 @@ namespace QuanLyThuVien
         public void LoadDanhSachLV(List<Book> lb)
         {
             lvsach.Items.Clear();
-            //lvsach.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-
             foreach (var bk in lb)
             {
                 ListViewItem lvitem = new ListViewItem(bk.masach);
@@ -76,6 +95,7 @@ namespace QuanLyThuVien
                 lvsach.Items.Add(lvitem);
             }
         }
+
         public bool KTKytuDacBiet(string kt)
         {
             if (kt.Contains("~") ||
@@ -102,6 +122,7 @@ namespace QuanLyThuVien
                 return false;
             return true;
         }
+
         public bool KTMA(string kt)
         {
             int n;
@@ -114,34 +135,35 @@ namespace QuanLyThuVien
         {
             LoginDocGia(tk);
         }
+
         public void LoginDocGia(string tentk)
         {
-            if(tentk.Contains("docgia"))
+            if (tentk.Contains("docgia"))
             {
                 btnThem.Enabled = false;
                 btnCapNhat.Enabled = false;
                 btnXoa.Enabled = false;
             }
-
         }
         #endregion
 
         #region Events
 
-        private void txbTim_TextChanged(object sender, EventArgs e)
+        private void txbTim_TextChanged_1(object sender, EventArgs e)
         {
             var lst = DataProvider.instance.ExcuteQuery("select * from Sach");
             if (lst == null) return;
+            string text = txbTim.Text;
 
-            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text))
+            if (text != "" && KTKytuDacBiet(text))
             {
                 string filterExpression = "";
-                if (KTMA(txbTim.Text))
+                if (KTMA(text))
                 {
-                   filterExpression  = "MaSach = " + txbTim.Text + "";
+                    filterExpression = "MaSach = " + text + "";
                 }
-                if (rdTenSach.Checked) filterExpression = "TenSach like '%" + txbTim.Text + "%'";
-                if (rdTenTG.Checked) filterExpression = "TenTG like '%" + txbTim.Text + "%'";
+                if (rdTenSach.Checked) filterExpression = "TenSach like '%" + text + "%'";
+                if (rdTenTG.Checked) filterExpression = "TenTG like '%" + text + "%'";
 
                 string sortExpression = "MaSach DESC";
                 DataViewRowState rowsatefilter = DataViewRowState.OriginalRows;
@@ -158,62 +180,62 @@ namespace QuanLyThuVien
             }
             else
             {
-                Load();
+                Loads();
             }
-        }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            string id = txbMaSach.Text;
-            if (BookDAO.instance.Delete(id))
-                MessageBox.Show("Xóa Thành Công");
-            else
-                MessageBox.Show("Xóa Thất Bại");
-
-            Load();
-        }
-
-        private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-            var book = GetControls();
-            if (BookDAO.instance.Update(book))
-                MessageBox.Show("Sửa Thành Công");
-            else
-                MessageBox.Show("Sửa Thất Bại");
-            Load();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             var book = GetControls();
-            if (BookDAO.instance.Insert(book))
-                MessageBox.Show("Thêm Thành Công");
+            if (KTText())
+            {
+                if (BookDAO.instance.Insert(book))
+                    MessageBoxCT("Thêm Thành Công");
+                else
+                    MessageBoxCT("Thêm Thất Bại");
+                Loads();
+            }
             else
-                MessageBox.Show("Thêm Thất Bại");
-            Load();
+                MessageBoxCT("Hãy điền đủ thông tin");
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string id = txbMaSach.Text;
+            if (id != "")
+            {
+                if (BookDAO.instance.Delete(id))
+                    MessageBoxCT("Xóa Thành Công");
+                else
+                    MessageBoxCT("Phiếu mượn có loại sách này, không thể xóa");
+                Loads();
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            var b = GetControls();
+            if (b.tensach != "" && b.tennxb != "" && b.tentg != "")
+            {
+                if (BookDAO.instance.Update(b))
+                    MessageBoxCT("Sửa Thành Công");
+                else
+                    MessageBoxCT("Sửa Thất Bại");
+                Loads();
+            }
+        }
         private void lvsach_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvsach.SelectedItems.Count == 0) return;
-            int id = Convert.ToInt32(lvsach.SelectedItems[0].Text);
+            string id = lvsach.SelectedItems[0].Text;
             var lst = BookDAO.instance.FindByID(id);
-            var book = lst[0];
-            LoadConTrols(book);
-        }
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Book d = lst[0];
+            LoadConTrols(d);
         }
 
         private void btnHome_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-
-
         #endregion
-
-
     }
 }

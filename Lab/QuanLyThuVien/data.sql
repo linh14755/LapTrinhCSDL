@@ -88,8 +88,24 @@ as
 begin
 	select * from TaiKhoan where TAIKHOAN = @account and MATKHAU = @password
 end
+
 go
---exec USP_Login N'staff' , N'2'
+
+create proc USP_MuonSach
+@madg int, @masach int , @ngaymuon date , @ngaytra date , @status int , @ghichu nvarchar(100)
+as
+declare @soluong int 
+select @soluong = SOLUONG  from Sach
+if(@soluong > 0)
+	begin
+		insert into MuonSach(MADG,MASACH, NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU,soluong) values(@madg , @masach , @ngaymuon , @ngaytra , @status , @ghichu , N'1')
+		--update sach
+		update	Sach set SOLUONG = SOLUONG - 1 where MASACH = @masach
+	end
+go
+--exec USP_MuonSach N'madg' , N'masach' , 'ngaymuon' , 'ngaytra' , 'status' , N'ghichu'
+--select * from MuonSach where ngaytra < '" + datecurrent + "'
+--delete MuonSach where MADG = N'2'
 go
 --select * from TaiKhoan where QUYENHAN = 1
 
@@ -100,23 +116,3 @@ select* from  TaiKhoan
 
 select* from  Sach
 go
---INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, LOP, DIACHI, EMAIL) VALUES (N'docgia1',N'1',N'Nguyễn Khánh Linh', GETDATE(), 1, N'CTK42', N'Ai Biết',N'linh14751@gmail.com')
-go
---update DocGia set	TAIKHOAN = N'docgia2' , MATkHAU = N'1' , HOTEN = N'Lê Nhật Ánh' , NGAYSINH = '2020-11-27' ,GIOITINH = 0 , LOP = N'CTK42' , DIACHI = N'Ai Biết' ,EMAIL = N'nhatanh@gmail.com' where MADG = 5
-
-go
-create proc USP_MuonSach
-@madg nvarchar(100), @masach nvarchar(100), @ngaymuon date	,@ngaytra date, @status nvarchar(10), @ghichu nvarchar(100)
-as
-declare @soluong int 
-select @soluong = SOLUONG  from Sach
-if(@soluong > 0)
-begin
-	insert into MuonSach(MADG,MASACH, NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU,soluong) values(@madg,@masach,@ngaymuon,@ngaytra,@status,@ghichu,N'1')
-	--update sach
-	update	Sach set SOLUONG = SOLUONG - 1 where MASACH = @masach
-end
-go
---exec USP_MuonSach N'madg' , N'masach' , 'ngaymuon' , 'ngaytra' , 'status' , N'ghichu'
---select * from MuonSach where ngaytra < '" + datecurrent + "'
---delete MuonSach where MADG = N'2'

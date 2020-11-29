@@ -60,7 +60,7 @@ namespace QuanLyThuVien.DAO
             string ngaymuon = Convert.ToDateTime(m.ngaymuon).ToString("yyyy-MM-dd");
             string ngaytra = Convert.ToDateTime(m.ngaytra).ToString("yyyy-MM-dd");
 
-            string query = "exec USP_MuonSach N'" + m.madg + "', N'" + m.masach + "', '" + ngaymuon + "', '" + ngaytra + "', '" + m.xacnhantra + "', N'" + m.ghichu + "'";
+            string query = "exec USP_MuonSach " + m.madg + ", " + m.masach + ", '" + ngaymuon + "', '" + ngaytra + "', " + m.xacnhantra + " , N'" + m.ghichu + "'";
             int result = DataProvider.instance.ExcuteNonQuery(query);
             return result > 0;
         }

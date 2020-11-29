@@ -17,11 +17,17 @@ namespace QuanLyThuVien
         public frmQuanLyDocGia()
         {
             InitializeComponent();
-            Load();
+            Loads();
             rdMaDocGia.Checked = true;
         }
         #region Methods
-        public void Load()
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
+        }
+        public void Loads()
         {
             LoadDanhSachLV(DocGiaDAO.Instance.LoadDocGia());
         }
@@ -116,12 +122,12 @@ namespace QuanLyThuVien
         #endregion
 
         #region Events
-        private void txbTim_TextChanged(object sender, EventArgs e)
+        private void txbTim_TextChanged_1(object sender, EventArgs e)
         {
             var lst = DataProvider.instance.ExcuteQuery("select * from DocGia");
             if (lst == null) return;
 
-            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) )
+            if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text))
             {
                 string filterExpression = "";
                 if (KTMA(txbTim.Text))
@@ -145,47 +151,55 @@ namespace QuanLyThuVien
             }
             else
             {
-                Load();
+                Loads();
             }
         }
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
+        private void btnCapNhat_Click_1(object sender, EventArgs e)
         {
             if (txbdocgia.Text == "") return;
             var dg = GetConTrols();
-            if (DocGiaDAO.Instance.Update(dg))
-                MessageBox.Show("Cập nhật thành công");
-            else
-                MessageBox.Show("Cập nhật thất bại");
-            Load();
+            if (dg.hoten != "" && dg.matkhau != "" && dg.sodt != "")
+            {
+                if (DocGiaDAO.Instance.Update(dg))
+                    MessageBoxCT("Cập nhật thành công");
+                else
+                    MessageBoxCT("Cập nhật thất bại");
+                Loads();
+            }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             string id = txbdocgia.Text;
-            if (DocGiaDAO.Instance.Delete(id))
-                MessageBox.Show("Xóa thành công");
-            else
-                MessageBox.Show("Xóa thất bại");
-            Load();
+            if (id != "")
+            {
+                if (DocGiaDAO.Instance.Delete(id))
+                    MessageBoxCT("Xóa thành công");
+                else
+                    MessageBoxCT("Đọc giả có trong danh sách mượn, không thể xóa");
+                Loads();
+            }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             if (txbTaiKhoan.Text.Contains("docgia"))
             {
                 var dg = GetConTrols();
-                if (DocGiaDAO.Instance.Insert(dg))
-                    MessageBox.Show("Thêm Thành Công");
-                else
-                    MessageBox.Show("Tài khoản đã có trong danh sách");
-                Load();
+                if (dg.hoten != "" && dg.matkhau != "" && dg.sodt != "")
+                {
+                    if (DocGiaDAO.Instance.Insert(dg))
+                        MessageBoxCT("Thêm Thành Công");
+                    else
+                        MessageBoxCT("Tài khoản đã có trong danh sách");
+                    Loads();
+                }
             }
-            else MessageBox.Show("Tài khoản phải có dạng docgia...");
-            
+            else MessageBoxCT("Tài khoản phải có dạng docgia...");
         }
 
-        private void lvdocgia_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvdocgia_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (lvdocgia.SelectedItems.Count == 0) return;
             string id = lvdocgia.SelectedItems[0].Text;
@@ -194,12 +208,18 @@ namespace QuanLyThuVien
             LoadConTrols(d);
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnHome_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
 
+
+
+
+
         #endregion
+
+        
     }
 }

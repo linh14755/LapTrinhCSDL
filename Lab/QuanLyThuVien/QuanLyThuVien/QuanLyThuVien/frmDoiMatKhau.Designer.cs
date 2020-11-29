@@ -52,7 +52,7 @@
             // 
             this.panel1.Controls.Add(this.txbtaikhoan);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(231, 245);
+            this.panel1.Location = new System.Drawing.Point(122, 203);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 31);
             this.panel1.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             this.panel2.Controls.Add(this.txbMatKhauCu);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(231, 282);
+            this.panel2.Location = new System.Drawing.Point(122, 240);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(549, 31);
             this.panel2.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             this.panel3.Controls.Add(this.txbMatKhauMoi);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(231, 319);
+            this.panel3.Location = new System.Drawing.Point(122, 277);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(549, 31);
             this.panel3.TabIndex = 2;
@@ -130,7 +130,7 @@
             // 
             this.panel4.Controls.Add(this.txbNhapLaiMatKhau);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(231, 356);
+            this.panel4.Location = new System.Drawing.Point(122, 314);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(549, 31);
             this.panel4.TabIndex = 3;
@@ -158,7 +158,7 @@
             this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
             this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoiMatKhau.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(472, 393);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(363, 351);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(110, 53);
             this.btnDoiMatKhau.TabIndex = 4;
@@ -172,7 +172,7 @@
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThoat.Location = new System.Drawing.Point(611, 393);
+            this.btnThoat.Location = new System.Drawing.Point(502, 351);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 53);
             this.btnThoat.TabIndex = 5;
@@ -186,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1044, 706);
+            this.ClientSize = new System.Drawing.Size(852, 606);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDoiMatKhau);
             this.Controls.Add(this.panel4);

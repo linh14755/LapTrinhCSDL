@@ -18,10 +18,10 @@ namespace QuanLyThuVien
         {
             InitializeComponent();
             rdMaDocGia.Checked = true;
-            Load();
+            Loads();
         }
         #region Methods
-        private void Load()
+        private void Loads()
         {
             LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
             LoadMaDG();
@@ -86,7 +86,7 @@ namespace QuanLyThuVien
         }
         public void LoadMaSach()
         {
-            List<Book> lst = BookDAO.instance.GetListBook();
+            List<Book> lst = BookDAO.instance.GetList();
             cbbmasach.DataSource = lst;
             cbbmasach.DisplayMember = "masach";
             cbbmasach.ValueMember = "tensach";

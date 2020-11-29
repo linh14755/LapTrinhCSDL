@@ -19,7 +19,7 @@ namespace QuanLyThuVien
             InitializeComponent();
             hideSubMenu();
         }
-
+        #region Methods
         public void XuLyConTrolsChoDocGia()
         {
             button7.Enabled = false;
@@ -62,19 +62,23 @@ namespace QuanLyThuVien
         {
             tentk = tk;
         }
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thực sự muốn đăng xuất ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
+        #endregion
+        #region Events
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBoxOKCancel box = new MessageBoxOKCancel();
+            box.SetMessage("Bạn có muốn đăng xuất không ?");
+            if (box.ShowDialog() != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+        #endregion
+        #region Menu
         private void btnTaikhoan_Click(object sender, EventArgs e)
         {
             showSubMenu(panelTaikhoanSubMenu);
@@ -162,10 +166,8 @@ namespace QuanLyThuVien
             openChildForm(new frmDanhSachQuaHan());
             hideSubMenu();
         }
-
-
+        #endregion
         #endregion
 
-      
     }
 }
