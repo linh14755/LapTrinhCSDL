@@ -20,5 +20,15 @@ namespace QuanLyThuVien
         {
             return dtpgiahan.Value;
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }

@@ -23,14 +23,14 @@ namespace QuanLyThuVien
             //guna2Button2.DialogResult = DialogResult.Cancel;
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

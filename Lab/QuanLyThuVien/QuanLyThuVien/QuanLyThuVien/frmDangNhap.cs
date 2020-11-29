@@ -30,7 +30,7 @@ namespace QuanLyThuVien
                 {
                     frmMain frmmain = new frmMain();
                     this.Hide();
-                    frmmain.GetTK(txbTaiKhoan.TextName);
+                    frmmain.GetTK(tk);
                     frmmain.ShowDialog();
                     this.Show();
                 }
@@ -43,7 +43,7 @@ namespace QuanLyThuVien
                 {
                     frmMain frmmain = new frmMain();
                     this.Hide();
-                    frmmain.GetTK(txbTaiKhoan.Text);
+                    frmmain.GetTK(tk);
                     frmmain.XuLyConTrolsChoDocGia();
                     frmmain.ShowDialog();
                     this.Show();

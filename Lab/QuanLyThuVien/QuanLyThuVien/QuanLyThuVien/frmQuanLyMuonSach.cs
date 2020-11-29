@@ -19,6 +19,8 @@ namespace QuanLyThuVien
             InitializeComponent();
             rdMaDocGia.Checked = true;
             Loads();
+            dtpmuon.Value = DateTime.Now;
+            dtptra.Value = DateTime.Now;
         }
         #region Methods
         private void Loads()
@@ -26,8 +28,12 @@ namespace QuanLyThuVien
             LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
             LoadMaDG();
             LoadMaSach();
-            dtpmuon.Value = DateTime.Now;
-            dtptra.Value = DateTime.Now;
+        }
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
         }
 
         public bool KTKytuDacBiet(string kt)
@@ -59,7 +65,7 @@ namespace QuanLyThuVien
         public MuonSach GetConTrols()
         {
             MuonSach m = new MuonSach();
-            m.sophieumuon = txbmaphieu.Text;
+            //m.sophieumuon = txbmaphieu.Text;
             m.masach = cbbmasach.Text;
             m.madg = cbbmadg.Text;
             m.ngaymuon = dtpmuon.Value;
@@ -103,7 +109,8 @@ namespace QuanLyThuVien
         #endregion
 
         #region Events
-        private void txbTim_TextChanged_1(object sender, EventArgs e)
+
+        private void txbTim_TextChanged(object sender, EventArgs e)
         {
             var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach");
             if (lst == null) return;
@@ -132,7 +139,7 @@ namespace QuanLyThuVien
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnmuon_Click(object sender, EventArgs e)
         {
             //cho muon
             //danh sach muon
@@ -144,22 +151,20 @@ namespace QuanLyThuVien
                     if (MuonTraDAO.instance.MuonSach(muon))
                         MessageBox.Show("Cho Mượn Thành Công \n Tên người mượn: " + txbtendocgia.Text + " \n Tên Sách: " + txbTenSach.Text + "", "Thông Báo");
                     else
-                        MessageBox.Show("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
+                        MessageBoxCT("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
                     LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
                 }
                 else
                     MessageBox.Show("Một đọc giả không được mượn quá 2 quyển sách cùng loại\n Và không quá 4 cuốn sách");
             }
-            else MessageBox.Show("Ngày trả không hợp lệ");
-            
+            else MessageBoxCT("Ngày trả không hợp lệ");
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void cbbmasach_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void cbbmasach_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbmasach.SelectedIndex == -1) return;
 
@@ -168,8 +173,10 @@ namespace QuanLyThuVien
                 txbTenSach.Text = cbbmasach.SelectedValue.ToString();
             }
         }
+
+ 
         
-        private void cbbmadg_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void cbbmadg_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbmadg.SelectedIndex == -1) return;
 
@@ -180,10 +187,8 @@ namespace QuanLyThuVien
         }
 
 
-
-
         #endregion
 
-       
+        
     }
 }

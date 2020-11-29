@@ -23,6 +23,14 @@ namespace QuanLyThuVien
 
 
         #region Methods
+
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
+        }
+
         public void ThietLapControlsDG(DocGia d)
         {
             txbHoTen.Text = d.hoten;
@@ -134,7 +142,7 @@ namespace QuanLyThuVien
                 var dg = GetConTrolsDG();
                 if (DocGiaDAO.Instance.UpdateDocGia(dg))
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBoxCT("Sửa thành công");
                     ThietLapControlsDG(dg);
                 }
             }
@@ -143,7 +151,7 @@ namespace QuanLyThuVien
                 var ac = GetConTrols();
                 if (AccountDAO.Instance.UpdateAccount(ac))
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBoxCT("Sửa thành công");
                     ThietLapControls(ac);
                 }
             }
@@ -170,15 +178,15 @@ namespace QuanLyThuVien
                         ac.matkau = txbMatKhau.Text;
 
                         AccountDAO.Instance.InsertAccount(ac);
-                        MessageBox.Show("Đăng Ký Thành Công");
+                        MessageBoxCT("Đăng Ký Thành Công");
                         this.Close();
                     }
-                    else MessageBox.Show("Tài khoản dã tồn tại");
+                    else MessageBoxCT("Tài khoản dã tồn tại");
                 }
-                else MessageBox.Show("Nhập lại mật khẩu không đúng");
+                else MessageBoxCT("Nhập lại mật khẩu không đúng");
 
             }
-            else MessageBox.Show("Bạn phải điền đầy đủ thông tin");
+            else MessageBoxCT("Bạn phải điền đầy đủ thông tin");
         }
 
         private void btnhome_Click(object sender, EventArgs e)

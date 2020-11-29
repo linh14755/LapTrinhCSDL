@@ -17,7 +17,7 @@ CREATE TABLE Sach
 	GHICHU NVARCHAR(100) default null
 )
 GO
-
+--Tao Bang DocGia
 CREATE TABLE DocGia
 (
 	MADG INT IDENTITY PRIMARY KEY,
@@ -32,7 +32,7 @@ CREATE TABLE DocGia
 	GHICHU NVARCHAR(100) default null
 )
 GO
-
+--Tao Bang TaiKhoan
 CREATE TABLE TaiKhoan
 (
 	TAIKHOAN NVARCHAR(100)NOT NULL,
@@ -45,6 +45,7 @@ CREATE TABLE TaiKhoan
 	GIOITINH bit
 )
 GO
+--Tao Bang MuonSach
 CREATE TABLE MuonSach
 (
 	MADG INT REFERENCES DocGia(MADG),
@@ -58,29 +59,28 @@ CREATE TABLE MuonSach
 )
 
 GO
---select * from TaiKhoan where TAIKHOAN = N'Linh' and MATKHAU = N'1'
---INSERT TAIKHOAN
 INSERT INTO TaiKhoan(TAIKHOAN, MATKHAU, TEN, DIACHI, EMAIL, SODT,NGAYSINH,GIOITINH) VALUES (N'Linh',N'1', N'Khánh Linh', N'01, Phù Đổng Thiên Vương, P9, Đà Lạt', N'linh1475@gmail.com', N'01445554444',GETDATE(),1)
 INSERT INTO TaiKhoan(TAIKHOAN, MATKHAU, TEN, DIACHI, EMAIL, SODT,NGAYSINH,GIOITINH) VALUES (N'Staff',N'1', N'Staff', N'01, Phù Đổng Thiên Vương, P9, Đà Lạt', N'staff@gmail.com', N'0144588944',GETDATE(),1)
 GO
+
 --INSERT SACH
 INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Chính trị Mác - Lênin', N'Xuân Quỳnh', N'Nhà xuất bản Kim Đồng', N'Tài Liệu Học tập', GETDATE(), 10, GETDATE())
 INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Tiếng Anh Giao Tiếp', N'Xuân Quỳnh', N'Nhà xuất bản Kim Đồng', N'Tài Liệu Học tập', GETDATE(), 10, GETDATE())
 INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Kỹ năng soạn thảo văn bản', N'Xuân Quỳnh', N'Nhà xuất bản Kim Đồng', N'Tài Liệu Học tập', GETDATE(), 10, GETDATE())
 INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'Nhập môn công nghệ thông tin', N'Xuân Quỳnh', N'Nhà xuất bản Kim Đồng', N'Tài Liệu Học tập', GETDATE(), 10, GETDATE())
 GO
+
 --INSERT DOCGIA
 INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL) VALUES (N'docgia1',N'1',N'Nguyễn Khánh Linh', GETDATE(), 1, N'0776598805', N'Ai Biết',N'linh14751@gmail.com')
 INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL) VALUES (N'docgia2',N'1',N'Lê Nhật Ánh',  GETDATE(), 1, N'0123456788', N'Ai Biết',N'nhatanh@gmail.com')
 go
+
 --INSERT MUONSACH
 INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (1,2,GETDATE(),GETDATE(),0)
 INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (2,3,GETDATE(),GETDATE(),0)
 INSERT INTO MuonSach(MADG, MASACH, NGAYMUON, NGAYTRA, XACNHANTRA) VALUES (2,3,GETDATE(),GETDATE(),1)
-
-
-
 GO
+
 --Login
 CREATE PROC USP_Login
 @account nvarchar(100), @password nvarchar(100)
@@ -88,7 +88,6 @@ as
 begin
 	select * from TaiKhoan where TAIKHOAN = @account and MATKHAU = @password
 end
-
 go
 
 create proc USP_MuonSach
@@ -103,16 +102,10 @@ if(@soluong > 0)
 		update	Sach set SOLUONG = SOLUONG - 1 where MASACH = @masach
 	end
 go
---exec USP_MuonSach N'madg' , N'masach' , 'ngaymuon' , 'ngaytra' , 'status' , N'ghichu'
---select * from MuonSach where ngaytra < '" + datecurrent + "'
---delete MuonSach where MADG = N'2'
-go
---select * from TaiKhoan where QUYENHAN = 1
 
 select* from  DocGia 
-
 select* from  MuonSach
 select* from  TaiKhoan
-
 select* from  Sach
 go
+

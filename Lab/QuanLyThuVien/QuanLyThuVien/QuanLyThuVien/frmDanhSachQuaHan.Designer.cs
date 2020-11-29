@@ -42,18 +42,18 @@
             this.rdmasach = new System.Windows.Forms.RadioButton();
             this.rdMaDocGia = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txbmaphieu = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbbmadg = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbmasach = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpmuon = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
             this.dtptra = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
             this.txbghichu = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.dtpmuon = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txbmaphieu = new System.Windows.Forms.TextBox();
+            this.cbbmasach = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbbmadg = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btngiahan = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
@@ -133,14 +133,14 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(26, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(253, 104);
+            this.groupBox2.Size = new System.Drawing.Size(276, 104);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
             // 
             // txbTim
             // 
-            this.txbTim.Location = new System.Drawing.Point(15, 59);
+            this.txbTim.Location = new System.Drawing.Point(27, 59);
             this.txbTim.Name = "txbTim";
             this.txbTim.Size = new System.Drawing.Size(221, 27);
             this.txbTim.TabIndex = 3;
@@ -149,7 +149,7 @@
             // rdmasach
             // 
             this.rdmasach.AutoSize = true;
-            this.rdmasach.Location = new System.Drawing.Point(141, 29);
+            this.rdmasach.Location = new System.Drawing.Point(153, 29);
             this.rdmasach.Name = "rdmasach";
             this.rdmasach.Size = new System.Drawing.Size(96, 24);
             this.rdmasach.TabIndex = 1;
@@ -160,7 +160,7 @@
             // rdMaDocGia
             // 
             this.rdMaDocGia.AutoSize = true;
-            this.rdMaDocGia.Location = new System.Drawing.Point(16, 28);
+            this.rdMaDocGia.Location = new System.Drawing.Point(28, 28);
             this.rdMaDocGia.Name = "rdMaDocGia";
             this.rdMaDocGia.Size = new System.Drawing.Size(119, 24);
             this.rdMaDocGia.TabIndex = 0;
@@ -189,58 +189,42 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cho Mượn Sách";
             // 
-            // txbmaphieu
+            // dtptra
             // 
-            this.txbmaphieu.Location = new System.Drawing.Point(116, 27);
-            this.txbmaphieu.Name = "txbmaphieu";
-            this.txbmaphieu.ReadOnly = true;
-            this.txbmaphieu.Size = new System.Drawing.Size(187, 27);
-            this.txbmaphieu.TabIndex = 39;
+            this.dtptra.CustomFormat = "dd/MM/yyyy";
+            this.dtptra.Enabled = false;
+            this.dtptra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtptra.Location = new System.Drawing.Point(116, 194);
+            this.dtptra.Name = "dtptra";
+            this.dtptra.Size = new System.Drawing.Size(187, 27);
+            this.dtptra.TabIndex = 47;
             // 
-            // label6
+            // txbghichu
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Mã Phiếu";
+            this.txbghichu.Enabled = false;
+            this.txbghichu.Location = new System.Drawing.Point(345, 67);
+            this.txbghichu.Multiline = true;
+            this.txbghichu.Name = "txbghichu";
+            this.txbghichu.Size = new System.Drawing.Size(189, 185);
+            this.txbghichu.TabIndex = 4;
             // 
-            // cbbmadg
+            // label8
             // 
-            this.cbbmadg.Enabled = false;
-            this.cbbmadg.FormattingEnabled = true;
-            this.cbbmadg.Location = new System.Drawing.Point(116, 67);
-            this.cbbmadg.Name = "cbbmadg";
-            this.cbbmadg.Size = new System.Drawing.Size(187, 28);
-            this.cbbmadg.TabIndex = 41;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 201);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 20);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Ngày Trả";
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Mã Đọc Giả";
-            // 
-            // cbbmasach
-            // 
-            this.cbbmasach.Enabled = false;
-            this.cbbmasach.FormattingEnabled = true;
-            this.cbbmasach.Location = new System.Drawing.Point(116, 110);
-            this.cbbmasach.Name = "cbbmasach";
-            this.cbbmasach.Size = new System.Drawing.Size(187, 28);
-            this.cbbmasach.TabIndex = 43;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Mã Sách";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(396, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Ghi chú";
             // 
             // dtpmuon
             // 
@@ -252,6 +236,15 @@
             this.dtpmuon.Size = new System.Drawing.Size(187, 27);
             this.dtpmuon.TabIndex = 45;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Mã Phiếu";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -261,48 +254,55 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "Ngày Mượn";
             // 
-            // dtptra
+            // txbmaphieu
             // 
-            this.dtptra.CustomFormat = "dd/MM/yyyy";
-            this.dtptra.Enabled = false;
-            this.dtptra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptra.Location = new System.Drawing.Point(116, 194);
-            this.dtptra.Name = "dtptra";
-            this.dtptra.Size = new System.Drawing.Size(187, 27);
-            this.dtptra.TabIndex = 47;
+            this.txbmaphieu.Location = new System.Drawing.Point(116, 27);
+            this.txbmaphieu.Name = "txbmaphieu";
+            this.txbmaphieu.ReadOnly = true;
+            this.txbmaphieu.Size = new System.Drawing.Size(187, 27);
+            this.txbmaphieu.TabIndex = 39;
             // 
-            // label8
+            // cbbmasach
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 201);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 20);
-            this.label8.TabIndex = 46;
-            this.label8.Text = "Ngày Trả";
+            this.cbbmasach.Enabled = false;
+            this.cbbmasach.FormattingEnabled = true;
+            this.cbbmasach.Location = new System.Drawing.Point(116, 110);
+            this.cbbmasach.Name = "cbbmasach";
+            this.cbbmasach.Size = new System.Drawing.Size(187, 28);
+            this.cbbmasach.TabIndex = 43;
             // 
-            // txbghichu
+            // label5
             // 
-            this.txbghichu.Enabled = false;
-            this.txbghichu.Location = new System.Drawing.Point(345, 67);
-            this.txbghichu.Multiline = true;
-            this.txbghichu.Name = "txbghichu";
-            this.txbghichu.Size = new System.Drawing.Size(189, 185);
-            this.txbghichu.TabIndex = 4;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 20);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Mã Đọc Giả";
             // 
-            // label7
+            // label4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(396, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Ghi chú";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Mã Sách";
+            // 
+            // cbbmadg
+            // 
+            this.cbbmadg.Enabled = false;
+            this.cbbmadg.FormattingEnabled = true;
+            this.cbbmadg.Location = new System.Drawing.Point(116, 67);
+            this.cbbmadg.Name = "cbbmadg";
+            this.cbbmadg.Size = new System.Drawing.Size(187, 28);
+            this.cbbmadg.TabIndex = 41;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btngiahan);
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Location = new System.Drawing.Point(26, 126);
+            this.panel1.Location = new System.Drawing.Point(26, 164);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(276, 100);
             this.panel1.TabIndex = 38;
@@ -354,7 +354,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDanhSachQuaHan";
             this.ShowIcon = false;
             this.Text = "Danh sách Quá Hạn";
