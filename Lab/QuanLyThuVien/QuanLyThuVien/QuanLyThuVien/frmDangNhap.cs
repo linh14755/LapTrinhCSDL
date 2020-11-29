@@ -19,8 +19,13 @@ namespace QuanLyThuVien
             InitializeComponent();
         }
         #region Events
-
-        private void btndaangnhap_Click(object sender, EventArgs e)
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
+        }
+        private void btndaangnhap_Click_1(object sender, EventArgs e)
         {
             string tk = txbTaiKhoan.TextName;
             string mk = txbMatKhau.TextName;
@@ -35,7 +40,7 @@ namespace QuanLyThuVien
                     this.Show();
                 }
                 else
-                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+                    MessageBoxCT("Sai tên tài khoản hoặc mật khẩu");
             }
             if (rdDocGia.Checked)
             {
@@ -49,10 +54,10 @@ namespace QuanLyThuVien
                     this.Show();
                 }
                 else
-                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+                    MessageBoxCT("Sai tên tài khoản hoặc mật khẩu");
             }
         }
-       
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             MessageBoxOKCancel box = new MessageBoxOKCancel();

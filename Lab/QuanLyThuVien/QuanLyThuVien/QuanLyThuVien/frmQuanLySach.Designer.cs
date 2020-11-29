@@ -29,7 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txbTim = new Guna.UI2.WinForms.Guna2TextBox();
+            this.rdTenTG = new System.Windows.Forms.RadioButton();
+            this.rdTenSach = new System.Windows.Forms.RadioButton();
+            this.rdMaSach = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCapNhat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.lvsach = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,14 +48,6 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCapNhat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
-            this.txbTim = new Guna.UI2.WinForms.Guna2TextBox();
-            this.rdTenTG = new System.Windows.Forms.RadioButton();
-            this.rdTenSach = new System.Windows.Forms.RadioButton();
-            this.rdMaSach = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbNhaXB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -82,13 +82,77 @@
             this.groupBox2.Controls.Add(this.rdMaSach);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(46, 260);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(823, 57);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
+            // 
+            // txbTim
+            // 
+            this.txbTim.BorderColor = System.Drawing.Color.Black;
+            this.txbTim.BorderRadius = 15;
+            this.txbTim.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbTim.DefaultText = "";
+            this.txbTim.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txbTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txbTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbTim.DisabledState.Parent = this.txbTim;
+            this.txbTim.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbTim.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbTim.FocusedState.Parent = this.txbTim;
+            this.txbTim.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTim.ForeColor = System.Drawing.Color.Black;
+            this.txbTim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbTim.HoverState.Parent = this.txbTim;
+            this.txbTim.Location = new System.Drawing.Point(495, 20);
+            this.txbTim.Name = "txbTim";
+            this.txbTim.PasswordChar = '\0';
+            this.txbTim.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txbTim.PlaceholderText = "";
+            this.txbTim.SelectedText = "";
+            this.txbTim.ShadowDecoration.Parent = this.txbTim;
+            this.txbTim.Size = new System.Drawing.Size(220, 27);
+            this.txbTim.TabIndex = 34;
+            this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged_1);
+            // 
+            // rdTenTG
+            // 
+            this.rdTenTG.AutoSize = true;
+            this.rdTenTG.Location = new System.Drawing.Point(327, 23);
+            this.rdTenTG.Margin = new System.Windows.Forms.Padding(2);
+            this.rdTenTG.Name = "rdTenTG";
+            this.rdTenTG.Size = new System.Drawing.Size(122, 24);
+            this.rdTenTG.TabIndex = 33;
+            this.rdTenTG.TabStop = true;
+            this.rdTenTG.Text = "Tên Tác Giả";
+            this.rdTenTG.UseVisualStyleBackColor = true;
+            // 
+            // rdTenSach
+            // 
+            this.rdTenSach.AutoSize = true;
+            this.rdTenSach.Location = new System.Drawing.Point(222, 23);
+            this.rdTenSach.Margin = new System.Windows.Forms.Padding(2);
+            this.rdTenSach.Name = "rdTenSach";
+            this.rdTenSach.Size = new System.Drawing.Size(101, 24);
+            this.rdTenSach.TabIndex = 32;
+            this.rdTenSach.TabStop = true;
+            this.rdTenSach.Text = "Tên Sách";
+            this.rdTenSach.UseVisualStyleBackColor = true;
+            // 
+            // rdMaSach
+            // 
+            this.rdMaSach.AutoSize = true;
+            this.rdMaSach.Location = new System.Drawing.Point(107, 23);
+            this.rdMaSach.Margin = new System.Windows.Forms.Padding(2);
+            this.rdMaSach.Name = "rdMaSach";
+            this.rdMaSach.Size = new System.Drawing.Size(96, 24);
+            this.rdMaSach.TabIndex = 31;
+            this.rdMaSach.TabStop = true;
+            this.rdMaSach.Text = "Mã Sách";
+            this.rdMaSach.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -100,6 +164,78 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(823, 80);
             this.panel2.TabIndex = 29;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BorderRadius = 20;
+            this.btnXoa.CheckedState.Parent = this.btnXoa;
+            this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.HoverState.Parent = this.btnXoa;
+            this.btnXoa.Location = new System.Drawing.Point(424, 15);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
+            this.btnXoa.Size = new System.Drawing.Size(114, 50);
+            this.btnXoa.TabIndex = 43;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BorderRadius = 20;
+            this.btnCapNhat.CheckedState.Parent = this.btnCapNhat;
+            this.btnCapNhat.CustomImages.Parent = this.btnCapNhat;
+            this.btnCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.HoverState.Parent = this.btnCapNhat;
+            this.btnCapNhat.Location = new System.Drawing.Point(282, 15);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.ShadowDecoration.Parent = this.btnCapNhat;
+            this.btnCapNhat.Size = new System.Drawing.Size(114, 50);
+            this.btnCapNhat.TabIndex = 42;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BorderRadius = 20;
+            this.btnThem.CheckedState.Parent = this.btnThem;
+            this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.HoverState.Parent = this.btnThem;
+            this.btnThem.Location = new System.Drawing.Point(142, 15);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ShadowDecoration.Parent = this.btnThem;
+            this.btnThem.Size = new System.Drawing.Size(114, 50);
+            this.btnThem.TabIndex = 41;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BorderRadius = 20;
+            this.btnHome.CheckedState.Parent = this.btnHome;
+            this.btnHome.CustomImages.Parent = this.btnHome;
+            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.HoverState.Parent = this.btnHome;
+            this.btnHome.Location = new System.Drawing.Point(567, 15);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.ShadowDecoration.Parent = this.btnHome;
+            this.btnHome.Size = new System.Drawing.Size(114, 50);
+            this.btnHome.TabIndex = 44;
+            this.btnHome.Text = "Quay lại";
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
             // 
             // lvsach
             // 
@@ -171,142 +307,6 @@
             // 
             this.columnHeader9.Text = "Ghi chú";
             this.columnHeader9.Width = 350;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BorderRadius = 20;
-            this.btnXoa.CheckedState.Parent = this.btnXoa;
-            this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(424, 15);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(114, 50);
-            this.btnXoa.TabIndex = 43;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.BorderRadius = 20;
-            this.btnCapNhat.CheckedState.Parent = this.btnCapNhat;
-            this.btnCapNhat.CustomImages.Parent = this.btnCapNhat;
-            this.btnCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.HoverState.Parent = this.btnCapNhat;
-            this.btnCapNhat.Location = new System.Drawing.Point(282, 15);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.ShadowDecoration.Parent = this.btnCapNhat;
-            this.btnCapNhat.Size = new System.Drawing.Size(114, 50);
-            this.btnCapNhat.TabIndex = 42;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BorderRadius = 20;
-            this.btnThem.CheckedState.Parent = this.btnThem;
-            this.btnThem.CustomImages.Parent = this.btnThem;
-            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(142, 15);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(114, 50);
-            this.btnThem.TabIndex = 41;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.BorderRadius = 20;
-            this.btnHome.CheckedState.Parent = this.btnHome;
-            this.btnHome.CustomImages.Parent = this.btnHome;
-            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.HoverState.Parent = this.btnHome;
-            this.btnHome.Location = new System.Drawing.Point(567, 15);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.ShadowDecoration.Parent = this.btnHome;
-            this.btnHome.Size = new System.Drawing.Size(114, 50);
-            this.btnHome.TabIndex = 44;
-            this.btnHome.Text = "Quay lại";
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
-            // 
-            // txbTim
-            // 
-            this.txbTim.BorderColor = System.Drawing.Color.Black;
-            this.txbTim.BorderRadius = 15;
-            this.txbTim.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbTim.DefaultText = "";
-            this.txbTim.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txbTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txbTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbTim.DisabledState.Parent = this.txbTim;
-            this.txbTim.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbTim.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTim.FocusedState.Parent = this.txbTim;
-            this.txbTim.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTim.ForeColor = System.Drawing.Color.Black;
-            this.txbTim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTim.HoverState.Parent = this.txbTim;
-            this.txbTim.Location = new System.Drawing.Point(495, 20);
-            this.txbTim.Name = "txbTim";
-            this.txbTim.PasswordChar = '\0';
-            this.txbTim.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txbTim.PlaceholderText = "";
-            this.txbTim.SelectedText = "";
-            this.txbTim.ShadowDecoration.Parent = this.txbTim;
-            this.txbTim.Size = new System.Drawing.Size(220, 27);
-            this.txbTim.TabIndex = 34;
-            this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged_1);
-            // 
-            // rdTenTG
-            // 
-            this.rdTenTG.AutoSize = true;
-            this.rdTenTG.Location = new System.Drawing.Point(327, 23);
-            this.rdTenTG.Margin = new System.Windows.Forms.Padding(2);
-            this.rdTenTG.Name = "rdTenTG";
-            this.rdTenTG.Size = new System.Drawing.Size(122, 24);
-            this.rdTenTG.TabIndex = 33;
-            this.rdTenTG.TabStop = true;
-            this.rdTenTG.Text = "Tên Tác Giả";
-            this.rdTenTG.UseVisualStyleBackColor = true;
-            // 
-            // rdTenSach
-            // 
-            this.rdTenSach.AutoSize = true;
-            this.rdTenSach.Location = new System.Drawing.Point(222, 23);
-            this.rdTenSach.Margin = new System.Windows.Forms.Padding(2);
-            this.rdTenSach.Name = "rdTenSach";
-            this.rdTenSach.Size = new System.Drawing.Size(101, 24);
-            this.rdTenSach.TabIndex = 32;
-            this.rdTenSach.TabStop = true;
-            this.rdTenSach.Text = "Tên Sách";
-            this.rdTenSach.UseVisualStyleBackColor = true;
-            // 
-            // rdMaSach
-            // 
-            this.rdMaSach.AutoSize = true;
-            this.rdMaSach.Location = new System.Drawing.Point(107, 23);
-            this.rdMaSach.Margin = new System.Windows.Forms.Padding(2);
-            this.rdMaSach.Name = "rdMaSach";
-            this.rdMaSach.Size = new System.Drawing.Size(96, 24);
-            this.rdMaSach.TabIndex = 31;
-            this.rdMaSach.TabStop = true;
-            this.rdMaSach.Text = "Mã Sách";
-            this.rdMaSach.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 

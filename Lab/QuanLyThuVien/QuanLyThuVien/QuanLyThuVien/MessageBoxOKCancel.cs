@@ -18,7 +18,7 @@ namespace QuanLyThuVien
         }
         public void SetMessage(string text)
         {
-            guna2TextBox1.Text = text;
+            textBox1.Text = text;
             //guna2Button1.DialogResult = DialogResult.OK;
             //guna2Button2.DialogResult = DialogResult.Cancel;
         }

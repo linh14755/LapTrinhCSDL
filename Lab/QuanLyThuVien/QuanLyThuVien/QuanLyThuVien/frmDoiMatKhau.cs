@@ -16,20 +16,26 @@ namespace QuanLyThuVien
         public frmDoiMatKhau()
         {
             InitializeComponent();
-         
-          
         }
-        
+        #region Methods
+        public void MessageBoxCT(string text)
+        {
+            MessageBoxOK box = new MessageBoxOK();
+            box.SetMessage(text);
+            box.ShowDialog();
+        }
+
         public void GetTK(string tk)
         {
             txbtaikhoan.Text = tk;
         }
+        #endregion
+        #region Events
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        private void btnDoiMatKhau_Click_1(object sender, EventArgs e)
         {
             if (txbtaikhoan.Text.Contains("docgia"))
             {
@@ -37,12 +43,12 @@ namespace QuanLyThuVien
                 {
                     if (DocGiaDAO.Instance.DoiMK(txbtaikhoan.Text, txbNhapLaiMatKhau.Text, txbMatKhauCu.Text))
                     {
-                        MessageBox.Show("Đổi mật khẩu thành công!");
+                        MessageBoxCT("Đổi mật khẩu thành công!");
                         this.Close();
                     }
-                    else MessageBox.Show("Mật khẩu cũ không đúng!");
+                    else MessageBoxCT("Mật khẩu cũ không đúng!");
                 }
-                else MessageBox.Show("Nhập lại mật khẩu không đúng!");
+                else MessageBoxCT("Nhập lại mật khẩu không đúng!");
             }
             else
             {
@@ -50,18 +56,14 @@ namespace QuanLyThuVien
                 {
                     if (AccountDAO.Instance.DoiMK(txbtaikhoan.Text, txbNhapLaiMatKhau.Text, txbMatKhauCu.Text))
                     {
-                        MessageBox.Show("Đổi mật khẩu thành công!");
+                        MessageBoxCT("Đổi mật khẩu thành công!");
                         this.Close();
                     }
-                    else MessageBox.Show("Mật khẩu cũ không đúng!");
+                    else MessageBoxCT("Mật khẩu cũ không đúng!");
                 }
-                else MessageBox.Show("Nhập lại mật khẩu không đúng!");
+                else MessageBoxCT("Nhập lại mật khẩu không đúng!");
             }
         }
-
-        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

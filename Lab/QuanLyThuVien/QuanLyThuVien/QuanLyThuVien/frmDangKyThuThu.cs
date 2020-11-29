@@ -135,7 +135,8 @@ namespace QuanLyThuVien
         #endregion
 
         #region Events
-        private void btnupdate_Click(object sender, EventArgs e)
+
+        private void btnupdate_Click_1(object sender, EventArgs e)
         {
             if (tk.Contains("docgia"))
             {
@@ -156,8 +157,7 @@ namespace QuanLyThuVien
                 }
             }
         }
-
-        private void btnDangKy_Click(object sender, EventArgs e)
+        private void btnDangKy_Click_1(object sender, EventArgs e)
         {
             if (KiemTraThongTin())
             {
@@ -189,10 +189,14 @@ namespace QuanLyThuVien
             else MessageBoxCT("Bạn phải điền đầy đủ thông tin");
         }
 
-        private void btnhome_Click(object sender, EventArgs e)
+        private void btnhome_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
         #endregion
+
+        
     }
 }

@@ -40,6 +40,9 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txbTim = new System.Windows.Forms.TextBox();
+            this.rdTenDocGia = new System.Windows.Forms.RadioButton();
+            this.rdMaDocGia = new System.Windows.Forms.RadioButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txbGhiChu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,9 +66,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txbdocgia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbTim = new System.Windows.Forms.TextBox();
-            this.rdTenDocGia = new System.Windows.Forms.RadioButton();
-            this.rdMaDocGia = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnCapNhat = new Guna.UI2.WinForms.Guna2Button();
@@ -164,6 +164,36 @@
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
+            // 
+            // txbTim
+            // 
+            this.txbTim.Location = new System.Drawing.Point(449, 21);
+            this.txbTim.Name = "txbTim";
+            this.txbTim.Size = new System.Drawing.Size(235, 27);
+            this.txbTim.TabIndex = 6;
+            this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged_1);
+            // 
+            // rdTenDocGia
+            // 
+            this.rdTenDocGia.AutoSize = true;
+            this.rdTenDocGia.Location = new System.Drawing.Point(284, 22);
+            this.rdTenDocGia.Name = "rdTenDocGia";
+            this.rdTenDocGia.Size = new System.Drawing.Size(124, 24);
+            this.rdTenDocGia.TabIndex = 5;
+            this.rdTenDocGia.TabStop = true;
+            this.rdTenDocGia.Text = "Tên Đọc Giả";
+            this.rdTenDocGia.UseVisualStyleBackColor = true;
+            // 
+            // rdMaDocGia
+            // 
+            this.rdMaDocGia.AutoSize = true;
+            this.rdMaDocGia.Location = new System.Drawing.Point(139, 21);
+            this.rdMaDocGia.Name = "rdMaDocGia";
+            this.rdMaDocGia.Size = new System.Drawing.Size(119, 24);
+            this.rdMaDocGia.TabIndex = 4;
+            this.rdMaDocGia.TabStop = true;
+            this.rdMaDocGia.Text = "Mã Đọc Giả";
+            this.rdMaDocGia.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -379,36 +409,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Mã Đọc Giả:";
             // 
-            // txbTim
-            // 
-            this.txbTim.Location = new System.Drawing.Point(449, 21);
-            this.txbTim.Name = "txbTim";
-            this.txbTim.Size = new System.Drawing.Size(235, 27);
-            this.txbTim.TabIndex = 6;
-            this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged_1);
-            // 
-            // rdTenDocGia
-            // 
-            this.rdTenDocGia.AutoSize = true;
-            this.rdTenDocGia.Location = new System.Drawing.Point(284, 22);
-            this.rdTenDocGia.Name = "rdTenDocGia";
-            this.rdTenDocGia.Size = new System.Drawing.Size(124, 24);
-            this.rdTenDocGia.TabIndex = 5;
-            this.rdTenDocGia.TabStop = true;
-            this.rdTenDocGia.Text = "Tên Đọc Giả";
-            this.rdTenDocGia.UseVisualStyleBackColor = true;
-            // 
-            // rdMaDocGia
-            // 
-            this.rdMaDocGia.AutoSize = true;
-            this.rdMaDocGia.Location = new System.Drawing.Point(139, 21);
-            this.rdMaDocGia.Name = "rdMaDocGia";
-            this.rdMaDocGia.Size = new System.Drawing.Size(119, 24);
-            this.rdMaDocGia.TabIndex = 4;
-            this.rdMaDocGia.TabStop = true;
-            this.rdMaDocGia.Text = "Mã Đọc Giả";
-            this.rdMaDocGia.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnXoa);
@@ -425,7 +425,7 @@
             this.btnXoa.BorderRadius = 20;
             this.btnXoa.CheckedState.Parent = this.btnXoa;
             this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
@@ -443,7 +443,7 @@
             this.btnCapNhat.BorderRadius = 20;
             this.btnCapNhat.CheckedState.Parent = this.btnCapNhat;
             this.btnCapNhat.CustomImages.Parent = this.btnCapNhat;
-            this.btnCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
             this.btnCapNhat.HoverState.Parent = this.btnCapNhat;
@@ -461,7 +461,7 @@
             this.btnThem.BorderRadius = 20;
             this.btnThem.CheckedState.Parent = this.btnThem;
             this.btnThem.CustomImages.Parent = this.btnThem;
-            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
@@ -479,7 +479,7 @@
             this.btnHome.BorderRadius = 20;
             this.btnHome.CheckedState.Parent = this.btnHome;
             this.btnHome.CustomImages.Parent = this.btnHome;
-            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.HoverState.Parent = this.btnHome;
@@ -505,7 +505,7 @@
             this.Controls.Add(this.lvdocgia);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQuanLyDocGia";
             this.ShowIcon = false;
             this.Text = "Quản Lý Đọc Giả";
