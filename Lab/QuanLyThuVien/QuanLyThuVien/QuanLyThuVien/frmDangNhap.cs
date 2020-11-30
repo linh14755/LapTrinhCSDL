@@ -29,13 +29,16 @@ namespace QuanLyThuVien
         {
             string tk = txbTaiKhoan.TextName;
             string mk = txbMatKhau.TextName;
+            bool loaitk = true;
+            if (rdDocGia.Checked)
+                loaitk = false;
             if (rdThuThu.Checked)
             {
                 if (AccountDAO.Instance.LoginThuThu(tk, mk))
                 {
                     frmMain frmmain = new frmMain();
                     this.Hide();
-                    frmmain.GetTK(tk);
+                    frmmain.GetTK(tk,loaitk);
                     frmmain.ShowDialog();
                     this.Show();
                 }
@@ -48,7 +51,7 @@ namespace QuanLyThuVien
                 {
                     frmMain frmmain = new frmMain();
                     this.Hide();
-                    frmmain.GetTK(tk);
+                    frmmain.GetTK(tk,loaitk);
                     frmmain.XuLyConTrolsChoDocGia();
                     frmmain.ShowDialog();
                     this.Show();

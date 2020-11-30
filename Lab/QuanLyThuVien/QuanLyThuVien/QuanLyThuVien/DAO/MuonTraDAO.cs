@@ -30,17 +30,59 @@ namespace QuanLyThuVien.DAO
             }
             return l;
         }
-        public List<MuonSach> GetDSQuaHan()
+        public List<MuonSach> GetDSQuaHan(string madg = null)
         {
+            //quá hạn 1 ngày sẽ phạt 5k trên mỗi đầu sách mượn
             List<MuonSach> l = new List<MuonSach>();
+            var songayquahan = 0;
             string datecurrent = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
-            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
-            foreach (DataRow row in data.Rows)
+
+            if (madg != null)
             {
-                MuonSach m = new MuonSach(row);
-                l.Add(m);
+                var dsquahan = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0' and MaDG = " + madg + "");
+                //cập nhật tiền phạt
+                foreach (DataRow row1 in dsquahan.Rows)
+                {
+                    MuonSach m = new MuonSach(row1);
+                    TimeSpan Time = DateTime.Now - m.ngaytra;
+                    songayquahan = Time.Days;
+
+                    var tienphat = songayquahan * 5000;
+                    DataProvider.instance.ExcuteNonQuery("update MuonSach set TIENPHAT = @tienphat where SoPhieuMuon = @sopm", new object[] { tienphat, m.sophieumuon });
+                }
+
+                var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where NgayTra < '" + datecurrent + "' and xacnhantra = N'0' and MaDG = " + madg + "");
+                foreach (DataRow row in data.Rows)
+                {
+                    //tiền phạt
+                    MuonSach m = new MuonSach(row);
+                    l.Add(m);
+                }
+                return l;
             }
-            return l;
+            else
+            {
+                var dsquahan = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
+                //cập nhật tiền phạt
+                foreach (DataRow row1 in dsquahan.Rows)
+                {
+                    MuonSach m = new MuonSach(row1);
+                    TimeSpan Time = DateTime.Now - m.ngaytra;
+                    songayquahan = Time.Days;
+
+                    var tienphat = songayquahan * 5000;
+                    DataProvider.instance.ExcuteNonQuery("update MuonSach set TIENPHAT = @tienphat where SoPhieuMuon = @sopm", new object[] { tienphat, m.sophieumuon });
+                }
+
+                var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where NgayTra < '" + datecurrent + "' and xacnhantra = N'0'");
+                foreach (DataRow row in data.Rows)
+                {
+                    //tiền phạt
+                    MuonSach m = new MuonSach(row);
+                    l.Add(m);
+                }
+                return l;
+            }
         }
         public bool KiemTraDocGia(string madg, string masach) //mot doc gia khong duoc muon qua 3 sach
         {

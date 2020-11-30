@@ -83,8 +83,8 @@ namespace QuanLyThuVien
                 ListViewItem lvitem = new ListViewItem(ms.sophieumuon);
                 lvitem.SubItems.Add(ms.madg);
                 lvitem.SubItems.Add(ms.masach);
-                lvitem.SubItems.Add(ms.ngaymuon.ToString());
-                lvitem.SubItems.Add(ms.ngaytra.ToString());
+                lvitem.SubItems.Add(ms.ngaymuon.ToShortDateString().ToString());
+                lvitem.SubItems.Add(ms.ngaytra.ToShortDateString().ToString());
                 lvitem.SubItems.Add(ms.soluong);
                 lvitem.SubItems.Add(ms.ghichu);
                 lvmuonsach.Items.Add(lvitem);
@@ -92,14 +92,14 @@ namespace QuanLyThuVien
         }
         public void LoadMaSach()
         {
-            List<Book> lst = BookDAO.instance.GetList();
+            List<Sach> lst = BookDAO.instance.GetList();
             cbbmasach.DataSource = lst;
             cbbmasach.DisplayMember = "masach";
             cbbmasach.ValueMember = "tensach";
         }
         public void LoadMaDG()
         {
-            List<DocGia> lst = DocGiaDAO.Instance.LoadDocGia();
+            List<DocGia> lst = DocGiaDAO.Instance.GetList();
 
             cbbmadg.DataSource = lst;
             cbbmadg.DisplayMember = "madg";

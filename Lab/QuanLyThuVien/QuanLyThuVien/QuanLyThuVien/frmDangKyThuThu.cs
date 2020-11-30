@@ -15,6 +15,7 @@ namespace QuanLyThuVien
     public partial class frmDangKy : Form
     {
         string tk;
+        bool loaitk;
         public frmDangKy()
         {
             InitializeComponent();
@@ -88,10 +89,12 @@ namespace QuanLyThuVien
             ac.matkau = txbMatKhau.Text;
             return ac;
         }
-        public void GetTK(string tk)
+        public void GetTK(string tk, bool loaitk)
         {
             this.tk = tk;
-            if (tk.Contains("docgia"))
+            this.loaitk = loaitk;
+            //loaitk = true ->> thu thu = false docgia
+            if (!loaitk)
             {
                 List<DocGia> lst = DocGiaDAO.Instance.GetListDGByTK(this.tk);
 
@@ -138,7 +141,7 @@ namespace QuanLyThuVien
 
         private void btnupdate_Click_1(object sender, EventArgs e)
         {
-            if (tk.Contains("docgia"))
+            if (!loaitk)
             {
                 var dg = GetConTrolsDG();
                 if (DocGiaDAO.Instance.UpdateDocGia(dg))
@@ -197,6 +200,6 @@ namespace QuanLyThuVien
 
         #endregion
 
-        
+
     }
 }

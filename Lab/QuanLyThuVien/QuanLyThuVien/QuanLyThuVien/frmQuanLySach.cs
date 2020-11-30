@@ -48,9 +48,9 @@ namespace QuanLyThuVien
             box.ShowDialog();
         }
 
-        public Book GetControls()
+        public Sach GetControls()
         {
-            Book b = new Book();
+            Sach b = new Sach();
             b.masach = txbMaSach.Text;
             b.tensach = txbTenSach.Text;
             b.tentg = txbTenTG.Text;
@@ -64,7 +64,7 @@ namespace QuanLyThuVien
             return b;
         }
 
-        public void LoadConTrols(Book b)
+        public void LoadConTrols(Sach b)
         {
             txbMaSach.Text = b.masach;
             txbTenSach.Text = b.tensach;
@@ -77,7 +77,7 @@ namespace QuanLyThuVien
             txbGhiChu.Text = b.ghichu;
         }
 
-        public void LoadDanhSachLV(List<Book> lb)
+        public void LoadDanhSachLV(List<Sach> lb)
         {
             lvsach.Items.Clear();
             foreach (var bk in lb)
@@ -87,7 +87,7 @@ namespace QuanLyThuVien
                 lvitem.SubItems.Add(bk.tentg);
                 lvitem.SubItems.Add(bk.tenlv);
                 lvitem.SubItems.Add(bk.tennxb);
-                lvitem.SubItems.Add(bk.namxb.ToString());
+                lvitem.SubItems.Add(bk.namxb.ToShortDateString().ToString());
                 lvitem.SubItems.Add(bk.sl);
                 lvitem.SubItems.Add(bk.ngaynhap.ToString());
                 lvitem.SubItems.Add(bk.ghichu);
@@ -170,10 +170,10 @@ namespace QuanLyThuVien
 
                 DataView dataview = new DataView(lst, filterExpression, sortExpression, rowsatefilter);
 
-                List<Book> lbook = new List<Book>();
+                List<Sach> lbook = new List<Sach>();
                 foreach (DataRowView row in dataview)
                 {
-                    Book b = new Book(row);
+                    Sach b = new Sach(row);
                     lbook.Add(b);
                 }
                 LoadDanhSachLV(lbook);
@@ -228,7 +228,7 @@ namespace QuanLyThuVien
             if (lvsach.SelectedItems.Count == 0) return;
             string id = lvsach.SelectedItems[0].Text;
             var lst = BookDAO.instance.FindByID(id);
-            Book d = lst[0];
+            Sach d = lst[0];
             LoadConTrols(d);
         }
 

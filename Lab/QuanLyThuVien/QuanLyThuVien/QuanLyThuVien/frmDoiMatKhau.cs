@@ -13,6 +13,7 @@ namespace QuanLyThuVien
 {
     public partial class frmDoiMatKhau : Form
     {
+        bool loaitk;
         public frmDoiMatKhau()
         {
             InitializeComponent();
@@ -25,19 +26,20 @@ namespace QuanLyThuVien
             box.ShowDialog();
         }
 
-        public void GetTK(string tk)
+        public void GetTK(string tk,bool loaitk)
         {
             txbtaikhoan.Text = tk;
+            this.loaitk = loaitk;
         }
         #endregion
         #region Events
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnThoat_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
         private void btnDoiMatKhau_Click_1(object sender, EventArgs e)
         {
-            if (txbtaikhoan.Text.Contains("docgia"))
+            if (!loaitk)
             {
                 if (txbMatKhauMoi.Text == txbNhapLaiMatKhau.Text)
                 {
@@ -65,5 +67,7 @@ namespace QuanLyThuVien
             }
         }
         #endregion
+
+        
     }
 }

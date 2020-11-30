@@ -18,6 +18,19 @@ namespace QuanLyThuVien.DAO
 
         public static DocGiaDAO Instance { get => instance; set => instance = value; }
 
+        public bool KiemTraTaiKhoan(string tk)
+        {
+            List<DocGia> lst = DocGiaDAO.instance.GetList();
+            foreach (DocGia d in lst)
+            {
+                if (tk == d.taikhoan)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public bool DoiMK(string tk, string mkmoi, string mkcu)
         {
             string query = "update DocGia set	MATKHAU = N'" + mkmoi + "' where TaiKhoan = N'" + tk + "' and MatKhau = N'" + mkcu + "'";
@@ -95,7 +108,7 @@ namespace QuanLyThuVien.DAO
             int result = DataProvider.instance.ExcuteNonQuery("INSERT INTO DocGia(TAIKHOAN, MATKHAU, HOTEN, NGAYSINH, GIOITINH, SODT, DIACHI, EMAIL) VALUES (N'" + d.taikhoan + "',N'" + d.matkhau + "',N'" + d.hoten + "', '" + ngaysinhnew + "', " + gt + ", N'" + d.sodt + "', N'" + d.diachi + "',N'" + d.email + "')");
             return result > 0;
         }
-        public List<DocGia> LoadDocGia()
+        public List<DocGia> GetList()
         {
             string query = "select * from  DocGia";
             DataTable data = new DataTable();

@@ -24,7 +24,7 @@ namespace QuanLyThuVien.DAO
                 result = DataProvider.instance.ExcuteNonQuery("delete Sach where MaSach = @id", new object[] { id });
             return result > 0;
         }
-        public bool Update(Book b)
+        public bool Update(Sach b)
         {
             string namxb = ConvertDateTime(b.namxb);
             string ngaynhap = ConvertDateTime(b.ngaynhap);
@@ -32,7 +32,7 @@ namespace QuanLyThuVien.DAO
             int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + namxb + "' ,GhiChu = N'" + b.ghichu + "', SOLUONG = @soluong , NGAYNHAP = '" + ngaynhap + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
             return result > 0;
         }
-        public bool Insert(Book b)
+        public bool Insert(Sach b)
         {
             string namxb = ConvertDateTime(b.namxb);
             string ngaynhap = ConvertDateTime(b.ngaynhap);
@@ -41,31 +41,31 @@ namespace QuanLyThuVien.DAO
             int restult = DataProvider.instance.ExcuteNonQuery(query);
             return restult > 0;
         }
-        public List<Book> FindByID(string id)
+        public List<Sach> FindByID(string id)
         {
-            List<Book> lstbook = new List<Book>();
+            List<Sach> lstbook = new List<Sach>();
             string query = "SELECT * FROM SACH where masach = " + id + "";
             DataTable data = new DataTable();
             data = DataProvider.instance.ExcuteQuery(query);
 
             foreach (DataRow row in data.Rows)
             {
-                Book book = new Book(row);
+                Sach book = new Sach(row);
                 lstbook.Add(book);
             }
             return lstbook;
         }
 
-        public List<Book> GetList()
+        public List<Sach> GetList()
         {
-            List<Book> lstbook = new List<Book>();
+            List<Sach> lstbook = new List<Sach>();
             string query = "SELECT * FROM SACH";
             DataTable data = new DataTable();
             data = DataProvider.instance.ExcuteQuery(query);
 
             foreach (DataRow row in data.Rows)
             {
-                Book book = new Book(row);
+                Sach book = new Sach(row);
                 lstbook.Add(book);
             }
             return lstbook;

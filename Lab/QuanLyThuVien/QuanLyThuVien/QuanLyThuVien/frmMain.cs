@@ -14,6 +14,7 @@ namespace QuanLyThuVien
     public partial class frmMain : Form
     {
         string tentk = "";
+        bool loaitk;
         public frmMain()
         {
             InitializeComponent();
@@ -23,9 +24,11 @@ namespace QuanLyThuVien
         public void XuLyConTrolsChoDocGia()
         {
             button7.Enabled = false;
-            btnqunlymuontra.Enabled = false;
+            //btnqunlymuontra.Enabled = false;
             btnEqualizer.Enabled = false;
             button2.Enabled = false;
+            button12.Enabled = false;
+            button13.Enabled = false;
         }
         private void hideSubMenu()
         {
@@ -58,9 +61,10 @@ namespace QuanLyThuVien
             childForm.Show();
         }
 
-        public void GetTK(string tk)
+        public void GetTK(string tk, bool loaitk)
         {
-            tentk = tk;
+            this.tentk = tk;
+            this.loaitk = loaitk;
         }
         #endregion
         #region Events
@@ -99,7 +103,7 @@ namespace QuanLyThuVien
         private void button3_Click(object sender, EventArgs e)
         {
             frmDangKy frm = new frmDangKy();
-            frm.GetTK(this.tentk);
+            frm.GetTK(this.tentk,loaitk);
             frm.UnEnableTK();
             openChildForm(frm);
             //..
@@ -111,7 +115,7 @@ namespace QuanLyThuVien
         private void button4_Click(object sender, EventArgs e)
         {
             frmDoiMatKhau frm = new frmDoiMatKhau();
-            frm.GetTK(this.tentk);
+            frm.GetTK(this.tentk,loaitk);
             openChildForm(frm);
             //..
             //your codes
@@ -163,7 +167,9 @@ namespace QuanLyThuVien
         }
         private void btndsquahan_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new frmDanhSachQuaHan());
+            frmDanhSachQuaHan frm = new frmDanhSachQuaHan();
+            frm.GetTK(this.tentk,loaitk);
+            openChildForm(frm);
             hideSubMenu();
         }
         #endregion

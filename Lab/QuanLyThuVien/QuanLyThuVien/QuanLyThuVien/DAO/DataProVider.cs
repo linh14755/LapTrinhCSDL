@@ -14,7 +14,8 @@ namespace QuanLyThuVien.DAO
 
         public static DataProvider Instance { get => instance; set => instance = value; }
 
-        string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=QuanLyThuVien;Integrated Security=True";
+        //string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=QuanLyThuVien;Integrated Security=True";
+        string connectSRT = @"Data Source=.;Initial Catalog=QuanLyThuVien;Integrated Security=True";
 
         public DataTable ExcuteQuery(string query, object[] paramaters = null)
         {

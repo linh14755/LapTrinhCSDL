@@ -29,7 +29,7 @@ namespace QuanLyThuVien
         }
         public void Loads()
         {
-            LoadDanhSachLV(DocGiaDAO.Instance.LoadDocGia());
+            LoadDanhSachLV(DocGiaDAO.Instance.GetList());
         }
         public DocGia GetConTrols()
         {
@@ -71,7 +71,7 @@ namespace QuanLyThuVien
             {
                 ListViewItem lvitem = new ListViewItem(dg.madg);
                 lvitem.SubItems.Add(dg.hoten);
-                lvitem.SubItems.Add(dg.ngaysinh.ToString());
+                lvitem.SubItems.Add(dg.ngaysinh.ToShortDateString().ToString());
                 string gt = "Nam";
                 if (dg.gioitinh == false)
                     gt = "Nữ";

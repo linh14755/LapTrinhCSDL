@@ -96,7 +96,7 @@
     <Compile Include="DAO\DocGiaDAO.cs" />
     <Compile Include="DAO\MuonTraDAO.cs" />
     <Compile Include="DTO\Account.cs" />
-    <Compile Include="DTO\Book.cs" />
+    <Compile Include="DTO\Sach.cs" />
     <Compile Include="DTO\DocGia.cs" />
     <Compile Include="DTO\MuonSach.cs" />
     <Compile Include="frmDangKyThuThu.cs">

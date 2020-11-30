@@ -93,6 +93,7 @@
             this.btnThoat.Size = new System.Drawing.Size(114, 50);
             this.btnThoat.TabIndex = 46;
             this.btnThoat.Text = "Quay lại";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // panel4
             // 

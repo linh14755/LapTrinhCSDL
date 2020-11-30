@@ -17,8 +17,9 @@ namespace QuanLyThuVien.DTO
         public string xacnhantra { get; set; }
         public string soluong { get; set; }
         public string ghichu { get; set; }
+        public int tienphat { get; set; }
         public MuonSach() { }
-        public MuonSach(string madg,string masach,string sophieumuon,DateTime ngaymuon,DateTime ngaytra, string xacnhantra, string soluong,string ghichu)
+        public MuonSach(string madg,string masach,string sophieumuon,DateTime ngaymuon,DateTime ngaytra, string xacnhantra, string soluong,string ghichu,int itenphat)
         {
             this.madg = madg;
             this.masach = masach;
@@ -28,6 +29,7 @@ namespace QuanLyThuVien.DTO
             this.xacnhantra = xacnhantra;
             this.soluong = soluong;
             this.ghichu = ghichu;
+            this.tienphat = tienphat;
         }
         public MuonSach(DataRow row)
         {
@@ -39,6 +41,7 @@ namespace QuanLyThuVien.DTO
             this.xacnhantra = row["xacnhantra"].ToString();
             this.soluong = row["soluong"].ToString();
             this.ghichu = row["ghichu"].ToString();
+            this.tienphat = Int32.Parse(row["tienphat"].ToString());
         }
         public MuonSach(DataRowView row)
         {
@@ -50,6 +53,7 @@ namespace QuanLyThuVien.DTO
             this.xacnhantra = row["xacnhantra"].ToString();
             this.soluong = row["soluong"].ToString();
             this.ghichu = row["ghichu"].ToString();
+            this.tienphat = Int32.Parse(row["tienphat"].ToString());
         }
     }
 }

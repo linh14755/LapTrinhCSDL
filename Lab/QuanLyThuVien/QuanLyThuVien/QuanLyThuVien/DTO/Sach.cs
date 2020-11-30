@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.DTO
 {
-    public class Book
+    public class Sach
     {
         public string masach { get; set; }
         public string tensach { get; set; }
@@ -18,8 +18,8 @@ namespace QuanLyThuVien.DTO
         public string sl { get; set; }
         public DateTime ngaynhap { get; set; }
         public string ghichu { get; set; }
-        public Book() { }
-        public Book(string ms, string tensach, string tentg, string tenlv, string tennxb, DateTime namxb, string sl, DateTime ngaynhap, string ghichu)
+        public Sach() { }
+        public Sach(string ms, string tensach, string tentg, string tenlv, string tennxb, DateTime namxb, string sl, DateTime ngaynhap, string ghichu)
         {
             this.masach = ms;
             this.tensach = tensach;
@@ -31,7 +31,7 @@ namespace QuanLyThuVien.DTO
             this.ngaynhap = ngaynhap;
             this.ghichu = ghichu;
         }
-        public Book(DataRow row)
+        public Sach(DataRow row)
         {
             this.masach = row["masach"].ToString();
             this.tensach = row["tensach"].ToString();
@@ -43,7 +43,7 @@ namespace QuanLyThuVien.DTO
             this.ngaynhap = DateTime.Parse(row["ngaynhap"].ToString());
             this.ghichu = row["ghichu"].ToString();
         }
-        public Book(DataRowView row)
+        public Sach(DataRowView row)
         {
             this.masach = row["masach"].ToString();
             this.tensach = row["tensach"].ToString();
