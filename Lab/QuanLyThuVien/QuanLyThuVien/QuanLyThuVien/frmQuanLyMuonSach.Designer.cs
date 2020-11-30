@@ -86,37 +86,37 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã Phiếu Mượn";
+            this.columnHeader1.Text = "Mã phiếu";
             this.columnHeader1.Width = 133;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Mã Đọc Giả";
+            this.columnHeader2.Text = "Mã đọc giả";
             this.columnHeader2.Width = 133;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Mã Sách";
+            this.columnHeader3.Text = "Mã sách";
             this.columnHeader3.Width = 147;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Ngày Mượn";
+            this.columnHeader4.Text = "Ngày mượn";
             this.columnHeader4.Width = 150;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Ngày Trả";
+            this.columnHeader5.Text = "Ngày trả";
             this.columnHeader5.Width = 107;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Số Lượng";
+            this.columnHeader6.Text = "Số lượng";
             this.columnHeader6.Width = 99;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Ghi Chú";
+            this.columnHeader7.Text = "Ghi chú";
             this.columnHeader7.Width = 350;
             // 
             // groupBox4

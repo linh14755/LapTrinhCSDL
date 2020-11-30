@@ -173,27 +173,27 @@ namespace QuanLyThuVien
             }
         }
 
-        private void btngiahan_Click(object sender, EventArgs e)
-        {
-            //giahan
-            if (txbmaphieu.Text == "") return;
-            frmGiaHan frm = new frmGiaHan();
+        //private void btngiahan_Click(object sender, EventArgs e)
+        //{
+        //    //giahan
+        //    if (txbmaphieu.Text == "") return;
+        //    frmGiaHan frm = new frmGiaHan();
 
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                DateTime dategiahan = frm.Getdatetime();
-                if (KTngayquahan(dategiahan))
-                {
-                    MuonTraDAO.instance.GianHan(dategiahan, txbmaphieu.Text);
-                    MessageBoxCT("Gian Hạn Thành Công");
-                }
-                else
-                {
-                    MessageBoxCT("Gia hạn thất bại, ngày nhập không hợp lệ");
-                }
-            }
-            Loads();
-        }
+        //    if (frm.ShowDialog() == DialogResult.OK)
+        //    {
+        //        DateTime dategiahan = frm.Getdatetime();
+        //        if (KTngayquahan(dategiahan))
+        //        {
+        //            MuonTraDAO.instance.GianHan(dategiahan, txbmaphieu.Text);
+        //            MessageBoxCT("Gian Hạn Thành Công");
+        //        }
+        //        else
+        //        {
+        //            MessageBoxCT("Gia hạn thất bại, ngày nhập không hợp lệ");
+        //        }
+        //    }
+        //    Loads();
+        //}
 
         private void lvmuonsach_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -203,14 +203,29 @@ namespace QuanLyThuVien
             MuonSach m = list[0];
 
             LoadConTrols(m);
+
+
+            //tổng tiền phạt
+            var ls = MuonTraDAO.instance.GetDSQuaHan(cbbmadg.Text);
+            if (ls.Count > 0)
+            {
+                tongtien = 0;
+                foreach (var item in ls)
+                {
+                    tongtien += item.tienphat;
+                }
+            }
+
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txbtongtien.Text = tongtien.ToString("c", culture);
+            lbtongiten.Text = "Tổng tiền phạt ĐG:" + cbbmadg.Text;
         }
         private void btnHome_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
         #endregion
-
-
     }
 }

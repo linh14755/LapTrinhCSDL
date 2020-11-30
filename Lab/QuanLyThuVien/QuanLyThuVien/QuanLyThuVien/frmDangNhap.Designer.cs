@@ -107,7 +107,7 @@
             this.txbTaiKhoan.Size = new System.Drawing.Size(220, 28);
             this.txbTaiKhoan.TabIndex = 0;
             this.txbTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbTaiKhoan.TextName = "linh";
+            this.txbTaiKhoan.TextName = "Tài khoản";
             // 
             // txbMatKhau
             // 
@@ -129,7 +129,7 @@
             this.txbMatKhau.Size = new System.Drawing.Size(220, 27);
             this.txbMatKhau.TabIndex = 1;
             this.txbMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbMatKhau.TextName = "1";
+            this.txbMatKhau.TextName = "Mật khẩu";
             // 
             // panel1
             // 

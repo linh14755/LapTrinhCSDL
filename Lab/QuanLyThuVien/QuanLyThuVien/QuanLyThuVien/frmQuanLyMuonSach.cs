@@ -25,7 +25,7 @@ namespace QuanLyThuVien
         #region Methods
         private void Loads()
         {
-            LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+            LoadDanhSachLV(MuonTraDAO.instance.GetList());
             LoadMaDG();
             LoadMaSach();
         }
@@ -112,7 +112,7 @@ namespace QuanLyThuVien
 
         private void txbTim_TextChanged(object sender, EventArgs e)
         {
-            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach");
+            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where XacNhanTra = N'0'");
             if (lst == null) return;
             int n;
             if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) && int.TryParse(txbTim.Text, out n))
@@ -135,7 +135,7 @@ namespace QuanLyThuVien
             }
             else
             {
-                LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+                LoadDanhSachLV(MuonTraDAO.instance.GetList());
             }
         }
 
@@ -152,7 +152,7 @@ namespace QuanLyThuVien
                         MessageBox.Show("Cho Mượn Thành Công \n Tên người mượn: " + txbtendocgia.Text + " \n Tên Sách: " + txbTenSach.Text + "", "Thông Báo");
                     else
                         MessageBoxCT("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
-                    LoadDanhSachLV(MuonTraDAO.instance.GetListMuonTra());
+                    LoadDanhSachLV(MuonTraDAO.instance.GetList());
                 }
                 else
                     MessageBox.Show("Một đọc giả không được mượn quá 2 quyển sách cùng loại\n Và không quá 4 cuốn sách");
