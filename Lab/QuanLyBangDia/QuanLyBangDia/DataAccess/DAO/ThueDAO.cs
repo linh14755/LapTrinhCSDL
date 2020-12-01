@@ -1,0 +1,62 @@
+﻿using DataAccess.DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess.DAO
+{
+   public class ThueDAO
+    {
+        public static ThueDAO instance = new ThueDAO();
+        public ThueDAO() { }
+        public Thue GetBDByID(string id)
+        {
+            var data = DataProvider.instance.ExcuteQuery("select * from Thue where Luot = " + id + "");
+            foreach (DataRow row in data.Rows)
+            {
+                Thue k = new Thue(row);
+                if (k.luot == id)
+                    return k;
+            }
+            return null;
+        }
+        public bool Insert(Thue k)
+        {
+            string ngaythue = Convert.ToDateTime(k.ngaythue).ToString("yyyy-MM-dd");
+            string ngaytra = Convert.ToDateTime(k.ngaytra).ToString("yyyy-MM-dd");
+
+            int result = DataProvider.instance.ExcuteNonQuery(string.Format("exec USP_InsertThue {0} , {1} , {2} , '{3}' , '{4}' , {5}", k.mabd, k.makh, k.tiencoc, ngaythue, ngaytra, k.tongtien));
+            return result > 0;
+        }
+        public bool Update(Thue k)
+        {
+            if (k.mabd == "0") return false;
+
+            string ngaythue = Convert.ToDateTime(k.ngaythue).ToString("yyyy-MM-dd");
+            string ngaytra = Convert.ToDateTime(k.ngaytra).ToString("yyyy-MM-dd");
+            int result = DataProvider.instance.ExcuteNonQuery(string.Format("exec USP_UpdateThue {0} , {1} , {2} , {3}, '{4}' , '{5}' , {6}", k.luot, k.mabd, k.makh, k.tiencoc, k.ngaythue, k.ngaytra,k.tongtien));
+            return result > 0;
+        }
+        public bool Delete(string luot)
+        {
+            if (luot == "0") return false;
+            int result = DataProvider.instance.ExcuteNonQuery("delete Thue where Luot = " + luot + "");
+            return result > 0;
+        }
+
+        public List<Thue> GetList()
+        {
+            List<Thue> l = new List<Thue>();
+            var data = DataProvider.instance.ExcuteQuery("select * from Thue where status = 0");
+            foreach (DataRow row in data.Rows)
+            {
+                Thue k = new Thue(row);
+                l.Add(k);
+            }
+            return l;
+        }
+    }
+}

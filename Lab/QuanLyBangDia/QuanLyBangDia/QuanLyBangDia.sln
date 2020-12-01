@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyBangDia", "QuanLyBangDia\QuanLyBangDia.csproj", "{043ECDAA-A610-4E48-9121-577E95679D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{4F921372-CC60-4884-86F6-5C734F584AF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{043ECDAA-A610-4E48-9121-577E95679D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043ECDAA-A610-4E48-9121-577E95679D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043ECDAA-A610-4E48-9121-577E95679D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043ECDAA-A610-4E48-9121-577E95679D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F921372-CC60-4884-86F6-5C734F584AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F921372-CC60-4884-86F6-5C734F584AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F921372-CC60-4884-86F6-5C734F584AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F921372-CC60-4884-86F6-5C734F584AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01F79093-C119-4521-99DA-526DA9E2BDA0}
+	EndGlobalSection
+EndGlobal
