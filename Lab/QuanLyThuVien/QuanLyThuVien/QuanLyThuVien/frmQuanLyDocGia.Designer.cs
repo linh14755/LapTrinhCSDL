@@ -170,7 +170,7 @@
             this.txbTim.Location = new System.Drawing.Point(449, 21);
             this.txbTim.Name = "txbTim";
             this.txbTim.Size = new System.Drawing.Size(235, 27);
-            this.txbTim.TabIndex = 6;
+            this.txbTim.TabIndex = 2;
             this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged_1);
             // 
             // rdTenDocGia
@@ -179,7 +179,7 @@
             this.rdTenDocGia.Location = new System.Drawing.Point(284, 22);
             this.rdTenDocGia.Name = "rdTenDocGia";
             this.rdTenDocGia.Size = new System.Drawing.Size(124, 24);
-            this.rdTenDocGia.TabIndex = 5;
+            this.rdTenDocGia.TabIndex = 1;
             this.rdTenDocGia.TabStop = true;
             this.rdTenDocGia.Text = "Tên Đọc Giả";
             this.rdTenDocGia.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             this.rdMaDocGia.Location = new System.Drawing.Point(139, 21);
             this.rdMaDocGia.Name = "rdMaDocGia";
             this.rdMaDocGia.Size = new System.Drawing.Size(119, 24);
-            this.rdMaDocGia.TabIndex = 4;
+            this.rdMaDocGia.TabIndex = 0;
             this.rdMaDocGia.TabStop = true;
             this.rdMaDocGia.Text = "Mã Đọc Giả";
             this.rdMaDocGia.UseVisualStyleBackColor = true;
@@ -205,9 +205,9 @@
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.txbLop);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(512, 17);
+            this.panel5.Location = new System.Drawing.Point(462, 17);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 226);
+            this.panel5.Size = new System.Drawing.Size(400, 226);
             this.panel5.TabIndex = 29;
             // 
             // txbGhiChu
@@ -215,8 +215,8 @@
             this.txbGhiChu.Location = new System.Drawing.Point(161, 116);
             this.txbGhiChu.Multiline = true;
             this.txbGhiChu.Name = "txbGhiChu";
-            this.txbGhiChu.Size = new System.Drawing.Size(186, 98);
-            this.txbGhiChu.TabIndex = 13;
+            this.txbGhiChu.Size = new System.Drawing.Size(230, 98);
+            this.txbGhiChu.TabIndex = 3;
             // 
             // label6
             // 
@@ -231,8 +231,8 @@
             // 
             this.txbEmail.Location = new System.Drawing.Point(161, 80);
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(186, 27);
-            this.txbEmail.TabIndex = 11;
+            this.txbEmail.Size = new System.Drawing.Size(230, 27);
+            this.txbEmail.TabIndex = 2;
             // 
             // label7
             // 
@@ -247,8 +247,8 @@
             // 
             this.txbDiaChi.Location = new System.Drawing.Point(161, 42);
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(186, 27);
-            this.txbDiaChi.TabIndex = 9;
+            this.txbDiaChi.Size = new System.Drawing.Size(230, 27);
+            this.txbDiaChi.TabIndex = 1;
             // 
             // label8
             // 
@@ -263,8 +263,8 @@
             // 
             this.txbLop.Location = new System.Drawing.Point(161, 6);
             this.txbLop.Name = "txbLop";
-            this.txbLop.Size = new System.Drawing.Size(186, 27);
-            this.txbLop.TabIndex = 7;
+            this.txbLop.Size = new System.Drawing.Size(230, 27);
+            this.txbLop.TabIndex = 0;
             // 
             // label5
             // 
@@ -292,15 +292,15 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(39, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 226);
+            this.panel1.Size = new System.Drawing.Size(400, 226);
             this.panel1.TabIndex = 28;
             // 
             // txbMatKhau
             // 
             this.txbMatKhau.Location = new System.Drawing.Point(160, 187);
             this.txbMatKhau.Name = "txbMatKhau";
-            this.txbMatKhau.Size = new System.Drawing.Size(187, 27);
-            this.txbMatKhau.TabIndex = 18;
+            this.txbMatKhau.Size = new System.Drawing.Size(230, 27);
+            this.txbMatKhau.TabIndex = 5;
             // 
             // label10
             // 
@@ -315,8 +315,8 @@
             // 
             this.txbTaiKhoan.Location = new System.Drawing.Point(160, 150);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
-            this.txbTaiKhoan.Size = new System.Drawing.Size(187, 27);
-            this.txbTaiKhoan.TabIndex = 16;
+            this.txbTaiKhoan.Size = new System.Drawing.Size(230, 27);
+            this.txbTaiKhoan.TabIndex = 4;
             // 
             // label9
             // 
@@ -330,10 +330,10 @@
             // rdNu
             // 
             this.rdNu.AutoSize = true;
-            this.rdNu.Location = new System.Drawing.Point(247, 117);
+            this.rdNu.Location = new System.Drawing.Point(284, 117);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(51, 24);
-            this.rdNu.TabIndex = 14;
+            this.rdNu.TabIndex = 3;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
             // 
@@ -344,7 +344,7 @@
             this.rdNam.Location = new System.Drawing.Point(171, 117);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(65, 24);
-            this.rdNam.TabIndex = 13;
+            this.rdNam.TabIndex = 2;
             this.rdNam.TabStop = true;
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
@@ -364,8 +364,8 @@
             this.dtpkNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkNgaySinh.Location = new System.Drawing.Point(161, 78);
             this.dtpkNgaySinh.Name = "dtpkNgaySinh";
-            this.dtpkNgaySinh.Size = new System.Drawing.Size(187, 27);
-            this.dtpkNgaySinh.TabIndex = 11;
+            this.dtpkNgaySinh.Size = new System.Drawing.Size(229, 27);
+            this.dtpkNgaySinh.TabIndex = 1;
             // 
             // label3
             // 
@@ -380,8 +380,8 @@
             // 
             this.txbHoTen.Location = new System.Drawing.Point(160, 42);
             this.txbHoTen.Name = "txbHoTen";
-            this.txbHoTen.Size = new System.Drawing.Size(187, 27);
-            this.txbHoTen.TabIndex = 9;
+            this.txbHoTen.Size = new System.Drawing.Size(230, 27);
+            this.txbHoTen.TabIndex = 0;
             // 
             // label2
             // 
@@ -397,7 +397,7 @@
             this.txbdocgia.Location = new System.Drawing.Point(160, 9);
             this.txbdocgia.Name = "txbdocgia";
             this.txbdocgia.ReadOnly = true;
-            this.txbdocgia.Size = new System.Drawing.Size(187, 27);
+            this.txbdocgia.Size = new System.Drawing.Size(230, 27);
             this.txbdocgia.TabIndex = 7;
             // 
             // label1
@@ -434,7 +434,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
             this.btnXoa.Size = new System.Drawing.Size(114, 50);
-            this.btnXoa.TabIndex = 43;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
@@ -452,7 +452,7 @@
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.ShadowDecoration.Parent = this.btnCapNhat;
             this.btnCapNhat.Size = new System.Drawing.Size(114, 50);
-            this.btnCapNhat.TabIndex = 42;
+            this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
             // 
@@ -470,7 +470,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
             this.btnThem.Size = new System.Drawing.Size(114, 50);
-            this.btnThem.TabIndex = 41;
+            this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
@@ -488,7 +488,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.Parent = this.btnHome;
             this.btnHome.Size = new System.Drawing.Size(114, 50);
-            this.btnHome.TabIndex = 44;
+            this.btnHome.TabIndex = 3;
             this.btnHome.Text = "Quay lại";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
             // 

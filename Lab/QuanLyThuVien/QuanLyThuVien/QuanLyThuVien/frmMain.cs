@@ -172,8 +172,18 @@ namespace QuanLyThuVien
             openChildForm(frm);
             hideSubMenu();
         }
+
         #endregion
+
+        private void btnEqualizer_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKe());
+
+            hideSubMenu();
+        }
+
         #endregion
+
 
     }
 }

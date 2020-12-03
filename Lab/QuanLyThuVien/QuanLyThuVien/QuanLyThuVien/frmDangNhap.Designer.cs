@@ -54,7 +54,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(45, 45);
-            this.btnThoat.TabIndex = 5;
+            this.btnThoat.TabIndex = 0;
             this.btnThoat.Text = "X";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -163,7 +163,7 @@
             this.btndaangnhap.Name = "btndaangnhap";
             this.btndaangnhap.ShadowDecoration.Parent = this.btndaangnhap;
             this.btndaangnhap.Size = new System.Drawing.Size(220, 45);
-            this.btndaangnhap.TabIndex = 16;
+            this.btndaangnhap.TabIndex = 4;
             this.btndaangnhap.Text = "Đăng nhập";
             this.btndaangnhap.Click += new System.EventHandler(this.btndaangnhap_Click_1);
             // 

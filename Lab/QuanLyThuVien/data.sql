@@ -22,14 +22,14 @@ CREATE TABLE DocGia
 (
 	MADG INT IDENTITY PRIMARY KEY,
 	TAIKHOAN NVARCHAR(100),
-	MATkHAU NVARCHAR(100),
+	MATKHAU NVARCHAR(100),
 	HOTEN NVARCHAR(100),
 	NGAYSINH date,
 	GIOITINH bit,
 	SODT NVARCHAR(100),
 	DIACHI NVARCHAR(100),
 	EMAIL NVARCHAR(100),
-	GHICHU NVARCHAR(100) default null
+	GHICHU NVARCHAR(100) default null,
 )
 GO
 --Tao Bang TaiKhoan
@@ -55,7 +55,8 @@ CREATE TABLE MuonSach
 	NGAYTRA DATE,
 	XACNHANTRA INT DEFAULT 0, -- 0 LA CHUA TRA --1 DA TRA
 	GHICHU NVARCHAR(100) default null,
-	SOLUONG NVARCHAR(100) default null
+	SOLUONG NVARCHAR(100) default null,
+	TIENPHAT INT DEFAULT 0
 )
 
 GO
@@ -101,11 +102,40 @@ if(@soluong > 0)
 		--update sach
 		update	Sach set SOLUONG = SOLUONG - 1 where MASACH = @masach
 	end
-go
 
-select* from  DocGia 
-select* from  MuonSach
-select* from  TaiKhoan
-select* from  Sach
 go
-
+create proc USP_TraSach
+@sophieumuon int, @masach int
+as
+declare @soluong int
+select @soluong = SOLUONG  from Sach where MASACH = @masach
+	begin
+	--update MuonSach
+		update MuonSach set XacNhanTra = N'1' where SoPhieuMuon = @sophieumuon
+		--update sach
+		update	Sach set SOLUONG = SOLUONG + 1 where MASACH = @masach
+	end
+go
+alter proc USP_TraSach
+@sophieumuon int
+as
+declare @soluong int, @masach int
+select @masach = MASACH from MuonSach where SOPHIEUMUON = @sophieumuon
+select @soluong = SOLUONG  from Sach where MASACH = @masach
+	begin
+	--update MuonSach
+		update MuonSach set XacNhanTra = N'1' where SoPhieuMuon = @sophieumuon
+		--update sach
+		update	Sach set SOLUONG = SOLUONG + 1 where MASACH = @masach
+	end
+go
+select * from MuonSach
+select * from Sach
+select * from DocGia
+go
+create proc USP_GetListMuonSachByDateBorrow
+@datefrom date	, @dateto date
+as
+begin
+	select * from MuonSach where NGAYMUON between @datefrom and @dateto and XACNHANTRA = N'1'
+end

@@ -1,5 +1,4 @@
-﻿using DevExpress.ClipboardSource.SpreadsheetML;
-using QuanLyThuVien.DAO;
+﻿using QuanLyThuVien.DAO;
 using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
@@ -22,12 +21,14 @@ namespace QuanLyThuVien
             InitializeComponent();
             Loads();
             rdMaSach.Checked = true;
+            dtpnamxb.Value = DateTime.Now;
+            dtpngaynhap.Value = DateTime.Now;
         }
         #region MEthods
         
         public void Loads()
         {
-            LoadDanhSachLV(BookDAO.instance.GetList());
+            LoadDanhSachLV(SachDAO.instance.GetList());
         }
 
         public bool KTText()
@@ -188,7 +189,7 @@ namespace QuanLyThuVien
             var book = GetControls();
             if (KTText())
             {
-                if (BookDAO.instance.Insert(book))
+                if (SachDAO.instance.Insert(book))
                     MessageBoxCT("Thêm Thành Công");
                 else
                     MessageBoxCT("Thêm Thất Bại");
@@ -203,7 +204,7 @@ namespace QuanLyThuVien
             string id = txbMaSach.Text;
             if (id != "")
             {
-                if (BookDAO.instance.Delete(id))
+                if (SachDAO.instance.Delete(id))
                     MessageBoxCT("Xóa Thành Công");
                 else
                     MessageBoxCT("Phiếu mượn có loại sách này, không thể xóa");
@@ -216,7 +217,7 @@ namespace QuanLyThuVien
             var b = GetControls();
             if (b.tensach != "" && b.tennxb != "" && b.tentg != "")
             {
-                if (BookDAO.instance.Update(b))
+                if (SachDAO.instance.Update(b))
                     MessageBoxCT("Sửa Thành Công");
                 else
                     MessageBoxCT("Sửa Thất Bại");
@@ -227,7 +228,7 @@ namespace QuanLyThuVien
         {
             if (lvsach.SelectedItems.Count == 0) return;
             string id = lvsach.SelectedItems[0].Text;
-            var lst = BookDAO.instance.FindByID(id);
+            var lst = SachDAO.instance.FindByID(id);
             Sach d = lst[0];
             LoadConTrols(d);
         }

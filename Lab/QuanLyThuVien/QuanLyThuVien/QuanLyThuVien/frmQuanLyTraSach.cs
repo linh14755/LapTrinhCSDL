@@ -59,19 +59,7 @@ namespace QuanLyThuVien
                 return false;
             return true;
         }
-        //public MuonSach GetConTrols()
-        //{
-        //    MuonSach m = new MuonSach();
-        //    //m.sophieumuon = txbmaphieu.Text;
-        //    m.masach = cbbmasach.Text;
-        //    m.madg = cbbmadg.Text;
-        //    m.ngaymuon = dtpmuon.Value;
-        //    m.ngaytra = dtptra.Value;
-        //    m.xacnhantra = "0"; //khi muon auto chua tra 0
-        //    m.ghichu = txbghichu.Text;
 
-        //    return m;
-        //}
         public void LoadControls(MuonSach m)
         {
             txbmaphieu.Text = m.sophieumuon;
@@ -102,7 +90,7 @@ namespace QuanLyThuVien
         #region Events
         private void txbtim_TextChanged(object sender, EventArgs e)
         {
-            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where XacNhanTra = N'0'");
+            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where XacNhanTra = 0");
             if (lst == null) return;
             int n;
             if (txbtim.Text != "" && KTKytuDacBiet(txbtim.Text) && int.TryParse(txbtim.Text, out n))
@@ -132,10 +120,11 @@ namespace QuanLyThuVien
         private void btntrasach_Click(object sender, EventArgs e)
         {
             if (lvsach.SelectedItems.Count == 0) return;
-
-            var sophieu = lvsach.SelectedItems[0].Text;
-            MuonTraDAO.instance.TraSach(sophieu);
-            Loads();
+            frmTraSach frm = new frmTraSach(MuonTraDAO.instance.GetListByMaDG(txbmadocgia.Text));
+            if(frm.ShowDialog() == DialogResult.Cancel)
+            {
+                Loads();
+            }
         }
         private void lvsach_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -149,10 +138,6 @@ namespace QuanLyThuVien
         {
             this.Close();
         }
-
-
         #endregion
-
-        
     }
 }

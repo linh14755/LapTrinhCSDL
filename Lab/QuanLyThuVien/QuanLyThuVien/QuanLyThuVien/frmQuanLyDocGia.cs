@@ -184,19 +184,15 @@ namespace QuanLyThuVien
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            if (txbTaiKhoan.Text.Contains("docgia"))
+            var dg = GetConTrols();
+            if (dg.hoten != "" && dg.matkhau != "" && dg.sodt != "")
             {
-                var dg = GetConTrols();
-                if (dg.hoten != "" && dg.matkhau != "" && dg.sodt != "")
-                {
-                    if (DocGiaDAO.Instance.Insert(dg))
-                        MessageBoxCT("Thêm Thành Công");
-                    else
-                        MessageBoxCT("Tài khoản đã có trong danh sách");
-                    Loads();
-                }
+                if (DocGiaDAO.Instance.Insert(dg))
+                    MessageBoxCT("Thêm Thành Công");
+                else
+                    MessageBoxCT("Tài khoản đã có trong danh sách");
+                Loads();
             }
-            else MessageBoxCT("Tài khoản phải có dạng docgia...");
         }
 
         private void lvdocgia_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -213,13 +209,8 @@ namespace QuanLyThuVien
             this.Close();
         }
 
-
-
-
-
-
         #endregion
 
-        
+
     }
 }

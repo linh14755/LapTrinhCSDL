@@ -73,7 +73,7 @@
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.ShadowDecoration.Parent = this.btnDoiMatKhau;
             this.btnDoiMatKhau.Size = new System.Drawing.Size(114, 50);
-            this.btnDoiMatKhau.TabIndex = 45;
+            this.btnDoiMatKhau.TabIndex = 0;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click_1);
             // 
@@ -91,7 +91,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
             this.btnThoat.Size = new System.Drawing.Size(114, 50);
-            this.btnThoat.TabIndex = 46;
+            this.btnThoat.TabIndex = 1;
             this.btnThoat.Text = "Quay lại";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
@@ -109,7 +109,7 @@
             this.txbNhapLaiMatKhau.Location = new System.Drawing.Point(203, 4);
             this.txbNhapLaiMatKhau.Name = "txbNhapLaiMatKhau";
             this.txbNhapLaiMatKhau.Size = new System.Drawing.Size(327, 22);
-            this.txbNhapLaiMatKhau.TabIndex = 1;
+            this.txbNhapLaiMatKhau.TabIndex = 0;
             this.txbNhapLaiMatKhau.UseSystemPasswordChar = true;
             // 
             // label4
@@ -135,7 +135,7 @@
             this.txbMatKhauMoi.Location = new System.Drawing.Point(203, 4);
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(327, 22);
-            this.txbMatKhauMoi.TabIndex = 1;
+            this.txbMatKhauMoi.TabIndex = 0;
             this.txbMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // label3
@@ -161,7 +161,7 @@
             this.txbMatKhauCu.Location = new System.Drawing.Point(203, 4);
             this.txbMatKhauCu.Name = "txbMatKhauCu";
             this.txbMatKhauCu.Size = new System.Drawing.Size(327, 22);
-            this.txbMatKhauCu.TabIndex = 1;
+            this.txbMatKhauCu.TabIndex = 0;
             this.txbMatKhauCu.UseSystemPasswordChar = true;
             // 
             // label2
@@ -188,7 +188,7 @@
             this.txbtaikhoan.Name = "txbtaikhoan";
             this.txbtaikhoan.ReadOnly = true;
             this.txbtaikhoan.Size = new System.Drawing.Size(327, 22);
-            this.txbtaikhoan.TabIndex = 6;
+            this.txbtaikhoan.TabIndex = 0;
             // 
             // label1
             // 

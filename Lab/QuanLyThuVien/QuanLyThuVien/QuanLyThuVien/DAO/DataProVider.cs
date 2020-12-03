@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace QuanLyThuVien.DAO
 {
@@ -14,8 +15,7 @@ namespace QuanLyThuVien.DAO
 
         public static DataProvider Instance { get => instance; set => instance = value; }
 
-        //string connectSRT = @"Data Source=LAPTOP-AB3AI976;Initial Catalog=QuanLyThuVien;Integrated Security=True";
-        string connectSRT = @"Data Source=.;Initial Catalog=QuanLyThuVien;Integrated Security=True";
+        public static string connectSRT = ConfigurationManager.ConnectionStrings["QLTV"].ConnectionString;
 
         public DataTable ExcuteQuery(string query, object[] paramaters = null)
         {

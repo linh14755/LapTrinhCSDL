@@ -280,6 +280,7 @@
             this.btnEqualizer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEqualizer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEqualizer.UseVisualStyleBackColor = false;
+            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // btnqunlymuontra
             // 
@@ -433,10 +434,10 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.White;
+            this.panelChildForm.Controls.Add(this.label1);
             this.panelChildForm.Controls.Add(this.label4);
             this.panelChildForm.Controls.Add(this.label3);
             this.panelChildForm.Controls.Add(this.label2);
-            this.panelChildForm.Controls.Add(this.label1);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(4);
@@ -475,10 +476,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 204);
+            this.label1.Location = new System.Drawing.Point(193, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(546, 49);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Đề Tài Quản Lý Thư Viện";
             // 
             // frmMain
@@ -522,7 +523,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -537,5 +537,6 @@
         private System.Windows.Forms.Button btnTaikhoan;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

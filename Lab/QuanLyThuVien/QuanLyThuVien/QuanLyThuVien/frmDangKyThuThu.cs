@@ -96,14 +96,14 @@ namespace QuanLyThuVien
             //loaitk = true ->> thu thu = false docgia
             if (!loaitk)
             {
-                List<DocGia> lst = DocGiaDAO.Instance.GetListDGByTK(this.tk);
+                List<DocGia> lst = DocGiaDAO.Instance.GetListByTK(this.tk);
 
                 ThietLapControlsDG(lst[0]);
                 this.Text = "Cập nhật thông tin";
             }
             else
             {
-                List<Account> lst = AccountDAO.Instance.GetListAccountByTK(this.tk);
+                List<Account> lst = AccountDAO.Instance.GetListByTK(this.tk);
 
                 ThietLapControls(lst[0]);
                 this.Text = "Cập nhật thông tin";
@@ -153,7 +153,7 @@ namespace QuanLyThuVien
             else
             {
                 var ac = GetConTrols();
-                if (AccountDAO.Instance.UpdateAccount(ac))
+                if (AccountDAO.Instance.Update(ac))
                 {
                     MessageBoxCT("Sửa thành công");
                     ThietLapControls(ac);
@@ -180,7 +180,7 @@ namespace QuanLyThuVien
                         ac.taikhoan = txbTaiKhoan.Text;
                         ac.matkau = txbMatKhau.Text;
 
-                        AccountDAO.Instance.InsertAccount(ac);
+                        AccountDAO.Instance.Insert(ac);
                         MessageBoxCT("Đăng Ký Thành Công");
                         this.Close();
                     }

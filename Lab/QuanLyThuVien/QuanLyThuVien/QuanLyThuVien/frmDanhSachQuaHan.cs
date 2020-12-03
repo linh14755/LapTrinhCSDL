@@ -1,6 +1,4 @@
-﻿using DevExpress.ClipboardSource.SpreadsheetML;
-using DevExpress.Data.Mask;
-using QuanLyThuVien.DAO;
+﻿using QuanLyThuVien.DAO;
 using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
@@ -39,7 +37,7 @@ namespace QuanLyThuVien
         }
         public void Loads()
         {
-            var lst = DocGiaDAO.Instance.GetListDGByTK(tk);
+            var lst = DocGiaDAO.Instance.GetListByTK(tk);
             List<MuonSach> dsqh = new List<MuonSach>();
             if (lst.Count == 0)
             {
@@ -144,7 +142,7 @@ namespace QuanLyThuVien
         private void txbTim_TextChanged_1(object sender, EventArgs e)
         {
             string datecurrent = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
-            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
+            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = 0");
 
             if (lst == null) return;
             int n;
@@ -172,28 +170,6 @@ namespace QuanLyThuVien
                 Loads();
             }
         }
-
-        //private void btngiahan_Click(object sender, EventArgs e)
-        //{
-        //    //giahan
-        //    if (txbmaphieu.Text == "") return;
-        //    frmGiaHan frm = new frmGiaHan();
-
-        //    if (frm.ShowDialog() == DialogResult.OK)
-        //    {
-        //        DateTime dategiahan = frm.Getdatetime();
-        //        if (KTngayquahan(dategiahan))
-        //        {
-        //            MuonTraDAO.instance.GianHan(dategiahan, txbmaphieu.Text);
-        //            MessageBoxCT("Gian Hạn Thành Công");
-        //        }
-        //        else
-        //        {
-        //            MessageBoxCT("Gia hạn thất bại, ngày nhập không hợp lệ");
-        //        }
-        //    }
-        //    Loads();
-        //}
 
         private void lvmuonsach_SelectedIndexChanged(object sender, EventArgs e)
         {

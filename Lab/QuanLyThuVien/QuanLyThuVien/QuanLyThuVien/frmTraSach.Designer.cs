@@ -38,6 +38,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btntrasach = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.txbtendg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lvsach
@@ -54,9 +55,9 @@
             this.lvsach.FullRowSelect = true;
             this.lvsach.GridLines = true;
             this.lvsach.HideSelection = false;
-            this.lvsach.Location = new System.Drawing.Point(0, 150);
+            this.lvsach.Location = new System.Drawing.Point(0, 121);
             this.lvsach.Name = "lvsach";
-            this.lvsach.Size = new System.Drawing.Size(722, 246);
+            this.lvsach.Size = new System.Drawing.Size(660, 217);
             this.lvsach.TabIndex = 31;
             this.lvsach.UseCompatibleStateImageBehavior = false;
             this.lvsach.View = System.Windows.Forms.View.Details;
@@ -105,13 +106,14 @@
             this.btntrasach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntrasach.ForeColor = System.Drawing.Color.White;
             this.btntrasach.HoverState.Parent = this.btntrasach;
-            this.btntrasach.Location = new System.Drawing.Point(248, 48);
+            this.btntrasach.Location = new System.Drawing.Point(180, 49);
             this.btntrasach.Margin = new System.Windows.Forms.Padding(2);
             this.btntrasach.Name = "btntrasach";
             this.btntrasach.ShadowDecoration.Parent = this.btntrasach;
             this.btntrasach.Size = new System.Drawing.Size(114, 50);
-            this.btntrasach.TabIndex = 47;
-            this.btntrasach.Text = "Trả sách";
+            this.btntrasach.TabIndex = 49;
+            this.btntrasach.Text = "Trả hết";
+            this.btntrasach.Click += new System.EventHandler(this.btntrasach_Click);
             // 
             // btnHome
             // 
@@ -122,27 +124,40 @@
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.HoverState.Parent = this.btnHome;
-            this.btnHome.Location = new System.Drawing.Point(366, 48);
+            this.btnHome.Location = new System.Drawing.Point(366, 49);
             this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.Parent = this.btnHome;
             this.btnHome.Size = new System.Drawing.Size(114, 50);
-            this.btnHome.TabIndex = 48;
-            this.btnHome.Text = "Quay lại";
+            this.btnHome.TabIndex = 50;
+            this.btnHome.Text = "Trả";
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // txbtendg
+            // 
+            this.txbtendg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbtendg.Location = new System.Drawing.Point(180, 13);
+            this.txbtendg.Name = "txbtendg";
+            this.txbtendg.Size = new System.Drawing.Size(300, 15);
+            this.txbtendg.TabIndex = 51;
+            this.txbtendg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(722, 396);
+            this.ClientSize = new System.Drawing.Size(660, 338);
+            this.Controls.Add(this.txbtendg);
             this.Controls.Add(this.btntrasach);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.lvsach);
+            this.MaximizeBox = false;
             this.Name = "frmTraSach";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTraSach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Trả sách";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -158,5 +173,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private Guna.UI2.WinForms.Guna2Button btntrasach;
         private Guna.UI2.WinForms.Guna2Button btnHome;
+        private System.Windows.Forms.TextBox txbtendg;
     }
 }

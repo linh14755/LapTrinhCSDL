@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyThuVien.DAO;
+using QuanLyThuVien.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,23 @@ namespace QuanLyThuVien
         public frmThongKe()
         {
             InitializeComponent();
+            rdNgayMuon.Checked = true;
+            dtpFromDate.Value = DateTime.Now;
+            dtpToDate.Value = DateTime.Now;
+            Loads();
+        }
+        private void Loads()
+        {
+            dataGridView1.DataSource = MuonTraDAO.instance.GetDSDaTra();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnThongKe_Click(object sender, EventArgs e)
         {
-            this.Close();
+            List<MuonSach> l = new List<MuonSach>();
+            if (rdNgayMuon.Checked) l = MuonTraDAO.instance.GetDSMuonTraByNgayMuon(dtpFromDate.Value, dtpToDate.Value);
+            if (rdNgayTra.Checked) l = MuonTraDAO.instance.GetDSMuonTraByNgayTra(dtpFromDate.Value, dtpToDate.Value);
+            dataGridView1.DataSource = l;
         }
+
     }
 }

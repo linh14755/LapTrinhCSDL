@@ -1,5 +1,4 @@
-﻿using DevExpress.ClipboardSource.SpreadsheetML;
-using QuanLyThuVien.DTO;
+﻿using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,21 +12,53 @@ namespace QuanLyThuVien.DAO
     {
         public static MuonTraDAO instance = new MuonTraDAO();
         public MuonTraDAO() { }
+        public List<MuonSach> GetDSMuonTraByNgayTra(DateTime datefrom, DateTime dateto)
+        {
+            List<MuonSach> l = new List<MuonSach>();
+            var data = DataProvider.instance.ExcuteQuery(string.Format("EXEC USP_GetDSMuonTraByNgayTra '{0}' , '{1}'", datefrom, dateto));
+            foreach (DataRow row in data.Rows)
+            {
+                MuonSach m = new MuonSach(row);
+                l.Add(m);
+            }
+            return l;
+        }
+        public List<MuonSach> GetDSMuonTraByNgayMuon(DateTime datefrom, DateTime dateto)
+        {
+            List<MuonSach> l = new List<MuonSach>();
+            var data = DataProvider.instance.ExcuteQuery(String.Format("EXEC USP_GetDSMuonTraByNgayMuon '{0}' , '{1}'", datefrom, dateto));
+            foreach (DataRow row in data.Rows)
+            {
+                MuonSach m = new MuonSach(row);
+                l.Add(m);
+            }
+            return l;
+        }
+        public List<MuonSach> GetDSDaTra()
+        {
+            List<MuonSach> l = new List<MuonSach>();
+            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where XACNHANTRA = 1");
+            foreach (DataRow row in data.Rows)
+            {
+                MuonSach m = new MuonSach(row);
+                l.Add(m);
+            }
+            return l;
+        }
         public bool TraSach(string sophieumuon)
         {
-            int result = DataProvider.instance.ExcuteNonQuery("exec USP_TraSach " + sophieumuon + "");
+            int result = DataProvider.instance.ExcuteNonQuery("exec USP_TraSach @sophieumuon ", new object[] { sophieumuon });
             return result > 0;
         }
         public bool GianHan(DateTime ngaytra, string id)
         {
-            string ngaytranew = Convert.ToDateTime(ngaytra).ToString("yyyy-MM-dd");
-            int result = DataProvider.instance.ExcuteNonQuery("update MuonSach set NgayTra = '" + ngaytranew + "' where sophieumuon = N'" + id + "'");
+            int result = DataProvider.instance.ExcuteNonQuery(string.Format("update MuonSach set NgayTra = '{0}' where sophieumuon = {1}", ngaytra, id));
             return result > 0;
         }
         public List<MuonSach> GetListByMaDG(string madg)
         {
             List<MuonSach> l = new List<MuonSach>();
-            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "'");
+            var data = DataProvider.instance.ExcuteQuery(string.Format("select * from MuonSach where MaDG = N'{0}' and XacNhanTra = 0",madg));
             foreach (DataRow row in data.Rows)
             {
                 MuonSach m = new MuonSach(row);
@@ -38,7 +69,7 @@ namespace QuanLyThuVien.DAO
         public List<MuonSach> FindByID(string sophieumuon)
         {
             List<MuonSach> l = new List<MuonSach>();
-            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where SoPhieuMuon = N'" + sophieumuon + "'");
+            var data = DataProvider.instance.ExcuteQuery(string.Format("select * from MuonSach where SoPhieuMuon = N'{0}'",sophieumuon));
             foreach (DataRow row in data.Rows)
             {
                 MuonSach m = new MuonSach(row);
@@ -55,7 +86,7 @@ namespace QuanLyThuVien.DAO
 
             if (madg != null)
             {
-                var dsquahan = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0' and MaDG = " + madg + "");
+                var dsquahan = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = 0 and MaDG = " + madg + "");
                 //cập nhật tiền phạt
                 foreach (DataRow row1 in dsquahan.Rows)
                 {
@@ -67,7 +98,7 @@ namespace QuanLyThuVien.DAO
                     DataProvider.instance.ExcuteNonQuery("update MuonSach set TIENPHAT = @tienphat where SoPhieuMuon = @sopm", new object[] { tienphat, m.sophieumuon });
                 }
 
-                var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where NgayTra < '" + datecurrent + "' and xacnhantra = N'0' and MaDG = " + madg + "");
+                var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where NgayTra < '" + datecurrent + "' and xacnhantra = 0 and MaDG = " + madg + "");
                 foreach (DataRow row in data.Rows)
                 {
                     //tiền phạt
@@ -78,7 +109,7 @@ namespace QuanLyThuVien.DAO
             }
             else
             {
-                var dsquahan = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = N'0'");
+                var dsquahan = DataProvider.instance.ExcuteQuery("select * from MuonSach where ngaytra < '" + datecurrent + "' and xacnhantra = 0");
                 //cập nhật tiền phạt
                 foreach (DataRow row1 in dsquahan.Rows)
                 {
@@ -90,7 +121,7 @@ namespace QuanLyThuVien.DAO
                     DataProvider.instance.ExcuteNonQuery("update MuonSach set TIENPHAT = @tienphat where SoPhieuMuon = @sopm", new object[] { tienphat, m.sophieumuon });
                 }
 
-                var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where NgayTra < '" + datecurrent + "' and xacnhantra = N'0'");
+                var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where NgayTra < '" + datecurrent + "' and xacnhantra = 0");
                 foreach (DataRow row in data.Rows)
                 {
                     //tiền phạt
@@ -102,8 +133,8 @@ namespace QuanLyThuVien.DAO
         }
         public bool KiemTraDocGia(string madg, string masach) //mot doc gia khong duoc muon qua 3 sach
         {
-            var result = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "' and MaSach = N'" + masach + "' and XacNhanTra = N'0'");
-            var result2 = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "'and XacNhanTra = N'0'");
+            var result = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "' and MaSach = N'" + masach + "' and XacNhanTra = 0");
+            var result2 = DataProvider.instance.ExcuteQuery("select * from MuonSach where MaDG = N'" + madg + "'and XacNhanTra = 0");
             return result.Rows.Count < 2 && result2.Rows.Count < 4;
         }
         public bool MuonSach(MuonSach m)
@@ -114,11 +145,7 @@ namespace QuanLyThuVien.DAO
                 if (row[0].ToString() == "0")
                     return false;
             }
-
-            string ngaymuon = Convert.ToDateTime(m.ngaymuon).ToString("yyyy-MM-dd");
-            string ngaytra = Convert.ToDateTime(m.ngaytra).ToString("yyyy-MM-dd");
-
-            string query = "exec USP_MuonSach " + m.madg + ", " + m.masach + ", '" + ngaymuon + "', '" + ngaytra + "', " + m.xacnhantra + " , N'" + m.ghichu + "'";
+            string query = "exec USP_MuonSach " + m.madg + ", " + m.masach + ", '" + m.ngaymuon + "', '" + m.ngaytra + "', " + m.xacnhantra + " , N'" + m.ghichu + "'";
             int result = DataProvider.instance.ExcuteNonQuery(query);
             return result > 0;
         }
@@ -126,7 +153,7 @@ namespace QuanLyThuVien.DAO
         public List<MuonSach> GetList()
         {
             List<MuonSach> lst = new List<MuonSach>();
-            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where xacnhantra = '0'");
+            var data = DataProvider.instance.ExcuteQuery("select * from MuonSach where xacnhantra = 0");
             foreach (DataRow row in data.Rows)
             {
                 MuonSach m = new MuonSach(row);

@@ -92,7 +92,7 @@ namespace QuanLyThuVien
         }
         public void LoadMaSach()
         {
-            List<Sach> lst = BookDAO.instance.GetList();
+            List<Sach> lst = SachDAO.instance.GetList();
             cbbmasach.DataSource = lst;
             cbbmasach.DisplayMember = "masach";
             cbbmasach.ValueMember = "tensach";
@@ -112,7 +112,7 @@ namespace QuanLyThuVien
 
         private void txbTim_TextChanged(object sender, EventArgs e)
         {
-            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where XacNhanTra = N'0'");
+            var lst = DataProvider.instance.ExcuteQuery("select * from MuonSach where XacNhanTra = 0");
             if (lst == null) return;
             int n;
             if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text) && int.TryParse(txbTim.Text, out n))
@@ -138,6 +138,28 @@ namespace QuanLyThuVien
                 LoadDanhSachLV(MuonTraDAO.instance.GetList());
             }
         }
+        public bool KTCBBMaDG()
+        {
+            var data = DataProvider.instance.ExcuteQuery("select * from DocGia");
+            foreach (DataRow row in data.Rows)
+            {
+                DocGia d = new DocGia(row);
+                if (cbbmadg.Text.Contains(d.madg))
+                    return true;
+            }
+            return false;
+        }
+        public bool KTCBBMaSach()
+        {
+            var data = DataProvider.instance.ExcuteQuery("select * from Sach");
+            foreach (DataRow row in data.Rows)
+            {
+                Sach d = new Sach(row);
+                if (cbbmasach.Text.Contains(d.masach))
+                    return true;
+            }
+            return false;
+        }
 
         private void btnmuon_Click(object sender, EventArgs e)
         {
@@ -145,17 +167,25 @@ namespace QuanLyThuVien
             //danh sach muon
             if (dtptra.Value >= DateTime.Now)
             {
-                var muon = GetConTrols();
-                if (MuonTraDAO.instance.KiemTraDocGia(muon.madg, muon.masach))
+                if (KTCBBMaDG())
                 {
-                    if (MuonTraDAO.instance.MuonSach(muon))
-                        MessageBox.Show("Cho Mượn Thành Công \n Tên người mượn: " + txbtendocgia.Text + " \n Tên Sách: " + txbTenSach.Text + "", "Thông Báo");
-                    else
-                        MessageBoxCT("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
-                    LoadDanhSachLV(MuonTraDAO.instance.GetList());
+                    if (KTCBBMaSach())
+                    {
+                        var muon = GetConTrols();
+                        if (MuonTraDAO.instance.KiemTraDocGia(muon.madg, muon.masach))
+                        {
+                            if (MuonTraDAO.instance.MuonSach(muon))
+                                MessageBox.Show(string.Format("Cho Mượn Thành Công \n Tên người mượn: " + txbtendocgia.Text + " \n Tên Sách: " + txbTenSach.Text + "", "Thông Báo"));
+                            else
+                                MessageBoxCT("Ngày Trả không hợp lệ , hoặc không còn sách để mượn");
+                            LoadDanhSachLV(MuonTraDAO.instance.GetList());
+                        }
+                        else
+                            MessageBox.Show("Một đọc giả không được mượn quá 2 quyển sách cùng loại\n Và không quá 4 cuốn sách");
+                    }
+                    else MessageBoxCT("Mã sách không hợp lệ");
                 }
-                else
-                    MessageBox.Show("Một đọc giả không được mượn quá 2 quyển sách cùng loại\n Và không quá 4 cuốn sách");
+                else MessageBoxCT("Mã đọc giả không hợp lệ");
             }
             else MessageBoxCT("Ngày trả không hợp lệ");
         }
@@ -173,8 +203,6 @@ namespace QuanLyThuVien
                 txbTenSach.Text = cbbmasach.SelectedValue.ToString();
             }
         }
-
- 
         
         private void cbbmadg_SelectedIndexChanged(object sender, EventArgs e)
         {

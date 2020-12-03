@@ -115,7 +115,7 @@
             this.txbTim.SelectedText = "";
             this.txbTim.ShadowDecoration.Parent = this.txbTim;
             this.txbTim.Size = new System.Drawing.Size(220, 27);
-            this.txbTim.TabIndex = 34;
+            this.txbTim.TabIndex = 3;
             this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged_1);
             // 
             // rdTenTG
@@ -125,7 +125,7 @@
             this.rdTenTG.Margin = new System.Windows.Forms.Padding(2);
             this.rdTenTG.Name = "rdTenTG";
             this.rdTenTG.Size = new System.Drawing.Size(122, 24);
-            this.rdTenTG.TabIndex = 33;
+            this.rdTenTG.TabIndex = 2;
             this.rdTenTG.TabStop = true;
             this.rdTenTG.Text = "Tên Tác Giả";
             this.rdTenTG.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             this.rdTenSach.Margin = new System.Windows.Forms.Padding(2);
             this.rdTenSach.Name = "rdTenSach";
             this.rdTenSach.Size = new System.Drawing.Size(101, 24);
-            this.rdTenSach.TabIndex = 32;
+            this.rdTenSach.TabIndex = 1;
             this.rdTenSach.TabStop = true;
             this.rdTenSach.Text = "Tên Sách";
             this.rdTenSach.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.rdMaSach.Margin = new System.Windows.Forms.Padding(2);
             this.rdMaSach.Name = "rdMaSach";
             this.rdMaSach.Size = new System.Drawing.Size(96, 24);
-            this.rdMaSach.TabIndex = 31;
+            this.rdMaSach.TabIndex = 0;
             this.rdMaSach.TabStop = true;
             this.rdMaSach.Text = "Mã Sách";
             this.rdMaSach.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
             this.btnXoa.Size = new System.Drawing.Size(114, 50);
-            this.btnXoa.TabIndex = 43;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -197,7 +197,7 @@
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.ShadowDecoration.Parent = this.btnCapNhat;
             this.btnCapNhat.Size = new System.Drawing.Size(114, 50);
-            this.btnCapNhat.TabIndex = 42;
+            this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -215,7 +215,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
             this.btnThem.Size = new System.Drawing.Size(114, 50);
-            this.btnThem.TabIndex = 41;
+            this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -233,7 +233,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.Parent = this.btnHome;
             this.btnHome.Size = new System.Drawing.Size(114, 50);
-            this.btnHome.TabIndex = 44;
+            this.btnHome.TabIndex = 3;
             this.btnHome.Text = "Quay lại";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
             // 
@@ -324,21 +324,21 @@
             this.panel1.Location = new System.Drawing.Point(46, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 226);
+            this.panel1.Size = new System.Drawing.Size(400, 226);
             this.panel1.TabIndex = 31;
             // 
             // txbNhaXB
             // 
-            this.txbNhaXB.Location = new System.Drawing.Point(147, 197);
+            this.txbNhaXB.Location = new System.Drawing.Point(147, 195);
             this.txbNhaXB.Margin = new System.Windows.Forms.Padding(2);
             this.txbNhaXB.Name = "txbNhaXB";
-            this.txbNhaXB.Size = new System.Drawing.Size(184, 27);
-            this.txbNhaXB.TabIndex = 14;
+            this.txbNhaXB.Size = new System.Drawing.Size(230, 27);
+            this.txbNhaXB.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 200);
+            this.label6.Location = new System.Drawing.Point(19, 198);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 20);
@@ -350,8 +350,8 @@
             this.txbLinhVuc.Location = new System.Drawing.Point(147, 149);
             this.txbLinhVuc.Margin = new System.Windows.Forms.Padding(2);
             this.txbLinhVuc.Name = "txbLinhVuc";
-            this.txbLinhVuc.Size = new System.Drawing.Size(185, 27);
-            this.txbLinhVuc.TabIndex = 12;
+            this.txbLinhVuc.Size = new System.Drawing.Size(230, 27);
+            this.txbLinhVuc.TabIndex = 3;
             // 
             // label7
             // 
@@ -368,8 +368,8 @@
             this.txbTenTG.Location = new System.Drawing.Point(148, 105);
             this.txbTenTG.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenTG.Name = "txbTenTG";
-            this.txbTenTG.Size = new System.Drawing.Size(185, 27);
-            this.txbTenTG.TabIndex = 10;
+            this.txbTenTG.Size = new System.Drawing.Size(229, 27);
+            this.txbTenTG.TabIndex = 2;
             // 
             // label3
             // 
@@ -386,8 +386,8 @@
             this.txbTenSach.Location = new System.Drawing.Point(148, 58);
             this.txbTenSach.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenSach.Name = "txbTenSach";
-            this.txbTenSach.Size = new System.Drawing.Size(185, 27);
-            this.txbTenSach.TabIndex = 8;
+            this.txbTenSach.Size = new System.Drawing.Size(229, 27);
+            this.txbTenSach.TabIndex = 1;
             // 
             // label2
             // 
@@ -405,8 +405,8 @@
             this.txbMaSach.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.ReadOnly = true;
-            this.txbMaSach.Size = new System.Drawing.Size(186, 27);
-            this.txbMaSach.TabIndex = 6;
+            this.txbMaSach.Size = new System.Drawing.Size(230, 27);
+            this.txbMaSach.TabIndex = 0;
             // 
             // label1
             // 
@@ -429,10 +429,10 @@
             this.panel5.Controls.Add(this.txbGhiChu);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(519, 11);
+            this.panel5.Location = new System.Drawing.Point(469, 11);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 226);
+            this.panel5.Size = new System.Drawing.Size(400, 226);
             this.panel5.TabIndex = 32;
             // 
             // dtpnamxb
@@ -442,8 +442,8 @@
             this.dtpnamxb.Location = new System.Drawing.Point(150, 12);
             this.dtpnamxb.Margin = new System.Windows.Forms.Padding(2);
             this.dtpnamxb.Name = "dtpnamxb";
-            this.dtpnamxb.Size = new System.Drawing.Size(187, 27);
-            this.dtpnamxb.TabIndex = 11;
+            this.dtpnamxb.Size = new System.Drawing.Size(230, 27);
+            this.dtpnamxb.TabIndex = 0;
             // 
             // label5
             // 
@@ -460,8 +460,8 @@
             this.txbsoluong.Location = new System.Drawing.Point(150, 58);
             this.txbsoluong.Margin = new System.Windows.Forms.Padding(2);
             this.txbsoluong.Name = "txbsoluong";
-            this.txbsoluong.Size = new System.Drawing.Size(187, 27);
-            this.txbsoluong.TabIndex = 9;
+            this.txbsoluong.Size = new System.Drawing.Size(230, 27);
+            this.txbsoluong.TabIndex = 1;
             // 
             // label8
             // 
@@ -480,8 +480,8 @@
             this.dtpngaynhap.Location = new System.Drawing.Point(149, 103);
             this.dtpngaynhap.Margin = new System.Windows.Forms.Padding(2);
             this.dtpngaynhap.Name = "dtpngaynhap";
-            this.dtpngaynhap.Size = new System.Drawing.Size(187, 27);
-            this.dtpngaynhap.TabIndex = 7;
+            this.dtpngaynhap.Size = new System.Drawing.Size(231, 27);
+            this.dtpngaynhap.TabIndex = 2;
             // 
             // label9
             // 
@@ -499,8 +499,8 @@
             this.txbGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txbGhiChu.Multiline = true;
             this.txbGhiChu.Name = "txbGhiChu";
-            this.txbGhiChu.Size = new System.Drawing.Size(187, 62);
-            this.txbGhiChu.TabIndex = 5;
+            this.txbGhiChu.Size = new System.Drawing.Size(229, 62);
+            this.txbGhiChu.TabIndex = 3;
             // 
             // label4
             // 

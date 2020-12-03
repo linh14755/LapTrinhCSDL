@@ -78,7 +78,7 @@
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.ShadowDecoration.Parent = this.btnupdate;
             this.btnupdate.Size = new System.Drawing.Size(257, 50);
-            this.btnupdate.TabIndex = 47;
+            this.btnupdate.TabIndex = 2;
             this.btnupdate.Text = "Thay đổi thông tin";
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click_1);
             // 
@@ -96,7 +96,7 @@
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.ShadowDecoration.Parent = this.btnDangKy;
             this.btnDangKy.Size = new System.Drawing.Size(114, 50);
-            this.btnDangKy.TabIndex = 45;
+            this.btnDangKy.TabIndex = 0;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click_1);
             // 
@@ -114,7 +114,7 @@
             this.btnhome.Name = "btnhome";
             this.btnhome.ShadowDecoration.Parent = this.btnhome;
             this.btnhome.Size = new System.Drawing.Size(114, 50);
-            this.btnhome.TabIndex = 46;
+            this.btnhome.TabIndex = 1;
             this.btnhome.Text = "Quay lại";
             this.btnhome.Click += new System.EventHandler(this.btnhome_Click_1);
             // 
@@ -124,7 +124,7 @@
             this.rdNu.Location = new System.Drawing.Point(266, 208);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(47, 21);
-            this.rdNu.TabIndex = 69;
+            this.rdNu.TabIndex = 3;
             this.rdNu.TabStop = true;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             this.rdNam.Location = new System.Drawing.Point(166, 208);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(58, 21);
-            this.rdNam.TabIndex = 67;
+            this.rdNam.TabIndex = 2;
             this.rdNam.TabStop = true;
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.dtpkNgaySinh.Location = new System.Drawing.Point(166, 160);
             this.dtpkNgaySinh.Name = "dtpkNgaySinh";
             this.dtpkNgaySinh.Size = new System.Drawing.Size(239, 22);
-            this.dtpkNgaySinh.TabIndex = 65;
+            this.dtpkNgaySinh.TabIndex = 1;
             // 
             // label4
             // 
@@ -176,7 +176,7 @@
             this.txbHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(239, 22);
-            this.txbHoTen.TabIndex = 63;
+            this.txbHoTen.TabIndex = 0;
             // 
             // label2
             // 
@@ -194,7 +194,7 @@
             this.txbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(239, 22);
-            this.txbEmail.TabIndex = 61;
+            this.txbEmail.TabIndex = 6;
             // 
             // label5
             // 
@@ -212,7 +212,7 @@
             this.txbTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
             this.txbTaiKhoan.Size = new System.Drawing.Size(241, 22);
-            this.txbTaiKhoan.TabIndex = 59;
+            this.txbTaiKhoan.TabIndex = 7;
             // 
             // label8
             // 
@@ -230,7 +230,7 @@
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(241, 22);
-            this.txbMatKhau.TabIndex = 57;
+            this.txbMatKhau.TabIndex = 8;
             this.txbMatKhau.UseSystemPasswordChar = true;
             // 
             // label9
@@ -249,7 +249,7 @@
             this.txbNhapLaiMK.Margin = new System.Windows.Forms.Padding(4);
             this.txbNhapLaiMK.Name = "txbNhapLaiMK";
             this.txbNhapLaiMK.Size = new System.Drawing.Size(239, 22);
-            this.txbNhapLaiMK.TabIndex = 55;
+            this.txbNhapLaiMK.TabIndex = 9;
             this.txbNhapLaiMK.UseSystemPasswordChar = true;
             // 
             // label10
@@ -268,7 +268,7 @@
             this.txbDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txbDiaChi.Name = "txbDiaChi";
             this.txbDiaChi.Size = new System.Drawing.Size(624, 22);
-            this.txbDiaChi.TabIndex = 53;
+            this.txbDiaChi.TabIndex = 5;
             // 
             // label1
             // 
@@ -286,7 +286,7 @@
             this.txbSoDT.Margin = new System.Windows.Forms.Padding(4);
             this.txbSoDT.Name = "txbSoDT";
             this.txbSoDT.Size = new System.Drawing.Size(239, 22);
-            this.txbSoDT.TabIndex = 51;
+            this.txbSoDT.TabIndex = 4;
             // 
             // label7
             // 

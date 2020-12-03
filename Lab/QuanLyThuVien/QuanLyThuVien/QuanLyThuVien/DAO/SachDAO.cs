@@ -8,14 +8,10 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.DAO
 {
-    public class BookDAO
+    public class SachDAO
     {
-        public static BookDAO instance = new BookDAO();
-        public BookDAO() { }
-        public string ConvertDateTime(DateTime datetime)
-        {
-            return Convert.ToDateTime(datetime).ToString("yyyy-MM-dd");
-        }
+        public static SachDAO instance = new SachDAO();
+        public SachDAO() { }
         public bool Delete(string id)
         {
             int result = 0;
@@ -26,18 +22,12 @@ namespace QuanLyThuVien.DAO
         }
         public bool Update(Sach b)
         {
-            string namxb = ConvertDateTime(b.namxb);
-            string ngaynhap = ConvertDateTime(b.ngaynhap);
-
-            int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + namxb + "' ,GhiChu = N'" + b.ghichu + "', SOLUONG = @soluong , NGAYNHAP = '" + ngaynhap + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
+            int result = DataProvider.instance.ExcuteNonQuery("update Sach set TENSACH = @tensach , TENTG = @tentg , TENNXB = @tennxb , TENLV = @tenlv , NAMXB = '" + b.namxb + "' ,GhiChu = N'" + b.ghichu + "', SOLUONG = @soluong , NGAYNHAP = '" + b.ngaynhap + "' where MASACH = @id", new object[] { b.tensach, b.tentg, b.tennxb, b.tenlv, b.sl, b.masach });
             return result > 0;
         }
         public bool Insert(Sach b)
         {
-            string namxb = ConvertDateTime(b.namxb);
-            string ngaynhap = ConvertDateTime(b.ngaynhap);
-
-            string query = "INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'" + b.tensach + "', N'" + b.tentg + "', N'" + b.tennxb + "', N'" + b.tenlv + "', '" + namxb + "', " + b.sl + ", '" + ngaynhap + "')";
+            string query = "INSERT INTO Sach(TENSACH,TENTG,TENNXB,TENLV,NAMXB,SOLUONG,NGAYNHAP) VALUES (N'" + b.tensach + "', N'" + b.tentg + "', N'" + b.tennxb + "', N'" + b.tenlv + "', '" + b.namxb + "', " + b.sl + ", '" + b.ngaynhap + "')";
             int restult = DataProvider.instance.ExcuteNonQuery(query);
             return restult > 0;
         }

@@ -1,5 +1,4 @@
-﻿using DevExpress.ClipboardSource.SpreadsheetML;
-using QuanLyThuVien.DTO;
+﻿using QuanLyThuVien.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -32,7 +31,7 @@ namespace QuanLyThuVien.DAO
 
             return listaccount.Count > 0;
         }
-        public List<Account> GetListAccount()
+        public List<Account> GetList()
         {
             List<Account> listaccount = new List<Account>();
 
@@ -46,7 +45,7 @@ namespace QuanLyThuVien.DAO
 
             return listaccount;
         }
-        public bool UpdateAccount(Account acc)
+        public bool Update(Account acc)
         {
             DateTime date = acc.ngaysinh;
             int gt = 0;
@@ -58,7 +57,7 @@ namespace QuanLyThuVien.DAO
             int result = DataProvider.instance.ExcuteNonQuery(query);
             return result > 0;
         }
-        public bool InsertAccount(Account acc)
+        public bool Insert(Account acc)
         {
             DateTime date = acc.ngaysinh;
             string createddate = Convert.ToDateTime(date).ToString("yyyy-MM-dd");
@@ -66,7 +65,7 @@ namespace QuanLyThuVien.DAO
             int result = DataProvider.instance.ExcuteNonQuery(query);
             return result > 0;
         }
-        public List<Account> GetListAccountByTK(string tk)
+        public List<Account> GetListByTK(string tk)
         {
             List<Account> listaccount = new List<Account>();
 
@@ -91,7 +90,7 @@ namespace QuanLyThuVien.DAO
 
         public bool KiemTraTaiKhoan(string tk)
         {
-            List<Account> lst = AccountDAO.Instance.GetListAccount();
+            List<Account> lst = AccountDAO.Instance.GetList();
             foreach (Account acc in lst)
             {
                 if (tk == acc.taikhoan)
