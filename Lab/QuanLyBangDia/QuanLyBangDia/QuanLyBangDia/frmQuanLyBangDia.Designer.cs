@@ -85,7 +85,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên băng đĩa";
-            this.columnHeader2.Width = 110;
+            this.columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
@@ -100,7 +100,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Thể loại";
-            this.columnHeader5.Width = 130;
+            this.columnHeader5.Width = 250;
             // 
             // txbDonGia
             // 

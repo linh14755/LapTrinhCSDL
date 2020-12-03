@@ -80,17 +80,17 @@
             // columnHeader14
             // 
             this.columnHeader14.Text = "Tên khách hàng";
-            this.columnHeader14.Width = 110;
+            this.columnHeader14.Width = 150;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Số ĐT";
-            this.columnHeader15.Width = 110;
+            this.columnHeader15.Width = 150;
             // 
             // columnHeader16
             // 
             this.columnHeader16.Text = "Địa chỉ";
-            this.columnHeader16.Width = 110;
+            this.columnHeader16.Width = 350;
             // 
             // label17
             // 
