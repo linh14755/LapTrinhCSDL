@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,6 +76,13 @@ namespace QuanLyBangDia
         private void btnQuanLyBangDia_Click(object sender, EventArgs e)
         {
             openChildForm(new frmQuanLyBangDia());
+
+            hideSubMenu();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTra());
 
             hideSubMenu();
         }

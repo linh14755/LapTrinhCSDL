@@ -50,9 +50,7 @@
             this.nmTienCoc = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txbMaKH = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txbMaBD = new System.Windows.Forms.TextBox();
             this.lvThue = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,6 +66,8 @@
             this.txbTim = new System.Windows.Forms.TextBox();
             this.rdMaBD = new System.Windows.Forms.RadioButton();
             this.rdMaLuot = new System.Windows.Forms.RadioButton();
+            this.cbbMaBD = new System.Windows.Forms.ComboBox();
+            this.cbbMaKH = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmTongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmTienCoc)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -122,7 +122,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(18, 117);
+            this.label13.Location = new System.Drawing.Point(18, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 17);
             this.label13.TabIndex = 83;
@@ -130,7 +130,7 @@
             // 
             // txbTenBD
             // 
-            this.txbTenBD.Location = new System.Drawing.Point(139, 114);
+            this.txbTenBD.Location = new System.Drawing.Point(139, 115);
             this.txbTenBD.Name = "txbTenBD";
             this.txbTenBD.Size = new System.Drawing.Size(135, 22);
             this.txbTenBD.TabIndex = 82;
@@ -207,6 +207,7 @@
             // 
             // txbLuot
             // 
+            this.txbLuot.Enabled = false;
             this.txbLuot.Location = new System.Drawing.Point(139, 16);
             this.txbLuot.Name = "txbLuot";
             this.txbLuot.Size = new System.Drawing.Size(135, 22);
@@ -244,13 +245,6 @@
             this.label9.TabIndex = 71;
             this.label9.Text = "Mã khách hàng";
             // 
-            // txbMaKH
-            // 
-            this.txbMaKH.Location = new System.Drawing.Point(139, 81);
-            this.txbMaKH.Name = "txbMaKH";
-            this.txbMaKH.Size = new System.Drawing.Size(135, 22);
-            this.txbMaKH.TabIndex = 70;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -260,13 +254,6 @@
             this.label8.Size = new System.Drawing.Size(86, 17);
             this.label8.TabIndex = 69;
             this.label8.Text = "Mã băng đĩa";
-            // 
-            // txbMaBD
-            // 
-            this.txbMaBD.Location = new System.Drawing.Point(139, 49);
-            this.txbMaBD.Name = "txbMaBD";
-            this.txbMaBD.Size = new System.Drawing.Size(135, 22);
-            this.txbMaBD.TabIndex = 68;
             // 
             // lvThue
             // 
@@ -298,26 +285,32 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Mã băng đĩa";
+            this.columnHeader2.Width = 90;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Mã khách hàng";
+            this.columnHeader3.Width = 110;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Ngày thuê";
+            this.columnHeader4.Width = 110;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Ngày trả";
+            this.columnHeader5.Width = 110;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Tiền cọc";
+            this.columnHeader13.Width = 110;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Tổng tiền";
+            this.columnHeader14.Width = 110;
             // 
             // btnHome
             // 
@@ -339,6 +332,7 @@
             this.btnThue.TabIndex = 93;
             this.btnThue.Text = "Cho thuê";
             this.btnThue.UseVisualStyleBackColor = false;
+            this.btnThue.Click += new System.EventHandler(this.btnThue_Click);
             // 
             // groupBox1
             // 
@@ -371,6 +365,7 @@
             this.txbTim.Name = "txbTim";
             this.txbTim.Size = new System.Drawing.Size(135, 22);
             this.txbTim.TabIndex = 52;
+            this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged);
             // 
             // rdMaBD
             // 
@@ -394,12 +389,32 @@
             this.rdMaLuot.Text = "Mã lượt";
             this.rdMaLuot.UseVisualStyleBackColor = true;
             // 
+            // cbbMaBD
+            // 
+            this.cbbMaBD.FormattingEnabled = true;
+            this.cbbMaBD.Location = new System.Drawing.Point(139, 52);
+            this.cbbMaBD.Name = "cbbMaBD";
+            this.cbbMaBD.Size = new System.Drawing.Size(135, 24);
+            this.cbbMaBD.TabIndex = 96;
+            this.cbbMaBD.SelectedIndexChanged += new System.EventHandler(this.cbbMaBD_SelectedIndexChanged);
+            // 
+            // cbbMaKH
+            // 
+            this.cbbMaKH.FormattingEnabled = true;
+            this.cbbMaKH.Location = new System.Drawing.Point(139, 84);
+            this.cbbMaKH.Name = "cbbMaKH";
+            this.cbbMaKH.Size = new System.Drawing.Size(135, 24);
+            this.cbbMaKH.TabIndex = 97;
+            this.cbbMaKH.SelectedIndexChanged += new System.EventHandler(this.cbbMaKH_SelectedIndexChanged);
+            // 
             // frmQuanLyThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(686, 500);
+            this.Controls.Add(this.cbbMaKH);
+            this.Controls.Add(this.cbbMaBD);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnThue);
@@ -419,9 +434,7 @@
             this.Controls.Add(this.nmTienCoc);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txbMaKH);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txbMaBD);
             this.Name = "frmQuanLyThue";
             this.Text = "frmQuanLYThue";
             ((System.ComponentModel.ISupportInitialize)(this.nmTongTien)).EndInit();
@@ -456,9 +469,7 @@
         private System.Windows.Forms.NumericUpDown nmTienCoc;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txbMaKH;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txbMaBD;
         private System.Windows.Forms.ListView lvThue;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -474,5 +485,7 @@
         private System.Windows.Forms.TextBox txbTim;
         private System.Windows.Forms.RadioButton rdMaBD;
         private System.Windows.Forms.RadioButton rdMaLuot;
+        private System.Windows.Forms.ComboBox cbbMaBD;
+        private System.Windows.Forms.ComboBox cbbMaKH;
     }
 }

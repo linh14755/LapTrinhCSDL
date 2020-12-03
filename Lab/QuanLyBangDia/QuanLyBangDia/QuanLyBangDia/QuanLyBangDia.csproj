@@ -73,6 +73,18 @@
     <Compile Include="frmQuanLyThue.Designer.cs">
       <DependentUpon>frmQuanLyThue.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTra.Designer.cs">
+      <DependentUpon>frmTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTra1KH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTra1KH.Designer.cs">
+      <DependentUpon>frmTra1KH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
@@ -86,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLYThue.resx">
       <DependentUpon>frmQuanLyThue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTra.resx">
+      <DependentUpon>frmTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTra1KH.resx">
+      <DependentUpon>frmTra1KH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

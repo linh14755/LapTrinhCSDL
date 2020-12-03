@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataAccess.DAO;
+using DataAccess.DTO;
+using QuanLyBangDia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataAccess.DAO;
-using DataAccess.DTO;
 
-namespace QuanLyBangDia
+namespace DataAccess
 {
-    public partial class frmQuanLyThue : Form
+    public partial class frmTra : Form
     {
-        public frmQuanLyThue()
+        public frmTra()
         {
             InitializeComponent();
             Loads();
@@ -23,9 +24,7 @@ namespace QuanLyBangDia
             dtpNgayThue.Value = DateTime.Now;
             dtpNgayTra.Value = DateTime.Now;
         }
-
         #region Methods
-
         private void Loads()
         {
             LoadListView(ThueDAO.instance.GetList());
@@ -137,18 +136,17 @@ namespace QuanLyBangDia
             }
         }
 
-        private void btnThue_Click(object sender, EventArgs e)
+        private void btnTra_Click(object sender, EventArgs e)
         {
-            var thue = GetControls();
-            
-            if (ThueDAO.instance.Insert(thue))
-                MessageBox.Show("Cho Thuê thành công");
-            else MessageBox.Show("Thuê thất bại");
+            frmTra1KH frm = new frmTra1KH(ThueDAO.instance.GetListByMAKH(cbbMaKH.Text));
+            if (frm.ShowDialog() == DialogResult.Cancel)
+            {
+                Loads();
+            }
 
-            Loads();
         }
-
-        private void txbTim_TextChanged(object sender, EventArgs e)
+        
+        private void txbTim_TextChanged_1(object sender, EventArgs e)
         {
             var lst = DataProvider.instance.ExcuteQuery("select * from Thue");
             if (lst == null) return;
@@ -177,8 +175,7 @@ namespace QuanLyBangDia
             }
             else Loads();
         }
-
-        private void lvThue_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvThue_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (lvThue.SelectedItems.Count == 0) return;
             string luot = lvThue.SelectedItems[0].Text;
@@ -192,15 +189,13 @@ namespace QuanLyBangDia
 
             LoadControls(thue);
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnHome_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
         #endregion
 
-
+        
     }
 }
