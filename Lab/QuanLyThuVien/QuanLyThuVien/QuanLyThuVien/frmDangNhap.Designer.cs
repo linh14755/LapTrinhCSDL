@@ -65,7 +65,7 @@
             this.rdThuThu.Checked = true;
             this.rdThuThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdThuThu.ForeColor = System.Drawing.Color.White;
-            this.rdThuThu.Location = new System.Drawing.Point(57, 304);
+            this.rdThuThu.Location = new System.Drawing.Point(57, 294);
             this.rdThuThu.Margin = new System.Windows.Forms.Padding(4);
             this.rdThuThu.Name = "rdThuThu";
             this.rdThuThu.Size = new System.Drawing.Size(108, 29);
@@ -79,7 +79,7 @@
             this.rdDocGia.AutoSize = true;
             this.rdDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdDocGia.ForeColor = System.Drawing.Color.White;
-            this.rdDocGia.Location = new System.Drawing.Point(174, 304);
+            this.rdDocGia.Location = new System.Drawing.Point(174, 294);
             this.rdDocGia.Margin = new System.Windows.Forms.Padding(4);
             this.rdDocGia.Name = "rdDocGia";
             this.rdDocGia.Size = new System.Drawing.Size(103, 29);

@@ -37,10 +37,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txbTenSach = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbtendocgia = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txbTim = new System.Windows.Forms.TextBox();
             this.rdmasach = new System.Windows.Forms.RadioButton();
@@ -58,6 +54,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnmuon = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.txbTenSach = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txbtendocgia = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -132,44 +132,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông Tin";
             // 
-            // txbTenSach
-            // 
-            this.txbTenSach.Location = new System.Drawing.Point(40, 52);
-            this.txbTenSach.Multiline = true;
-            this.txbTenSach.Name = "txbTenSach";
-            this.txbTenSach.ReadOnly = true;
-            this.txbTenSach.Size = new System.Drawing.Size(185, 49);
-            this.txbTenSach.TabIndex = 9;
-            this.txbTenSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(97, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Tên Sách";
-            // 
-            // txbtendocgia
-            // 
-            this.txbtendocgia.Location = new System.Drawing.Point(39, 132);
-            this.txbtendocgia.Multiline = true;
-            this.txbtendocgia.Name = "txbtendocgia";
-            this.txbtendocgia.ReadOnly = true;
-            this.txbtendocgia.Size = new System.Drawing.Size(185, 49);
-            this.txbtendocgia.TabIndex = 10;
-            this.txbtendocgia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(97, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Tên ĐG";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txbTim);
@@ -185,16 +147,16 @@
             // 
             // txbTim
             // 
-            this.txbTim.Location = new System.Drawing.Point(39, 63);
+            this.txbTim.Location = new System.Drawing.Point(27, 56);
             this.txbTim.Name = "txbTim";
-            this.txbTim.Size = new System.Drawing.Size(186, 27);
+            this.txbTim.Size = new System.Drawing.Size(184, 27);
             this.txbTim.TabIndex = 3;
             this.txbTim.TextChanged += new System.EventHandler(this.txbTim_TextChanged);
             // 
             // rdmasach
             // 
             this.rdmasach.AutoSize = true;
-            this.rdmasach.Location = new System.Drawing.Point(129, 26);
+            this.rdmasach.Location = new System.Drawing.Point(115, 26);
             this.rdmasach.Name = "rdmasach";
             this.rdmasach.Size = new System.Drawing.Size(96, 24);
             this.rdmasach.TabIndex = 1;
@@ -205,7 +167,7 @@
             // rdMaDocGia
             // 
             this.rdMaDocGia.AutoSize = true;
-            this.rdMaDocGia.Location = new System.Drawing.Point(39, 26);
+            this.rdMaDocGia.Location = new System.Drawing.Point(25, 26);
             this.rdMaDocGia.Name = "rdMaDocGia";
             this.rdMaDocGia.Size = new System.Drawing.Size(83, 24);
             this.rdMaDocGia.TabIndex = 0;
@@ -358,6 +320,44 @@
             this.btnHome.Text = "Quay lại";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // txbTenSach
+            // 
+            this.txbTenSach.Location = new System.Drawing.Point(27, 45);
+            this.txbTenSach.Multiline = true;
+            this.txbTenSach.Name = "txbTenSach";
+            this.txbTenSach.ReadOnly = true;
+            this.txbTenSach.Size = new System.Drawing.Size(185, 49);
+            this.txbTenSach.TabIndex = 13;
+            this.txbTenSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(84, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Tên Sách";
+            // 
+            // txbtendocgia
+            // 
+            this.txbtendocgia.Location = new System.Drawing.Point(26, 125);
+            this.txbtendocgia.Multiline = true;
+            this.txbtendocgia.Name = "txbtendocgia";
+            this.txbtendocgia.ReadOnly = true;
+            this.txbtendocgia.Size = new System.Drawing.Size(185, 49);
+            this.txbtendocgia.TabIndex = 14;
+            this.txbtendocgia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(84, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Tên ĐG";
+            // 
             // frmQuanLyMuonSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -413,11 +413,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbghichu;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btnmuon;
+        private Guna.UI2.WinForms.Guna2Button btnHome;
         private System.Windows.Forms.TextBox txbTenSach;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbtendocgia;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Button btnmuon;
-        private Guna.UI2.WinForms.Guna2Button btnHome;
     }
 }
