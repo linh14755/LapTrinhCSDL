@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdNgayTra = new System.Windows.Forms.RadioButton();
@@ -36,20 +35,17 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.lvThongKe = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 273);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(914, 333);
-            this.dataGridView1.TabIndex = 0;
             // 
             // label3
             // 
@@ -57,9 +53,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(237, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(440, 44);
+            this.label3.Size = new System.Drawing.Size(451, 44);
             this.label3.TabIndex = 22;
-            this.label3.Text = "Danh sách phiếu mượn ";
+            this.label3.Text = "Danh sách phiếu mượn  ";
             // 
             // groupBox1
             // 
@@ -76,7 +72,7 @@
             // rdNgayTra
             // 
             this.rdNgayTra.AutoSize = true;
-            this.rdNgayTra.Location = new System.Drawing.Point(133, 18);
+            this.rdNgayTra.Location = new System.Drawing.Point(151, 18);
             this.rdNgayTra.Name = "rdNgayTra";
             this.rdNgayTra.Size = new System.Drawing.Size(93, 24);
             this.rdNgayTra.TabIndex = 3;
@@ -87,7 +83,7 @@
             // rdNgayMuon
             // 
             this.rdNgayMuon.AutoSize = true;
-            this.rdNgayMuon.Location = new System.Drawing.Point(13, 18);
+            this.rdNgayMuon.Location = new System.Drawing.Point(31, 18);
             this.rdNgayMuon.Name = "rdNgayMuon";
             this.rdNgayMuon.Size = new System.Drawing.Size(114, 24);
             this.rdNgayMuon.TabIndex = 2;
@@ -135,21 +131,96 @@
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(789, 173);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(114, 50);
+            this.guna2Button1.TabIndex = 58;
+            this.guna2Button1.Text = "Export Excel";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // lvThongKe
+            // 
+            this.lvThongKe.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lvThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lvThongKe.FullRowSelect = true;
+            this.lvThongKe.GridLines = true;
+            this.lvThongKe.HideSelection = false;
+            this.lvThongKe.Location = new System.Drawing.Point(0, 228);
+            this.lvThongKe.MultiSelect = false;
+            this.lvThongKe.Name = "lvThongKe";
+            this.lvThongKe.Size = new System.Drawing.Size(914, 378);
+            this.lvThongKe.TabIndex = 59;
+            this.lvThongKe.UseCompatibleStateImageBehavior = false;
+            this.lvThongKe.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã Phiếu";
+            this.columnHeader1.Width = 80;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Mã ĐG";
+            this.columnHeader2.Width = 80;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Mã Sách";
+            this.columnHeader3.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ngày Mượn";
+            this.columnHeader4.Width = 110;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Ngày Trả";
+            this.columnHeader5.Width = 110;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tiền Phạt";
+            this.columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Ghi Chú";
+            this.columnHeader7.Width = 250;
+            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(914, 606);
+            this.Controls.Add(this.lvThongKe);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.dtpToDate);
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "frmThongKe";
             this.Text = "frmThongKe";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -158,8 +229,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdNgayTra;
@@ -167,5 +236,14 @@
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private Guna.UI2.WinForms.Guna2Button btnThongKe;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.ListView lvThongKe;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
