@@ -21,6 +21,7 @@ namespace QuanLyThuVien
             hideSubMenu();
         }
         #region Methods
+        
         public void XuLyConTrolsChoDocGia()
         {
             button7.Enabled = false;
@@ -182,8 +183,7 @@ namespace QuanLyThuVien
             hideSubMenu();
         }
 
+
         #endregion
-
-
     }
 }

@@ -236,7 +236,7 @@
             // 
             this.dtptra.CustomFormat = "dd/MM/yyyy";
             this.dtptra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptra.Location = new System.Drawing.Point(448, 62);
+            this.dtptra.Location = new System.Drawing.Point(433, 62);
             this.dtptra.Name = "dtptra";
             this.dtptra.Size = new System.Drawing.Size(186, 27);
             this.dtptra.TabIndex = 18;
@@ -244,7 +244,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(341, 67);
+            this.label8.Location = new System.Drawing.Point(326, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 20);
             this.label8.TabIndex = 17;
@@ -255,7 +255,7 @@
             this.dtpmuon.CustomFormat = "dd/MM/yyyy";
             this.dtpmuon.Enabled = false;
             this.dtpmuon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpmuon.Location = new System.Drawing.Point(448, 24);
+            this.dtpmuon.Location = new System.Drawing.Point(433, 24);
             this.dtpmuon.Name = "dtpmuon";
             this.dtpmuon.Size = new System.Drawing.Size(186, 27);
             this.dtpmuon.TabIndex = 16;
@@ -263,7 +263,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(341, 29);
+            this.label9.Location = new System.Drawing.Point(326, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 15;
@@ -272,7 +272,7 @@
             // cbbmasach
             // 
             this.cbbmasach.FormattingEnabled = true;
-            this.cbbmasach.Location = new System.Drawing.Point(138, 64);
+            this.cbbmasach.Location = new System.Drawing.Point(123, 64);
             this.cbbmasach.Name = "cbbmasach";
             this.cbbmasach.Size = new System.Drawing.Size(186, 28);
             this.cbbmasach.TabIndex = 14;
@@ -281,7 +281,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 67);
+            this.label4.Location = new System.Drawing.Point(7, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 13;
@@ -290,7 +290,7 @@
             // cbbmadg
             // 
             this.cbbmadg.FormattingEnabled = true;
-            this.cbbmadg.Location = new System.Drawing.Point(138, 26);
+            this.cbbmadg.Location = new System.Drawing.Point(123, 26);
             this.cbbmadg.Name = "cbbmadg";
             this.cbbmadg.Size = new System.Drawing.Size(186, 28);
             this.cbbmadg.TabIndex = 2;
@@ -299,7 +299,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 29);
+            this.label5.Location = new System.Drawing.Point(5, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 20);
             this.label5.TabIndex = 11;
@@ -316,7 +316,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 115);
+            this.label7.Location = new System.Drawing.Point(5, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 20);
             this.label7.TabIndex = 3;

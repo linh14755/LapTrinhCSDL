@@ -49,7 +49,6 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelTaikhoanSubMenu.SuspendLayout();
             this.panelQuanlymuontraSubMenu.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
@@ -454,16 +454,6 @@
             this.panelChildForm.Size = new System.Drawing.Size(932, 653);
             this.panelChildForm.TabIndex = 7;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(288, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(427, 55);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Quản Lý Thư Viện";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -514,9 +504,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(451, 332);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 20);
+            this.label3.Size = new System.Drawing.Size(241, 20);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Nguyễn Quốc Vương - ";
+            this.label3.Text = "Nguyễn Quốc Vương - 1813865";
             // 
             // label2
             // 
@@ -526,6 +516,16 @@
             this.label2.Size = new System.Drawing.Size(186, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Danh Sách Thành Viên:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(288, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(427, 55);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Quản Lý Thư Viện";
             // 
             // frmMain
             // 
@@ -544,7 +544,7 @@
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Thư Viện";
+            this.Text = "Libary Managerment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.panelTaikhoanSubMenu.ResumeLayout(false);
             this.panelQuanlymuontraSubMenu.ResumeLayout(false);
