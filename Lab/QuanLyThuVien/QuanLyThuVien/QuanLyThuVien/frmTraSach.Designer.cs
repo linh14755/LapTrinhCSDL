@@ -154,6 +154,7 @@
             this.Controls.Add(this.lvsach);
             this.MaximizeBox = false;
             this.Name = "frmTraSach";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Trả sách";
             this.ResumeLayout(false);

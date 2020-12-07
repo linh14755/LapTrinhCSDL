@@ -23,7 +23,7 @@ namespace QuanLyThuVien
         {
             InitializeComponent();
             rdNgayMuon.Checked = true;
-            dtpFromDate.Value = DateTime.Now;
+            dtpFromDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dtpToDate.Value = DateTime.Now;
             Loads();
         }
@@ -56,7 +56,7 @@ namespace QuanLyThuVien
             LoadListView(l);
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
+        private void btnThongKe_Click_1(object sender, EventArgs e)
         {
             List<MuonSach> l = new List<MuonSach>();
             if (rdNgayMuon.Checked) l = MuonTraDAO.instance.GetDSMuonTraByNgayMuon(dtpFromDate.Value, dtpToDate.Value);
@@ -194,6 +194,11 @@ namespace QuanLyThuVien
             {
                 MessageBox.Show(ex.Message, "Có lỗi khi lưu file!");
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -76,7 +76,7 @@
             this.lvmuonsach.FullRowSelect = true;
             this.lvmuonsach.GridLines = true;
             this.lvmuonsach.HideSelection = false;
-            this.lvmuonsach.Location = new System.Drawing.Point(12, 362);
+            this.lvmuonsach.Location = new System.Drawing.Point(25, 362);
             this.lvmuonsach.MultiSelect = false;
             this.lvmuonsach.Name = "lvmuonsach";
             this.lvmuonsach.Size = new System.Drawing.Size(869, 232);
@@ -125,7 +125,7 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.txbtendocgia);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(12, 14);
+            this.groupBox4.Location = new System.Drawing.Point(25, 14);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(238, 191);
             this.groupBox4.TabIndex = 29;
@@ -134,7 +134,7 @@
             // 
             // txbTenSach
             // 
-            this.txbTenSach.Location = new System.Drawing.Point(27, 52);
+            this.txbTenSach.Location = new System.Drawing.Point(40, 52);
             this.txbTenSach.Multiline = true;
             this.txbTenSach.Name = "txbTenSach";
             this.txbTenSach.ReadOnly = true;
@@ -145,7 +145,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 23);
+            this.label2.Location = new System.Drawing.Point(97, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 7;
@@ -153,7 +153,7 @@
             // 
             // txbtendocgia
             // 
-            this.txbtendocgia.Location = new System.Drawing.Point(26, 132);
+            this.txbtendocgia.Location = new System.Drawing.Point(39, 132);
             this.txbtendocgia.Multiline = true;
             this.txbtendocgia.Name = "txbtendocgia";
             this.txbtendocgia.ReadOnly = true;
@@ -164,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 106);
+            this.label3.Location = new System.Drawing.Point(97, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 8;
@@ -176,7 +176,7 @@
             this.groupBox2.Controls.Add(this.rdmasach);
             this.groupBox2.Controls.Add(this.rdMaDocGia);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 211);
+            this.groupBox2.Location = new System.Drawing.Point(25, 211);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(237, 104);
             this.groupBox2.TabIndex = 32;
@@ -185,7 +185,7 @@
             // 
             // txbTim
             // 
-            this.txbTim.Location = new System.Drawing.Point(26, 63);
+            this.txbTim.Location = new System.Drawing.Point(39, 63);
             this.txbTim.Name = "txbTim";
             this.txbTim.Size = new System.Drawing.Size(186, 27);
             this.txbTim.TabIndex = 3;
@@ -194,7 +194,7 @@
             // rdmasach
             // 
             this.rdmasach.AutoSize = true;
-            this.rdmasach.Location = new System.Drawing.Point(116, 26);
+            this.rdmasach.Location = new System.Drawing.Point(129, 26);
             this.rdmasach.Name = "rdmasach";
             this.rdmasach.Size = new System.Drawing.Size(96, 24);
             this.rdmasach.TabIndex = 1;
@@ -205,7 +205,7 @@
             // rdMaDocGia
             // 
             this.rdMaDocGia.AutoSize = true;
-            this.rdMaDocGia.Location = new System.Drawing.Point(26, 26);
+            this.rdMaDocGia.Location = new System.Drawing.Point(39, 26);
             this.rdMaDocGia.Name = "rdMaDocGia";
             this.rdMaDocGia.Size = new System.Drawing.Size(83, 24);
             this.rdMaDocGia.TabIndex = 0;
@@ -225,7 +225,7 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.txbghichu);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Location = new System.Drawing.Point(256, 14);
+            this.groupBox5.Location = new System.Drawing.Point(269, 14);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(625, 249);
             this.groupBox5.TabIndex = 30;
@@ -236,7 +236,7 @@
             // 
             this.dtptra.CustomFormat = "dd/MM/yyyy";
             this.dtptra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptra.Location = new System.Drawing.Point(435, 62);
+            this.dtptra.Location = new System.Drawing.Point(448, 62);
             this.dtptra.Name = "dtptra";
             this.dtptra.Size = new System.Drawing.Size(186, 27);
             this.dtptra.TabIndex = 18;
@@ -244,7 +244,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 67);
+            this.label8.Location = new System.Drawing.Point(341, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 20);
             this.label8.TabIndex = 17;
@@ -255,7 +255,7 @@
             this.dtpmuon.CustomFormat = "dd/MM/yyyy";
             this.dtpmuon.Enabled = false;
             this.dtpmuon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpmuon.Location = new System.Drawing.Point(435, 24);
+            this.dtpmuon.Location = new System.Drawing.Point(448, 24);
             this.dtpmuon.Name = "dtpmuon";
             this.dtpmuon.Size = new System.Drawing.Size(186, 27);
             this.dtpmuon.TabIndex = 16;
@@ -263,7 +263,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(328, 29);
+            this.label9.Location = new System.Drawing.Point(341, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 15;
@@ -272,7 +272,7 @@
             // cbbmasach
             // 
             this.cbbmasach.FormattingEnabled = true;
-            this.cbbmasach.Location = new System.Drawing.Point(125, 64);
+            this.cbbmasach.Location = new System.Drawing.Point(138, 64);
             this.cbbmasach.Name = "cbbmasach";
             this.cbbmasach.Size = new System.Drawing.Size(186, 28);
             this.cbbmasach.TabIndex = 14;
@@ -281,7 +281,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 67);
+            this.label4.Location = new System.Drawing.Point(22, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 13;
@@ -290,7 +290,7 @@
             // cbbmadg
             // 
             this.cbbmadg.FormattingEnabled = true;
-            this.cbbmadg.Location = new System.Drawing.Point(125, 26);
+            this.cbbmadg.Location = new System.Drawing.Point(138, 26);
             this.cbbmadg.Name = "cbbmadg";
             this.cbbmadg.Size = new System.Drawing.Size(186, 28);
             this.cbbmadg.TabIndex = 2;
@@ -299,7 +299,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 29);
+            this.label5.Location = new System.Drawing.Point(20, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 20);
             this.label5.TabIndex = 11;
@@ -307,7 +307,7 @@
             // 
             // txbghichu
             // 
-            this.txbghichu.Location = new System.Drawing.Point(124, 110);
+            this.txbghichu.Location = new System.Drawing.Point(137, 110);
             this.txbghichu.Multiline = true;
             this.txbghichu.Name = "txbghichu";
             this.txbghichu.Size = new System.Drawing.Size(482, 114);
@@ -316,7 +316,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 115);
+            this.label7.Location = new System.Drawing.Point(19, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 20);
             this.label7.TabIndex = 3;
@@ -331,7 +331,7 @@
             this.btnmuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmuon.ForeColor = System.Drawing.Color.White;
             this.btnmuon.HoverState.Parent = this.btnmuon;
-            this.btnmuon.Location = new System.Drawing.Point(329, 291);
+            this.btnmuon.Location = new System.Drawing.Point(342, 291);
             this.btnmuon.Margin = new System.Windows.Forms.Padding(2);
             this.btnmuon.Name = "btnmuon";
             this.btnmuon.ShadowDecoration.Parent = this.btnmuon;
@@ -349,7 +349,7 @@
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.HoverState.Parent = this.btnHome;
-            this.btnHome.Location = new System.Drawing.Point(472, 291);
+            this.btnHome.Location = new System.Drawing.Point(485, 291);
             this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.Parent = this.btnHome;
