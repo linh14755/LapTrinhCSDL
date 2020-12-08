@@ -12,9 +12,32 @@ namespace DataAccess.DAO
     {
         public static ThueDAO instance = new ThueDAO();
         public ThueDAO() { }
+
+        public List<Thue> GetListByNgayTra(DateTime datefrom, DateTime dateto)
+        {
+            List<Thue> l = new List<Thue>();
+            var data = DataProvider.instance.ExcuteQuery("select * from Thue where status = 1 and NgayTra between '" + datefrom + "' and '" + dateto + "'");
+            foreach (DataRow row in data.Rows)
+            {
+                Thue t = new Thue(row);
+                l.Add(t);
+            }
+            return l;
+        }
+        public List<Thue> GetListThueDaTra()
+        {
+            List<Thue> l = new List<Thue>();
+            var data = DataProvider.instance.ExcuteQuery("select * from Thue where status = 1");
+            foreach (DataRow row in data.Rows)
+            {
+                Thue t = new Thue(row);
+                l.Add(t);
+            }
+            return l;
+        }
         public bool TraHet(string makh)
         {
-            var result =  DataProvider.instance.ExcuteNonQuery("update Thue set status = 1 where MaKH = " + makh + " and status = 0");
+            var result = DataProvider.instance.ExcuteNonQuery("update Thue set status = 1 where MaKH = " + makh + " and status = 0");
             return result > 0;
         }
         public List<Thue> GetListByMAKH(string makh)

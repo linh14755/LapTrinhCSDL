@@ -86,5 +86,12 @@ namespace QuanLyBangDia
 
             hideSubMenu();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKe());
+
+            hideSubMenu();
+        }
     }
 }

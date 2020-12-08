@@ -148,7 +148,7 @@ namespace DataAccess
         
         private void txbTim_TextChanged_1(object sender, EventArgs e)
         {
-            var lst = DataProvider.instance.ExcuteQuery("select * from Thue");
+            var lst = DataProvider.instance.ExcuteQuery("select * from Thue where status = 0");
             if (lst == null) return;
 
             if (txbTim.Text != "" && KTKytuDacBiet(txbTim.Text))
